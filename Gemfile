@@ -8,7 +8,10 @@ gem "decidim", "0.20.0"
 # gem "decidim-consultations", "0.20.0"
 # gem "decidim-initiatives", "0.20.0"
 
-gem "bootsnap", "~> 1.3"
+gem "bootsnap", "~> 1.4"
+gem "health_check"
+gem "sidekiq", "~> 5.2"
+gem "sidekiq-cron"
 
 gem "puma", "~> 3.12.2"
 gem "uglifier", "~> 4.1"
