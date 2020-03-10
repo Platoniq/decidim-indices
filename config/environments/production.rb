@@ -33,6 +33,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
+  config.action_mailer.asset_host = 'https://decidim.platoniq.net'
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -47,7 +48,8 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
+  config.ssl_options = { redirect: { exclude: -> request { request.path =~ /health_check/ } } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -101,4 +103,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.active_job.queue_adapter = :sidekiq
 end
