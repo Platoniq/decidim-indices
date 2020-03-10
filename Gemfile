@@ -10,7 +10,7 @@ gem "decidim", "0.20.0"
 
 gem "bootsnap", "~> 1.4"
 gem "health_check"
-gem "sidekiq", "~> 5.2"
+gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
 
 gem "puma", "~> 3.12.2"
