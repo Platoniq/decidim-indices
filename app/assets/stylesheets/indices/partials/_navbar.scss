@@ -14,7 +14,7 @@
 }
 .navbar {
 	@include breakpoint(medium up){
-		@include strato-border($title-bar-color, 100);
+		@include strato-border($title-bar-color);
 	}
 	background-color: $navbar-color;
 }
@@ -54,6 +54,13 @@
     }
   }
 
+  &_edit__link a{
+    color: $navbar-color;
+
+    &:hover{
+      color: $navbar-color;
+    }
+  }
 
   &_user__login{
     a{

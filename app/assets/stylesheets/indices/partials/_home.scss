@@ -9,3 +9,15 @@
 	background-color: rgba(26, 24, 29, 0.1);;
 	@include noise-background;
 }
+
+.home-section {
+	&.hero, &.highligted-content-banner {
+	  @include strato-border($body-background-color);
+	  &::after {
+	  	z-index: 0;
+	  }
+	  >.hero__container, >.highligted-content-banner__container {
+		  @include strato-border($body-background-color, "down");
+	  }
+	}
+}

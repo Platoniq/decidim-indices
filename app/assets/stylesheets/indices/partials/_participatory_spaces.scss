@@ -1,7 +1,33 @@
 @import "variables";
 @import "indices/utils/mixins";
 
-.process-header__main::after {
+.process-header {
+  @include strato-border($body-background-color, "down", 8px);
+
+  .process-header__container  {
+	  @include strato-border(white, "down");
+  }
+
+  .process-header__main::after {
 		background-color: rgba(26, 24, 29, 0.1);;
-	@include noise-background;
+		@include noise-background;
+	}
+}
+
+.card {
+	&--secondary {
+		border: none;
+		.filters__section {
+			border: none;
+		}
+	}
+
+	&-grid > .column {
+		@include strato-border(#fafafa);
+		&::before {
+			z-index: 0;
+			width: calc(100% - 1.875rem);
+			left: 0.9375rem;
+		}
+	}
 }

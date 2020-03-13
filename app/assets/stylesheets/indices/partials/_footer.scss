@@ -3,8 +3,10 @@
 
 
 .main-footer {
-	@include strato-border($body-background-color, 100);
+	background-color: $navbar-color;
+	@include strato-border($body-background-color);
 }
 .mini-footer {
+	@include strato-border($navbar-color);
 	@include noise-background;
 }
