@@ -1,0 +1,7 @@
+@import "variables";
+@import "indices/utils/mixins";
+
+.process-header__main::after {
+		background-color: rgba(26, 24, 29, 0.1);;
+	@include noise-background;
+}
