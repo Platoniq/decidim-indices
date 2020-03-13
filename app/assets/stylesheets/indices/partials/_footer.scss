@@ -1,0 +1,10 @@
+@import "variables";
+@import "indices/utils/mixins";
+
+
+.main-footer {
+	@include strato-border($body-background-color, 100);
+}
+.mini-footer {
+	@include noise-background;
+}

@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  platoniq:
+    layouts:
+      footer:
+        made_by_platoniq: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free software</a> by <a target="_blank" href="http://platoniq.net">Platoniq</a>.

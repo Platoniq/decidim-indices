@@ -1,0 +1,29 @@
+<div class="footer-transition"></div>
+<div class="mini-footer">
+  <div class="row">
+    <div class="medium-6 large-6 column">
+      <a rel="license" class="cc-badge"
+         href="http://creativecommons.org/licenses/by-sa/4.0/"
+         target="_blank" rel="noopener">
+        <%= image_tag("decidim/cc-badge.png", alt: "Creative Commons License" ) %>
+      </a>
+      <%= t("platoniq.layouts.footer.made_by_platoniq").html_safe %>
+    </div>
+    <div class="medium-6 large-4 column">
+      <% if current_organization.official_img_footer? %>
+        <div class="decidim-logo">
+        <%= link_to  current_organization.official_url do %>
+          <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
+        <% end %>
+      </div>
+      <% end %>
+      <div class="decidim-logo">
+        <a rel="decidim"
+           href="https://decidim.org/"
+           target="_blank">
+          <%= image_tag("decidim/decidim-logo.svg", alt: "Decidim Logo" ) %>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

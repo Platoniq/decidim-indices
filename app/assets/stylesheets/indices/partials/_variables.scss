@@ -1,0 +1,53 @@
+// Define custom properties as css color variables
+$body-font-color: #494949;
+$body-background-color: #f1f1f1;
+$navbar-color: #231f20;
+$navbar-rgb: 35,31,32;
+$title-bar-color: #fcce06;
+$title-bar-rgb: 252,206,6;
+
+// Variables
+
+$primary: #bf0603;
+$primary-rgb: 191,6,3;
+$secondary: $navbar-color;
+$secondary-rgb: $navbar-rgb;
+$success: #6eeb83;
+$success-rgb:110,235,131;
+$warning: #f46036;
+$warning-rgb: 244,96,54;
+$alert: #ef2d56;
+$alert-rgb: 239,45,86;
+
+$proposals: #238ff7;
+$actions: #6eeb83;
+$debates: #fa6c96;
+$meetings: #fabc6c;
+
+$twitter: #55acee;
+$facebook: #3b5998;
+$google: #dd4b39;
+
+// background colors used in public diff views
+$color-addition: #e6ffed;
+$color-removal: #ffeef0;
+
+:root{
+  --primary: #{$primary};
+  --primary-rgb: #{$primary-rgb};
+  --secondary: #{$secondary};
+  --secondary-rgb: #{$secondary-rgb};
+  --success: #{$success};
+  --success-rgb: #{$success-rgb};
+  --warning: #{$warning};
+  --warning-rgb: #{$warning-rgb};
+  --alert: #{$alert};
+  --alert-rgb: #{$alert-rgb};
+  --proposals: #{$proposals};
+  --actions: #{$actions};
+  --debates: #{$debates};
+  --meetings: #{$meetings};
+  --twitter: #{$twitter};
+  --facebook: #{$facebook};
+  --google: #{$google};
+}

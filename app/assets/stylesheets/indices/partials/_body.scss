@@ -1,0 +1,30 @@
+@import "variables";
+@import url('//db.onlinewebfonts.com/c/24de365421e121614de19cb06a1b6957?family=HelveticaTextbook+LT+Roman');
+
+body {
+  font-family: 'HelveticaTextbook LT Roman', sans-serif;
+
+  color: $body-font-color;
+  background-color: $body-background-color;
+}
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6{
+  font-family: 'HelveticaTextbook LT Roman', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  // text-rendering: optimizeLegibility;
+  // letter-spacing: -.5px;
+}

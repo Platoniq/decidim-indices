@@ -1,0 +1,99 @@
+@import "variables";
+@import "foundation";
+@import "decidim/utils/settings";
+@import "indices/utils/mixins";
+
+
+.title-bar {
+	background-color: $title-bar-color;
+	@include breakpoint(medium up){
+	  .topbar__dropmenu > ul > li > a::after {
+	      border-top-color: $navbar-color !important;
+	  }
+	}
+}
+.navbar {
+	@include breakpoint(medium up){
+		@include strato-border($title-bar-color, 100);
+	}
+	background-color: $navbar-color;
+}
+
+.main-nav__link {
+	a{
+		box-shadow: none;
+		padding-top:1.1em;
+	  &:hover{
+	    // color: $navbar-color;
+	  }
+	}
+	&--active a {
+		box-shadow: none;
+		@include noise-background;
+	}
+}
+.hide-for-medium{
+  .topbar__user__login{
+    a{
+      color: $medium-gray;
+
+      &:hover{
+        color: $anchor-color;
+      }
+    }
+  }
+}
+.dropdown.menu .is-active > a{
+  color: $navbar-color;
+}
+
+.topbar_{
+  &_menu{
+    .icon--menu{
+      fill: $navbar-color;
+    }
+  }
+
+
+  &_user__login{
+    a{
+      color: $navbar-color;
+      font-weight: 400;
+      &:hover {
+      	color: darken($navbar-color, 10%);
+      }
+    }
+	}
+	&_search svg {
+		color: #999;
+	}
+  &_dropmenu{
+    > ul > li > a{
+      color: $navbar-color;
+    }
+
+    .is-dropdown-submenu-parent{
+      > a,
+      &.is-active > a{
+        @include breakpoint(smallmedium down){
+          color: white;
+        }
+      }
+    }
+
+    .is-dropdown-submenu li a{
+      color: $navbar-color;
+    }
+  }
+
+}
+@media print, screen and (min-width: 40em) {
+  .topbar__search input,
+  .topbar__search input:focus {
+		color: #777;
+    background: $body-background-color;
+  }
+  .topbar__search input::placeholder {
+  	color: #999;
+  }
+}
