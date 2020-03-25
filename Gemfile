@@ -7,6 +7,7 @@ ruby RUBY_VERSION
 gem "decidim", "0.20.0"
 # gem "decidim-consultations", "0.20.0"
 # gem "decidim-initiatives", "0.20.0"
+gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 
 gem "bootsnap", "~> 1.4"
 gem "health_check"

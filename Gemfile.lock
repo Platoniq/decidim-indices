@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
+  revision: 278d87950c2b09552e85be988f38bae617daa469
+  specs:
+    decidim-decidim_awesome (0.1)
+      decidim-admin (>= 0.19.0)
+      decidim-core (>= 0.19.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -767,6 +775,7 @@ DEPENDENCIES
   bootsnap (~> 1.4)
   byebug (~> 11.0)
   decidim (= 0.20.0)
+  decidim-decidim_awesome!
   decidim-dev (= 0.20.0)
   faker (~> 1.9)
   fog-aws
