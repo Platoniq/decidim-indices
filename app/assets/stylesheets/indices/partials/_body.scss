@@ -1,22 +1,23 @@
 @import "variables";
 
-@font-face {font-family: "HelveticaTextbook LT Roman";
-    src: url("/assets/HelveticaTextbookLT-Roman.eot"); /* IE9*/
-    src: url("/assets/HelveticaTextbookLT-Roman.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("/assets/HelveticaTextbookLT-Roman.woff2") format("woff2"), /* chrome firefox */
-    url("/assets/HelveticaTextbookLT-Roman.woff") format("woff"), /* chrome firefox */
-    url("/assets/HelveticaTextbookLT-Roman.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-    url("/assets/HelveticaTextbookLT-Roman.svg#HelveticaTextbook LT Roman") format("svg"); /* iOS 4.1- */
+@font-face {
+	font-family: "HelveticaTextbook LT Roman";
+  font-weight: normal;
+  font-style: normal;
+  src:
+    font-url('indices/HelveticaTextbookLT-Roman.woff2') format('woff2'),
+    font-url('indices/HelveticaTextbookLT-Roman.woff') format('woff'),
+    font-url('indices/HelveticaTextbookLT-Roman.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Textbook Digi Grotesk';
-    src: url('/assets/TextbookDigiGrotesk.woff2') format('woff2'),
-        url('/assets/TextbookDigiGrotesk.woff') format('woff'),
-        url('/assets/TextbookDigiGrotesk.ttf') format('truetype'),
-        url('/assets/TextbookDigiGrotesk.svg#TextbookDigiGrotesk') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Textbook Digi Grotesk';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    font-url('indices/TextbookDigiGrotesk.woff2') format('woff2'),
+    font-url('indices/TextbookDigiGrotesk.woff') format('woff'),
+    font-url('indices/TextbookDigiGrotesk.ttf') format('truetype');
 }
 
 
