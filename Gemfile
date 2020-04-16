@@ -4,9 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.20.0"
-# gem "decidim-consultations", "0.20.0"
-# gem "decidim-initiatives", "0.20.0"
+gem "decidim", "0.21.0"
+gem "decidim-consultations", "0.21.0"
+# gem "decidim-initiatives", "0.21.0"
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 
 gem "bootsnap", "~> 1.4"
@@ -14,7 +14,7 @@ gem "health_check"
 gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
 
-gem "puma", "~> 3.12.2"
+gem "puma", "~> 4.3"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
@@ -22,7 +22,7 @@ gem "faker", "~> 1.9"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", "0.20.0"
+  gem "decidim-dev", "0.21.0"
 end
 
 group :development do
