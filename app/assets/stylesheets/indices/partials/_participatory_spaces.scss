@@ -13,11 +13,23 @@
 
   &__content li {
   	padding: 0.5rem 0.75rem 0.5rem;
+    a{
+      color: $indices-black;
+    }
   	&:hover {
-  		box-shadow: inset 0px 4px 0 0  $indices-yellow-light;
+  		// box-shadow: inset 0px 4px 0 0  $indices-yellow-light;
+      box-shadow: none;
+      a {
+        color: #666;
+      }
   	}
   	&.is-active {
-    	box-shadow: inset 0px 4px 0 0  $indices-yellow;
+    	// box-shadow: inset 0px 4px 0 0  $indices-yellow;
+      background-color: $indices-yellow-light;
+      box-shadow: inset 0px 1px 5px 2px $indices-yellow;
+      &:hover a{
+        color: $indices-black;
+      }
   	}
   }
 
@@ -31,17 +43,17 @@
 
   &__hidden-content {
   	background-color: $indices-grey;
-  	li {
-	  	&:hover {
-	  		box-shadow: none;
-	    	background-color: lighten($indices-yellow-light, 10%);
-	  	}
+  	// li {
+	  // 	&:hover {
+	  // 		box-shadow: none;
+	  //   	background-color: lighten($indices-yellow-light, 10%);
+	  // 	}
 
-	  	&.is-active {
-	    	box-shadow: none;
-	    	background-color: $indices-yellow-light;
-	  	}
-  	}
+	  // 	&.is-active {
+	  //   	box-shadow: none;
+	  //   	background-color: $indices-yellow-light;
+	  // 	}
+  	// }
   }
 }
 
