@@ -3,7 +3,6 @@
 @import "decidim/utils/settings";
 @import "indices/utils/mixins";
 
-
 .title-bar {
 	background-color: $title-bar-color;
 	@include breakpoint(medium up){
@@ -48,9 +47,26 @@
 }
 
 .topbar_{
+  &_notifications, &_conversations {
+    .icon {
+      fill: $indices-black;
+    }
+    &.is-active .icon {
+      fill: $alert;
+      opacity: 0.9;
+    }
+  }
+
   &_menu{
     .icon--menu{
       fill: $navbar-color;
+    }
+  }
+
+  &_admin__link a {
+    color: $alert;
+    &:hover {
+      color: $navbar-color;
     }
   }
 

@@ -34,9 +34,17 @@ en:
   platoniq:
     layouts:
       footer:
-        made_by_platoniq: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free software</a> by <a target="_blank" href="http://platoniq.net">Platoniq</a>.
+        made_by_platoniq: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free software</a>.
   indices:
     footer:
       eu1: This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870792.
       eu2: The sole responsibility for the content of this publication lies with the authors. It does not necessarily represent the opinion of the European Union.
       eu3: Neither the EASME nor the European Commission is responsible for any use that may be made of the information contained therein.
+  decidim:
+    admin:
+      filters:
+        state_eq:
+          label: Label
+          values:
+            accepted: Accepted
+            rejected: Rejected

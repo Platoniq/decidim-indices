@@ -1,0 +1,13 @@
+@import "variables";
+
+.off-canvas-wrapper {
+  background-color: $body-background-color;
+}
+
+a {
+  color: $indices-blue;
+
+  &:hover, &:focus {
+    color: $indices-black;
+  }
+}

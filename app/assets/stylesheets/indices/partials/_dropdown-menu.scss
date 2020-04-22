@@ -1,0 +1,5 @@
+@import "variables";
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-top-color: $indices-blue;
+}

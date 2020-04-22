@@ -1,0 +1,85 @@
+@import "variables";
+
+.link {
+  color: $anchor-color;
+}
+
+.button {
+  color: $indices-black;
+  &:hover, &:focus {
+    color: $indices-black;
+    filter: none;
+    background-color: $indices-yellow-light;
+  }
+
+  &.secondary {
+    background-color: $indices-yellow-light;
+    color: $indices-black;
+    &:hover, &:focus {
+      border-color: $indices-yellow;
+      background-color: $indices-yellow;
+      color: $indices-blue;
+      filter: none;
+    }
+  }
+  &.light:not(.hollow).secondary {
+    color: $indices-black;
+  }
+
+  &.hollow {
+    color: $indices-black;
+    border-color: $indices-yellow-light;
+    background-color: $indices-yellow-light;
+    &:hover, &:focus {
+      border-color: $indices-yellow;
+      background-color: $indices-yellow;
+      color: $indices-blue;
+    }
+  }
+
+  &.secondary.hollow {
+    background-color: transparent;
+    color: $indices-blue;
+    border-color: $indices-blue;
+    &:hover, &:focus {
+      background-color: transparent;
+      border-color: $indices-black;
+      color: $indices-black;
+    }
+  }
+
+  &.disabled, &[disabled] {
+    background-color: $indices-yellow;
+    color: $indices-black;
+    &:hover, &:focus {
+      background-color: $indices-yellow-light;
+      color: $indices-black;
+    }
+  }
+  &.small {
+    padding-top: .5rem;
+    padding-bottom: .45rem;
+  }
+
+  &.opinion-toggle {
+    &--ok {
+      background-color: lighten($success, 20%);
+      &:hover{
+        background-color: $success;
+      }
+    }
+    &--ko {
+      background-color: lighten($alert, 20%);
+      &:hover{
+        background-color: $alert;
+      }
+    }
+    &--meh, &--meh.is-active {
+      background-color: lighten($indices-grey, 10%);
+    }
+    &--meh:hover, &--meh:focus {
+      background-color: $indices-grey;
+    }
+  }
+}
+

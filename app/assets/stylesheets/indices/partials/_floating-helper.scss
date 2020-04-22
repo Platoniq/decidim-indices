@@ -1,0 +1,12 @@
+@import "variables";
+
+.floating-helper_ {
+  &_text {
+    color: $indices-grey;
+    background-color: rgba($indices-grey, 0.3);
+  }
+  &_icon {
+    color: #fff;
+    background-color: $indices-grey;
+  }
+}

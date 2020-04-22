@@ -1,0 +1,9 @@
+@import "variables";
+
+.card__link {
+  color: $indices-black;
+
+  &:hover {
+    color: $anchor-color;
+  }
+}

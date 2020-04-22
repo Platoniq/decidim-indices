@@ -1,7 +1,7 @@
 <div class="footer-transition"></div>
 <div class="mini-footer">
   <div class="row">
-    <div class="medium-6 large-6 column">
+    <div class="medium-3 large-6 column">
       <a rel="license" class="cc-badge"
          href="http://creativecommons.org/licenses/by-sa/4.0/"
          target="_blank" rel="noopener">
@@ -9,7 +9,7 @@
       </a>
       <%= t("platoniq.layouts.footer.made_by_platoniq").html_safe %>
     </div>
-    <div class="medium-6 large-4 column">
+    <div class="medium-9 large-6 column footer-logos">
       <% if current_organization.official_img_footer? %>
         <div class="decidim-logo">
         <%= link_to  current_organization.official_url do %>
@@ -22,6 +22,13 @@
            href="https://decidim.org/"
            target="_blank">
           <%= image_tag("decidim/decidim-logo.svg", alt: "Decidim Logo" ) %>
+        </a>
+      </div>
+      <div class="decidim-logo platoniq">
+        <a rel="platoniq"
+           href="https://platoniq.net/"
+           target="_blank" rel="noopener">
+          <%= image_tag("logo_platoniq_white.png", alt: "Made by Platoniq" ) %>
         </a>
       </div>
     </div>

@@ -1,22 +1,34 @@
 // Define custom properties as css color variables
+
+$indices-black: #000000;
+$indices-black-rgb: 0,0,0;
+$indices-grey: #CBC9CA;
+$indices-grey-rgb: 203,201,202;
+$indices-yellow: #FFDA00;
+$indices-yellow-rgb: 255,218,0;
+$indices-yellow-light: #FFE981;
+$indices-yellow-light-rgb: 255,233,129;
+$indices-blue: #374a5e;
+$indices-blue-rgb: 55,74,94;
+
 $body-font-color: #494949;
-$body-background-color: #f1f1f1;
+$body-background-color: #fafafa;
 $navbar-color: #231f20;
 $navbar-rgb: 35,31,32;
 $title-bar-color: #fcce06;
 $title-bar-rgb: 252,206,6;
-
+$anchor-color: $indices-blue;
 // Variables
 
-$primary: #EE3138;
-$primary-rgb: 238,49,56;
-$secondary: $navbar-color;
-$secondary-rgb: $navbar-rgb;
+$primary: $indices-yellow;
+$primary-rgb: $indices-yellow-rgb;
+$secondary: $indices-blue;
+$secondary-rgb: $indices-blue-rgb;
 $success: #6eeb83;
 $success-rgb:110,235,131;
 $warning: #f46036;
 $warning-rgb: 244,96,54;
-$alert: #ef2d56;
+$alert: #EE3138;
 $alert-rgb: 239,45,86;
 
 $proposals: #238ff7;

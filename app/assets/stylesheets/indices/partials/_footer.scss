@@ -11,10 +11,22 @@
 	@include noise-background;
 }
 
+.footer-logos {
+  text-align: right;
+  .decidim-logo {
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+    margin-left: 1em;
+    &.platoniq {
+      padding-top: 1em;
+    }
+  }
+}
 
 
 .eu-footer{
-  background-color: $secondary;
+  background-color: $navbar-color;
   color: #828282;
   padding: 2em;
   font-size: .9em;

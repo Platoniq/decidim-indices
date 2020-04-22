@@ -20,4 +20,10 @@
 		  @include strato-border($body-background-color, "down");
 	  }
 	}
+	&:first-child {
+		&.hero, &.highligted-content-banner {
+		  @include strato-border($navbar-color);
+	  }
+	}
 }
+
