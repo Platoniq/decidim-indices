@@ -1,0 +1,12 @@
+<% if @organization %>
+  <% if @custom_url_for_mail_root.present? %>
+    <% url = @custom_url_for_mail_root %>
+  <% else %>
+    <% url = decidim.root_url(host: @organization.host) %>
+  <% end %>
+  <%= link_to url do %>
+    <%= image_tag "indices/logo-full.png", alt: @organization.name, border: "0" %>
+  <% end %>
+<% else %>
+  <%= Decidim.application_name %>
+<% end %>
