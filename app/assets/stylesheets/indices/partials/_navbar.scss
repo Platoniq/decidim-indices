@@ -11,6 +11,15 @@
 	  }
 	}
 }
+// Hide locales if only 1 language
+.num_locales-1 {
+  .title-bar {
+    @include breakpoint(smallmedium down){
+      border-top-width: 1px;
+      @include strato-border($navbar-color);
+    }
+  }
+}
 .navbar {
 	@include breakpoint(medium up){
 		@include strato-border($title-bar-color);

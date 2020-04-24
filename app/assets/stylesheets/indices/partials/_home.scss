@@ -1,3 +1,4 @@
+@import "foundation";
 @import "variables";
 @import "indices/utils/mixins";
 
@@ -12,18 +13,23 @@
 
 .home-section {
 	&.hero, &.highligted-content-banner {
-	  @include strato-border($body-background-color);
-	  &::after {
-	  	z-index: 0;
-	  }
+		&:not(:first-child) {
+		  @include strato-border($body-background-color);
+		  &::after {
+		  	z-index: 0;
+
+		  }
+		}
 	  >.hero__container, >.highligted-content-banner__container {
 		  @include strato-border($body-background-color, "down");
 	  }
 	}
-	&:first-child {
-		&.hero, &.highligted-content-banner {
-		  @include strato-border($navbar-color);
-	  }
+	@include breakpoint(medium up){
+		&:first-child {
+			&.hero, &.highligted-content-banner {
+			  @include strato-border($navbar-color);
+		  }
+		}
 	}
 }
 

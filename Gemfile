@@ -4,9 +4,10 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.21.0"
-gem "decidim-consultations", "0.21.0"
-# gem "decidim-initiatives", "0.21.0"
+DECDIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "0.21-platoniq" }
+gem "decidim", DECDIDIM_VERSION
+gem "decidim-consultations", DECDIDIM_VERSION
+# gem "decidim-initiatives", DECDIDIM_VERSION
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 
 gem "bootsnap", "~> 1.4"
@@ -22,7 +23,7 @@ gem "faker", "~> 1.9"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", "0.21.0"
+  gem "decidim-dev", DECDIDIM_VERSION
 end
 
 group :development do
