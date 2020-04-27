@@ -1,0 +1,10 @@
+@import "variables";
+
+.filters__section {
+  .section-title {
+    color: $indices-black;
+  }
+}
+.filters__section--general {
+  @extend .filters__section;
+}

@@ -1,0 +1,15 @@
+@import "variables";
+
+.accountability{
+  .categories{
+    .categories--group{
+      .card__link{
+        .category--line{
+          strong{
+            color: $indices-black;
+          }
+        }
+      }
+    }
+  }
+}

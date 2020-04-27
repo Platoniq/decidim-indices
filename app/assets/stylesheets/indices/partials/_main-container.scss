@@ -1,0 +1,11 @@
+@import "variables";
+
+.side-panel__tabs {
+  .tabs-title {
+    &.is-active {
+      > [role=tab], > a {
+        color: $anchor-color;
+      }
+    }
+  }
+}

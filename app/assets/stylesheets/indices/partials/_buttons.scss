@@ -26,7 +26,7 @@
     color: $indices-black;
   }
 
-  &.hollow {
+  &.hollow,&.light.hollow {
     color: $indices-black;
     border-color: $indices-yellow-light;
     background-color: $indices-yellow-light;
@@ -34,6 +34,9 @@
       border-color: $indices-yellow;
       background-color: $indices-yellow;
       color: $indices-blue;
+    }
+    &.light {
+      color: lighten($indices-black, 20%);
     }
   }
 

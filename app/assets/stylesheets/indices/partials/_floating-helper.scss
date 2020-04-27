@@ -1,6 +1,13 @@
 @import "variables";
 
 .floating-helper_ {
+  &_content {
+    background-color: rgba($secondary, .1);
+    border-top: 5px solid $secondary;
+    &-close {
+      background-color: $secondary;
+    }
+  }
   &_text {
     color: $indices-grey;
     background-color: rgba($indices-grey, 0.3);
