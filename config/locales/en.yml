@@ -55,3 +55,12 @@ en:
       direct_verifications:
         name: InDICEs & Friends
         explanation: A more broad (but controlled) audience related to the InDICEs project
+  devise:
+    mailer:
+      invitation_instructions:
+        hello: Dear %{email},
+        someone_invited_you: "Welcome to the %{application}! You’ve been invited to participate. Join the platform by accepting the invitation and clicking the link below:"
+        accept_until: Click sooner than later! The invite expires on %{due_date}.
+        ignore: |-
+          Remember that your account on the InDICEs Participatory Platform won't be created until you click the link to set your username and password. And to make it more personal, add a photo and some words about yourself. <br><br>
+            If you’ve been mistakenly invited, please ignore this email.
