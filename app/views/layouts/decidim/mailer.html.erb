@@ -24,15 +24,7 @@
                 <td class="decidim-bar">
                   <table class="row collapse">
                     <tr>
-                      <th class="small-3 large-3 first columns decidim-bar">
-                        <table>
-                          <tr>
-                            <th>
-                            </th>
-                          </tr>
-                        </table>
-                      </th>
-                      <th class="small-6 large-6 columns decidim-bar">
+                      <th class="small-8 large-8 columns decidim-bar">
                         <table>
                           <tr>
                             <th>
@@ -43,7 +35,7 @@
                           </tr>
                         </table>
                       </th>
-                      <th class="small-3 large-3 last columns decidim-bar">
+                      <th class="small-4 large-4 last columns decidim-bar">
                         <table>
                           <tr>
                             <th>
@@ -91,7 +83,7 @@
                   <table class="row">
                     <tr>
                       <th class="expander" rowspan="2"></th>
-                      <th class="small-12 first columns cityhall-bar" colspan="2" align="center">
+                      <th class="first columns cityhall-bar" colspan="2" align="center">
                         <% if @custom_url_for_mail_root.present? %>
                           <%= link_to @organization.name.html_safe, @custom_url_for_mail_root %>
                         <% else %>
@@ -99,11 +91,11 @@
                         <% end %>
                       </th>
                     </tr>
-                    <tr>
-                      <th class="small-4 columns eu-logo">
+                    <tr class="eu-logo">
+                      <th class="columns" align="center">
                         <%= image_tag "indices/europe-flag.png", alt: "Europe flag", border: "2" %>
                       </th>
-                      <th class="small-8 columns eu-logo" align="left">
+                      <th class="columns" align="left">
                         <%= t("indices.footer.eu1") %>
                       </th>
                     </tr>

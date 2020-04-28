@@ -1365,7 +1365,7 @@ body.outlook p {
 /* 2 - Custom styles ---------*/
 
 table.body th.decidim-bar, table.body td.decidim-bar{
-  padding: 10px 0;
+  padding: 5px 5px;
   background-color: #fcce06;
 }
 
@@ -1389,10 +1389,12 @@ table.body{
   padding: 16px 0;
   line-height: 1;
 }
-.eu-logo {
+.eu-logo, .eu-logo th {
   background-color: #374a5e;
   color: #fff;
-  padding: 16px 0;
+}
+.eu-logo th {
+  padding: 16px;
   font-size: 14px;
   line-height: 1.3;
 }
