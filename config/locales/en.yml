@@ -40,8 +40,38 @@ en:
       eu1: This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870792.
       eu2: The sole responsibility for the content of this publication lies with the authors. It does not necessarily represent the opinion of the European Union.
       eu3: Neither the EASME nor the European Commission is responsible for any use that may be made of the information contained therein.
+  activerecord:
+    models:
+      decidim/conference:
+        one: Calendar
+        other: Calendars
+  layouts:
+    decidim:
+      conferences:
+        index:
+          promoted_conferences: Highlighted calendars
+        order_by_conferences:
+          conferences:
+            one: "%{count} calendar"
+            other: "%{count} calendars"
   decidim:
+    conferences:
+      pages:
+        home:
+          highlighted_conferences:
+            active_conferences: Active calendars
+            see_all_conferences: See all calendars
+      index:
+        title: Calendars
+      statistics:
+        conference_count: Calendars
+    menu:
+      conferences: Calendars
     admin:
+      menu:
+        conferences: Calendars
+      titles:
+        conferences: Calendars
       filters:
         state_eq:
           label: Label
