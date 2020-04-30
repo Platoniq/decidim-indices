@@ -85,6 +85,12 @@ en:
       direct_verifications:
         name: InDICEs & Friends
         explanation: A more broad (but controlled) audience related to the InDICEs project
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            direct_verifications: InDICEs Consortium Members
+            direct_verifications_consortium: InDICEs & Friends
   devise:
     mailer:
       invitation_instructions:
