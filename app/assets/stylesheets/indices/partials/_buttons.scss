@@ -26,7 +26,16 @@
     color: $indices-black;
   }
 
-  &.hollow,&.light.hollow {
+  &.disabled, &[disabled] {
+    background-color: $indices-yellow;
+    color: $indices-black;
+    &:hover, &:focus {
+      background-color: $indices-yellow-light;
+      color: $indices-black;
+    }
+  }
+
+  &.hollow, &.light.hollow {
     color: $indices-black;
     border-color: $indices-yellow-light;
     background-color: $indices-yellow-light;
@@ -37,6 +46,10 @@
     }
     &.light {
       color: lighten($indices-black, 20%);
+    }
+    &.disabled, &.disabled:hover, &.disabled:focus {
+      background-color: lighten($indices-yellow, 30%);
+      color: inherit;
     }
   }
 
@@ -51,14 +64,6 @@
     }
   }
 
-  &.disabled, &[disabled] {
-    background-color: $indices-yellow;
-    color: $indices-black;
-    &:hover, &:focus {
-      background-color: $indices-yellow-light;
-      color: $indices-black;
-    }
-  }
   &.small {
     padding-top: .5rem;
     padding-bottom: .45rem;
