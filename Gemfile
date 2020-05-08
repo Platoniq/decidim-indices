@@ -11,6 +11,7 @@ gem "decidim-conferences", DECDIDIM_VERSION
 # gem "decidim-initiatives", DECDIDIM_VERSION
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
+gem "decidim-notify", git: "https://github.com/Platoniq/decidim-module-notify"
 
 gem "bootsnap", "~> 1.4"
 gem "health_check"
