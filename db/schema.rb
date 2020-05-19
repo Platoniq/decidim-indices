@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_152523) do
+ActiveRecord::Schema.define(version: 2020_05_15_170014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -992,6 +992,15 @@ ActiveRecord::Schema.define(version: 2020_05_08_152523) do
     t.index ["decidim_user_id"], name: "index_decidim_notify_authors_on_decidim_user_id"
   end
 
+  create_table "decidim_notify_chapters", force: :cascade do |t|
+    t.string "title", null: false
+    t.boolean "active", default: false, null: false
+    t.bigint "decidim_component_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_component_id"], name: "index_decidim_notify_chapters_on_decidim_component_id"
+  end
+
   create_table "decidim_notify_notes", force: :cascade do |t|
     t.string "body", null: false
     t.datetime "created_at", null: false
@@ -1000,10 +1009,12 @@ ActiveRecord::Schema.define(version: 2020_05_08_152523) do
     t.bigint "decidim_component_id"
     t.bigint "decidim_creator_id"
     t.bigint "decidim_author_id"
+    t.bigint "decidim_notify_chapter_id"
     t.index ["decidim_author_id"], name: "index_decidim_notify_notes_on_decidim_author_id"
     t.index ["decidim_component_id"], name: "index_decidim_notify_notes_on_decidim_component_id"
     t.index ["decidim_creator_id"], name: "index_decidim_notify_notes_on_decidim_creator_id"
     t.index ["decidim_notify_author_id"], name: "index_decidim_notify_notes_on_decidim_notify_author_id"
+    t.index ["decidim_notify_chapter_id"], name: "index_decidim_notify_notes_on_decidim_notify_chapter_id"
   end
 
   create_table "decidim_organizations", id: :serial, force: :cascade do |t|

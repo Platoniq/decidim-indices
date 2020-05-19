@@ -5,3 +5,8 @@ metrics_job:
   class: "MetricsGenerationWorker"
   queue: metrics
 
+followers_job:
+  cron: "15 18 * * *"
+  class: "MembersAsFollowersWorker"
+  queue: default
+
