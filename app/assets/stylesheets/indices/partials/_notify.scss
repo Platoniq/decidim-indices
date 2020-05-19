@@ -1,0 +1,12 @@
+.notify-container .notify-chapter {
+  .icon {
+    color:var(--primary);
+  }
+
+  h3.active {
+    background-color: rgba(var(--primary-rgb), 0.5);
+    border-radius: 4px;
+    padding: 0.8rem;
+    line-height: 1;
+  }
+}
