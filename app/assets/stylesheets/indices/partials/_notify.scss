@@ -1,6 +1,8 @@
+@import "variables";
+
 .notify-container .notify-chapter {
   .icon {
-    color:var(--primary);
+    color:var(--secondary);
   }
 
   h3.active {
@@ -8,5 +10,6 @@
     border-radius: 4px;
     padding: 0.8rem;
     line-height: 1;
+    color: $body-font-color;
   }
 }
