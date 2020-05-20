@@ -17,6 +17,7 @@ gem "bootsnap", "~> 1.4"
 gem "health_check"
 gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
+gem "sentry-raven"
 
 gem "puma", "~> 4.3"
 gem "uglifier", "~> 4.1"
