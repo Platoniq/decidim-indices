@@ -217,7 +217,7 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-module-notify
-  revision: 35f826daa70a3ccdd2d3c29d299e88f4d54e3c8b
+  revision: 4da8c325433ad68f88e0d92580767d6cde1db2c5
   specs:
     decidim-notify (0.1)
       decidim-core (>= 0.21)
@@ -599,7 +599,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.3.1)
     rack (2.2.2)
-    rack-attack (6.3.0)
+    rack-attack (6.3.1)
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
