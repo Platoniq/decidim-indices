@@ -217,7 +217,7 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-module-notify
-  revision: 4da8c325433ad68f88e0d92580767d6cde1db2c5
+  revision: ba744953772343c85b059d5846eac3aeee4a8dc6
   specs:
     decidim-notify (0.1)
       decidim-core (>= 0.21)
