@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECDIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "0.21-platoniq" }
+DECDIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "0.21-stable" }
 gem "decidim", DECDIDIM_VERSION
 gem "decidim-consultations", DECDIDIM_VERSION
 gem "decidim-conferences", DECDIDIM_VERSION
@@ -17,6 +17,7 @@ gem "bootsnap", "~> 1.4"
 gem "health_check"
 gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
+gem "sentry-raven"
 
 gem "puma", "~> 4.3"
 gem "uglifier", "~> 4.1"
