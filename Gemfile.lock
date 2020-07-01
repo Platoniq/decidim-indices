@@ -224,6 +224,14 @@ GIT
       decidim-core (>= 0.21)
 
 GIT
+  remote: https://github.com/Platoniq/decidim-module-term_customizer
+  revision: f47dd176883e3f7c93cfc17b35632a14278934d7
+  specs:
+    decidim-term_customizer (0.21.0)
+      decidim-admin (~> 0.21.0)
+      decidim-core (~> 0.21.0)
+
+GIT
   remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
   revision: 9f710c92a6c5f56ca99cf0c19c3d484ad37c3e29
   specs:
@@ -828,6 +836,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications!
   decidim-notify!
+  decidim-term_customizer!
   faker (~> 1.9)
   fog-aws
   health_check
