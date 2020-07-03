@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Platoniq/decidim
-  revision: 646d2f9e7210a872eb7118bb11a328dfe0f722f2
+  revision: e43d152ebd4e0bef8d96d16710ed2283376831bd
   branch: temp/0.21-amendments
   specs:
     decidim (0.21.0)
@@ -382,7 +382,7 @@ GEM
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
-    diff-lcs (1.4.3)
+    diff-lcs (1.4.4)
     diffy (3.3.0)
     doc2text (0.4.2)
       nokogiri (~> 1.10.0)
@@ -715,7 +715,7 @@ GEM
     rubocop-rails (2.0.1)
       rack (>= 1.1)
       rubocop (>= 0.70.0)
-    rubocop-rspec (1.40.0)
+    rubocop-rspec (1.41.0)
       rubocop (>= 0.68.1)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
