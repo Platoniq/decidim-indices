@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Platoniq/decidim
-  revision: e43d152ebd4e0bef8d96d16710ed2283376831bd
+  revision: e6df423963addfe4aec390469ad453edef9a3198
   branch: temp/0.21-amendments
   specs:
     decidim (0.21.0)
@@ -555,7 +555,7 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.2)
     nobspw (0.6.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
     oauth2 (1.4.4)
