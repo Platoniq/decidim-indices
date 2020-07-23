@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_170014) do
+ActiveRecord::Schema.define(version: 2020_07_23_103309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -693,6 +693,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_170014) do
     t.integer "position"
     t.jsonb "body"
     t.text "custom_body"
+    t.integer "decidim_question_matrix_row_id"
     t.index ["decidim_answer_id"], name: "index_decidim_forms_answer_choices_answer_id"
     t.index ["decidim_answer_option_id"], name: "index_decidim_forms_answer_choices_answer_option_id"
   end
@@ -718,6 +719,28 @@ ActiveRecord::Schema.define(version: 2020_05_15_170014) do
     t.index ["decidim_user_id"], name: "index_decidim_forms_answers_on_decidim_user_id"
     t.index ["ip_hash"], name: "index_decidim_forms_answers_on_ip_hash"
     t.index ["session_token"], name: "index_decidim_forms_answers_on_session_token"
+  end
+
+  create_table "decidim_forms_display_conditions", force: :cascade do |t|
+    t.bigint "decidim_question_id", null: false
+    t.bigint "decidim_condition_question_id", null: false
+    t.bigint "decidim_answer_option_id"
+    t.integer "condition_type", default: 0, null: false
+    t.jsonb "condition_value"
+    t.boolean "mandatory", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_answer_option_id"], name: "decidim_forms_display_condition_answer_option"
+    t.index ["decidim_condition_question_id"], name: "decidim_forms_display_condition_condition_question"
+    t.index ["decidim_question_id"], name: "decidim_forms_display_condition_question"
+  end
+
+  create_table "decidim_forms_question_matrix_rows", force: :cascade do |t|
+    t.bigint "decidim_question_id"
+    t.integer "position"
+    t.jsonb "body"
+    t.index ["decidim_question_id"], name: "index_decidim_forms_question_matrix_questionnaire_id"
+    t.index ["position"], name: "index_decidim_forms_question_matrix_rows_on_position"
   end
 
   create_table "decidim_forms_questionnaires", id: :serial, force: :cascade do |t|
@@ -1495,6 +1518,28 @@ ActiveRecord::Schema.define(version: 2020_05_15_170014) do
     t.index ["reset_password_token"], name: "index_decidim_system_admins_on_reset_password_token", unique: true
   end
 
+  create_table "decidim_term_customizer_constraints", force: :cascade do |t|
+    t.bigint "decidim_organization_id", null: false
+    t.string "subject_type"
+    t.bigint "subject_id"
+    t.bigint "translation_set_id", null: false
+    t.index ["decidim_organization_id"], name: "decidim_term_customizer_constraint_organization"
+    t.index ["subject_type", "subject_id"], name: "decidim_term_customizer_constraint_subject"
+    t.index ["translation_set_id"], name: "decidim_term_customizer_constraint_translation_set"
+  end
+
+  create_table "decidim_term_customizer_translation_sets", force: :cascade do |t|
+    t.jsonb "name"
+  end
+
+  create_table "decidim_term_customizer_translations", force: :cascade do |t|
+    t.string "locale"
+    t.string "key"
+    t.text "value"
+    t.bigint "translation_set_id", null: false
+    t.index ["translation_set_id"], name: "decidim_term_customizer_translation_translation_set"
+  end
+
   create_table "decidim_user_group_memberships", id: :serial, force: :cascade do |t|
     t.integer "decidim_user_id", null: false
     t.integer "decidim_user_group_id", null: false
@@ -1667,6 +1712,9 @@ ActiveRecord::Schema.define(version: 2020_05_15_170014) do
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"
   add_foreign_key "decidim_scopes", "decidim_scopes", column: "parent_id"
   add_foreign_key "decidim_static_pages", "decidim_organizations"
+  add_foreign_key "decidim_term_customizer_constraints", "decidim_organizations"
+  add_foreign_key "decidim_term_customizer_constraints", "decidim_term_customizer_translation_sets", column: "translation_set_id"
+  add_foreign_key "decidim_term_customizer_translations", "decidim_term_customizer_translation_sets", column: "translation_set_id"
   add_foreign_key "decidim_users", "decidim_organizations"
   add_foreign_key "decidim_verifications_csv_data", "decidim_organizations"
   add_foreign_key "oauth_access_grants", "decidim_users", column: "resource_owner_id"

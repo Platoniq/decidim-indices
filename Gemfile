@@ -4,11 +4,12 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECDIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "temp/0.21-amendments" }
-gem "decidim", DECDIDIM_VERSION
-gem "decidim-consultations", DECDIDIM_VERSION
-gem "decidim-conferences", DECDIDIM_VERSION
-# gem "decidim-initiatives", DECDIDIM_VERSION
+DECIDIM_VERSION = { git: "https://github.com/Platoniq/decidim.git", branch: "temp/0.21-surveys" }
+
+gem "decidim", DECIDIM_VERSION
+gem "decidim-consultations", DECIDIM_VERSION
+gem "decidim-conferences", DECIDIM_VERSION
+# gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
 gem "decidim-notify", git: "https://github.com/Platoniq/decidim-module-notify"
@@ -29,7 +30,7 @@ gem "rspec"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", DECDIDIM_VERSION
+  gem "decidim-dev", DECIDIM_VERSION
 end
 
 group :development do
