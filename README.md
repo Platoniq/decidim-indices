@@ -4,6 +4,8 @@ Free Open-Source participatory democracy, citizen participation and open governm
 
 This is the open-source repository for indices, based on [Decidim](https://github.com/decidim/decidim).
 
+![Build](https://github.com/Platoniq/decidim-indices/workflows/Build/badge.svg?branch=master)
+
 ## Setting up the application
 
 You will need to do some steps before having the app working properly once you've deployed it:
