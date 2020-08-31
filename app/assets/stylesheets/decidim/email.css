@@ -1416,7 +1416,18 @@ table.body{
   font-size: 12px;
 }
 
-
 table.container.main {
   background: #fefefe;
+}
+
+table.container.main > tr > td.decidim-bar a {
+  color: #fff;
+}
+table.content {
+  width: 96%;
+  margin: 0 2%;
+}
+table.content > tr > th.first {
+  padding-left: 0;
+  padding-right: 0;
 }
