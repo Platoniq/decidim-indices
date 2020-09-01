@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: c5d778ca2eef05f2609c6978b196cb363331d5f7
+  revision: 321079834fb1fc1f9c56c0fd356282900cff717b
   specs:
     decidim-decidim_awesome (0.2)
       decidim-admin (>= 0.20.0)
@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim.git
-  revision: f2b98d9f2295b5891e5db831f3efaaf76703e4bc
+  revision: edde47438b9154337e37af3b9638e6ced5e6f4e7
   branch: temp/0.21-surveys
   specs:
     decidim (0.21.0)
@@ -545,7 +545,7 @@ GEM
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.14.2)
     mixlib-cli (1.7.0)
     mixlib-config (2.2.18)
       tomlrb
