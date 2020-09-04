@@ -840,6 +840,7 @@ DEPENDENCIES
   decidim-notify!
   decidim-term_customizer!
   faker (~> 1.9)
+  faraday
   fog-aws
   health_check
   letter_opener_web (~> 1.3)

@@ -18,7 +18,7 @@ module Indices
   end
 end
 
-unless ENV['DISABLE_SENTRY']
+unless ENV['DISABLE_SENTRY'] || !Rails.env.production?
   Raven.configure do |config|
     config.dsn = ENV['SENTRY_DSN']
   end
