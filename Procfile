@@ -1,2 +1,2 @@
-web: puma -C /opt/elasticbeanstalk/config/private/pumaconf.rb
+web: bundle exec puma -C /opt/elasticbeanstalk/config/private/pumaconf.rb
 worker: bundle exec sidekiq -C config/sidekiq_worker.yml
