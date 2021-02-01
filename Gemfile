@@ -15,17 +15,14 @@ gem "decidim-direct_verifications", "~> 0.22.0"
 gem "decidim-notify", "~> 0.3.0"
 gem "decidim-term_customizer", { git: "https://github.com/platoniq/decidim-module-term_customizer", branch: "temp/0.23" }
 
-
-# gem 'omniauth-decidim', git: 'https://github.com/decidim/omniauth-decidim'
-gem 'omniauth-decidim', path: '../omniauth-decidim'
-
 gem "bootsnap", "~> 1.4"
 gem "health_check"
 gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
-gem "sentry-raven"
+gem "sentry-rails"
+gem "sentry-ruby"
 
-gem "puma", "~> 4.3"
+gem "puma", ">= 4.3.5"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
