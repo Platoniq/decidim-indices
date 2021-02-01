@@ -4,16 +4,20 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/Platoniq/decidim.git", branch: "temp/0.21-surveys" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.23-stable" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
-gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
-gem "decidim-notify", git: "https://github.com/Platoniq/decidim-module-notify"
-gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer"
+gem "decidim-decidim_awesome", "~> 0.6.2"
+gem "decidim-direct_verifications", "~> 0.22.0"
+gem "decidim-notify", "~> 0.3.0"
+gem "decidim-term_customizer", { git: "https://github.com/platoniq/decidim-module-term_customizer", branch: "temp/0.23" }
+
+
+# gem 'omniauth-decidim', git: 'https://github.com/decidim/omniauth-decidim'
+gem 'omniauth-decidim', path: '../omniauth-decidim'
 
 gem "bootsnap", "~> 1.4"
 gem "health_check"
