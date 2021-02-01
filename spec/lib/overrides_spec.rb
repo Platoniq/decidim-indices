@@ -18,7 +18,7 @@ checksums = [
       "/app/views/layouts/decidim/_organization_colors.html.erb" => "34f0d188a62108e7a57a1c270daed8bb",
       # assets
       "/app/assets/stylesheets/decidim/email.scss" => "f62c4e87d7b0bdda45480c6e98c71f86",
-      "/app/assets/stylesheets/decidim/utils/_settings.scss" => "cc65c749bff68ff08f3971fa8e53de6c",
+      "/app/assets/stylesheets/decidim/utils/_settings.scss" => "cc65c749bff68ff08f3971fa8e53de6c"
     }
   }
 ]

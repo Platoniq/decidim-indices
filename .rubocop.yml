@@ -12,7 +12,7 @@ AllCops:
     - "**/Rakefile"
   Exclude:
     - "**/vendor/**/*"
-    - "development_app/**/*"
+    - "db/**/*"
     - "spec/decidim_dummy_app/**/*"
     - "node_modules/**/*"
   # Default formatter will be used if no -f/--format option is given.
@@ -667,9 +667,6 @@ Style/ModuleFunction:
     - module_function
     - extend_self
 
-Style/MixinUsage:
-  Enabled: false
-
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: symmetrical
   SupportedStyles:
@@ -1115,7 +1112,6 @@ Metrics/LineLength:
     - https
   Exclude:
     - "**/spec/**/*"
-    - "**/db/**/*"
 
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
@@ -1126,6 +1122,7 @@ Metrics/ParameterLists:
   Max: 5
   CountKeywordArgs: true
   Exclude:
+    - "decidim-core/lib/decidim/filter_form_builder.rb"
 
 Metrics/PerceivedComplexity:
   Max: 10
@@ -1189,10 +1186,6 @@ Lint/UnusedMethodArgument:
   AllowUnusedKeywordArguments: false
   IgnoreEmptyMethods: true
 
-Lint/UnneededCopDisableDirective:
-  Exclude:
-    - db/migrate/*.rb
-
 ##################### Performance ############################
 
 Metrics/BlockLength:
@@ -1215,10 +1208,12 @@ RSpec/DescribeClass:
     - spec/js_bundles_spec.rb
     - spec/i18n_spec.rb
     - "**/*/spec/**/*_badge_spec.rb"
+    - decidim-core/spec/lib/global_engines_spec.rb
     - "**/tasks/**/*"
 
 RSpec/EmptyExampleGroup:
   Exclude:
+    - decidim-core/spec/lib/participatory_space_manifest_spec.rb
 
 RSpec/ExampleLength:
   Max: 49

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Visit a proposal', type: :system, perform_enqueued: true do
+describe "Visit a proposal", type: :system, perform_enqueued: true do
   let(:organization) { create :organization }
   let(:participatory_process) { create :participatory_process, organization: organization }
   let(:proposals_component) { create :component, manifest_name: :proposals, participatory_space: participatory_process }
@@ -19,4 +19,3 @@ describe 'Visit a proposal', type: :system, perform_enqueued: true do
     expect(page).to have_content(strip_tags(proposal.body["en"]).strip)
   end
 end
-
