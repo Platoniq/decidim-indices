@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/tasks/members_as_followers.rake
 namespace :indices do
   desc "Ensures locales in organizations are in sync with Decidim configuration"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/tasks/rebuild_locales.rake
 namespace :decidim do
   desc "Ensures locales in organizations are in sync with Decidim configuration"
@@ -6,9 +8,7 @@ namespace :decidim do
       organization.available_locales = Decidim.available_locales.filter do |lang|
         organization.available_locales.include?(lang.to_s)
       end
-      unless organization.available_locales.include? organization.default_locale
-        organization.default_locale = organization.available_locales.first
-      end
+      organization.default_locale = organization.available_locales.first unless organization.available_locales.include? organization.default_locale
       organization.save!
     end
   end
