@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20200320105916)
 
 class IndexForeignKeysInDecidimConsultationsVotes < ActiveRecord::Migration[5.2]

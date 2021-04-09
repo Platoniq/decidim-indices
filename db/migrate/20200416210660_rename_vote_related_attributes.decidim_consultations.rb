@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20180130110449)
 
 class RenameVoteRelatedAttributes < ActiveRecord::Migration[5.1]

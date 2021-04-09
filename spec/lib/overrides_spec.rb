@@ -9,20 +9,20 @@ checksums = [
   {
     package: "decidim-admin",
     files: {
-      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "926acd42a72c91263042502bdf50b400"
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
     }
   },
   {
     package: "decidim-core",
     files: {
       # layouts
-      "/app/views/layouts/decidim/_application.html.erb" => "c7ac58558ef3bc89c3555ae0df30f465",
+      "/app/views/layouts/decidim/_application.html.erb" => "3bd5852193832d35634ede6966c49b10",
       "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440",
       "/app/views/layouts/decidim/_mailer_logo.html.erb" => "8abb593b786423070101ded4ea8140b4",
       "/app/views/layouts/decidim/_mini_footer.html.erb" => "55a9ca723b65b8d9eadb714818a89bb3",
       "/app/views/layouts/decidim/mailer.html.erb" => "5bbe335c1dfd02f8448af287328a49dc",
       # assets
-      "/app/assets/stylesheets/decidim/email.scss" => "f62c4e87d7b0bdda45480c6e98c71f86",
+      "/app/assets/stylesheets/decidim/email.scss" => "e77ab30914437227443dd3c714b8534b",
       "/app/assets/stylesheets/decidim/utils/_settings.scss" => "cc65c749bff68ff08f3971fa8e53de6c"
     }
   }

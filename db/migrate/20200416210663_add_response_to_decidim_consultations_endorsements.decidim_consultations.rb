@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20180131083844)
 
 class AddResponseToDecidimConsultationsEndorsements < ActiveRecord::Migration[5.1]
