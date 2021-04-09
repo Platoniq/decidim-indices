@@ -7,6 +7,9 @@ Rails/ActionFilter:
   Include:
     - app/controllers/**/*.rb
 
+Rails/ContentTag:
+  Enabled: false
+
 Rails/CreateTableWithTimestamps:
   Enabled: false
 
@@ -48,9 +51,6 @@ Rails/LexicallyScopedActionFilter:
 Rails/NotNullColumn:
   Enabled: false
 
-Rails/BulkChangeTable:
-  Enabled: false
-
 Rails/Output:
   Include:
     - app/**/*.rb
@@ -59,10 +59,13 @@ Rails/Output:
     - lib/**/*.rb
   Exclude:
     - db/seeds.rb
-    - db/migrate/*.rb
-    - config/deploy.rb
-
 Rails/OutputSafety:
+  Enabled: false
+
+Rails/Pluck:
+  Enabled: false
+
+Rails/RakeEnvironment:
   Enabled: false
 
 Rails/ReadWriteAttribute:
@@ -77,7 +80,7 @@ Rails/ScopeArgs:
     - app/models/**/*.rb
 
 Rails/SkipsModelValidations:
-  Enabled: false
+  Enabled: true
 
 Rails/Validation:
   Include:

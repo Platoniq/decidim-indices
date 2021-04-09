@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20190708114204)
 
 class CreateDecidimConsultationsResponseGroups < ActiveRecord::Migration[5.2]

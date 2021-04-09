@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20190708120345)
 
 class AddResponseGroupsCountToDecidimConsultationsQuestions < ActiveRecord::Migration[5.2]

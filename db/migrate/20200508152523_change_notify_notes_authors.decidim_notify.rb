@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_notify (originally 20200507103034)
 
 class ChangeNotifyNotesAuthors < ActiveRecord::Migration[5.2]
