@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
+  revision: 558ee3505641b5aed9fbc000897b9c900e673dc3
+  branch: custom-fields
+  specs:
+    decidim-decidim_awesome (0.7.0)
+      decidim-admin (>= 0.23.0, < 0.25)
+      decidim-core (>= 0.23.0, < 0.25)
+      redcarpet (~> 3.4)
+      sassc (~> 2.3)
+
+GIT
   remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
   revision: 6064e4fcf6fbbe536696434c7869b03ad7f1b082
   branch: devel
@@ -9,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: b8746c647fee808948633c11b0c1c590a7a9593e
+  revision: 377373bac4d41e7339fb7bdc55af3df8a48513d4
   branch: release/0.24-stable
   specs:
     decidim (0.24.1)
@@ -340,7 +351,7 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chef-utils (16.12.3)
+    chef-utils (16.13.16)
     childprocess (3.0.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -352,7 +363,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
-    connection_pool (2.2.3)
+    connection_pool (2.2.4)
     cookiejar (0.3.3)
     crack (0.4.5)
       rexml
@@ -365,11 +376,6 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
-    decidim-decidim_awesome (0.7.0)
-      decidim-admin (>= 0.23.0, < 0.25)
-      decidim-core (>= 0.23.0, < 0.25)
-      redcarpet (~> 3.4)
-      sassc (~> 2.3)
     decidim-notify (0.4)
       decidim-admin (>= 0.21)
       decidim-core (>= 0.21)
@@ -484,7 +490,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.12.7)
+    graphql (1.12.8)
     hashdiff (1.0.1)
     hashie (4.1.0)
     health_check (3.0.0)
@@ -897,7 +903,7 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-consultations!
-  decidim-decidim_awesome (~> 0.7.0)
+  decidim-decidim_awesome!
   decidim-dev!
   decidim-direct_verifications!
   decidim-notify (~> 0.4.0)
