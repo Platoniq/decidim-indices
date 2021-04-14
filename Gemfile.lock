@@ -1,12 +1,11 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: f193430b45d8d2cc5cc138c188a6125c6ded9943
+  revision: 3eb06a1cebac370891d00e232543a00b340d8cce
   branch: custom-fields
   specs:
     decidim-decidim_awesome (0.7.0)
       decidim-admin (>= 0.23.0, < 0.25)
       decidim-core (>= 0.23.0, < 0.25)
-      redcarpet (~> 3.4)
       sassc (~> 2.3)
 
 GIT
@@ -20,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: 377373bac4d41e7339fb7bdc55af3df8a48513d4
+  revision: ed93198fa33836b5c131c1cc55b012956a1591c6
   branch: release/0.24-stable
   specs:
     decidim (0.24.1)
@@ -363,7 +362,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
-    connection_pool (2.2.4)
+    connection_pool (2.2.5)
     cookiejar (0.3.3)
     crack (0.4.5)
       rexml
