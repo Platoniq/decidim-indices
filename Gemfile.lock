@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: 3eb06a1cebac370891d00e232543a00b340d8cce
+  revision: 6d81f1f442c5682dae1d71c5e2be61eb12d72ee4
   branch: custom-fields
   specs:
-    decidim-decidim_awesome (0.7.0)
+    decidim-decidim_awesome (0.7.1)
       decidim-admin (>= 0.23.0, < 0.25)
       decidim-core (>= 0.23.0, < 0.25)
       sassc (~> 2.3)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: ed93198fa33836b5c131c1cc55b012956a1591c6
+  revision: 321a384a9ded3fcb0835b0bca3d6e44078c437aa
   branch: release/0.24-stable
   specs:
     decidim (0.24.1)
@@ -433,7 +433,7 @@ GEM
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.79.0)
+    excon (0.80.1)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
