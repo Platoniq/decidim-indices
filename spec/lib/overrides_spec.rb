@@ -25,6 +25,12 @@ checksums = [
       "/app/assets/stylesheets/decidim/email.scss" => "e77ab30914437227443dd3c714b8534b",
       "/app/assets/stylesheets/decidim/utils/_settings.scss" => "cc65c749bff68ff08f3971fa8e53de6c"
     }
+  },
+  {
+    package: "decidim-proposals",
+    files: {
+      "/app/views/decidim/proposals/proposals/show.html.erb" => "e95e244e99bba07303e6b94856d42cb4"
+    }
   }
 ]
 

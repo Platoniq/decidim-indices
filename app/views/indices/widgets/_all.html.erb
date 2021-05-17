@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="columns">
+    <h4 class="section-heading">AUTOMATED DATA CONTENT ANALYSIS</h4>
+  </div>
+
+  <div class="columns">
+    <ul class="tabs" data-tabs id="weblyzard-widgets-tabs">
+      <li class="tabs-title is-active"><a data-tabs-target="keywordgraph" href="#keywordgraph" aria-selected="true">Keyword Graph</a></li>
+      <li class="tabs-title"><a data-tabs-target="geomap" href="#geomap">Geomap</a></li>
+      <li class="tabs-title"><a data-tabs-target="tagcloud" href="#tagcloud">Tag Cloud</a></li>
+    </ul>
+
+    <div class="tabs-content vertical" data-tabs-content="weblyzard-widgets-tabs">
+      <div class="tabs-panel is-active" id="keywordgraph">
+        <%= weblyzard_iframe("keywordgraph", document.keywords) %>
+      </div>
+      <div class="tabs-panel" id="geomap">
+        <%= weblyzard_iframe("geomap", document.keywords) %>
+      </div>
+      <div class="tabs-panel" id="tagcloud">
+        <%= weblyzard_iframe("tagcloud", document.keywords) %>
+      </div>
+    </div>
+  </div>
+</div>
