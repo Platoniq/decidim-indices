@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20180130142018)
 
 class AddDecidimUserGroupIdToDecidimConsultationsEndorsements < ActiveRecord::Migration[5.1]

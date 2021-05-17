@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_notify (originally 20200514144040)
 
 class AddNotifyNoteChapters < ActiveRecord::Migration[5.2]

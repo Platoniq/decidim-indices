@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20180202133655)
 
 class AddVotesCountToDecidimConsultationsResponse < ActiveRecord::Migration[5.1]

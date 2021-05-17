@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_consultations (originally 20180212100503)
 
 class RemoveEnableHighlightedBannerFlag < ActiveRecord::Migration[5.1]
