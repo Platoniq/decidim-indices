@@ -23,9 +23,9 @@ gem "sentry-ruby"
 gem "sidekiq", "~> 6.0"
 gem "sidekiq-cron"
 
+gem "faraday"
 gem "puma", ">= 5.0.0"
 gem "uglifier", "~> 4.1"
-gem "faraday"
 
 gem "faker", "~> 2.14"
 gem "rspec"

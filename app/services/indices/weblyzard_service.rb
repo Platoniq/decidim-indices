@@ -5,8 +5,8 @@ module Indices
     include ActiveSupport::Configurable
 
     config_accessor :username, :password
-    
-    config_accessor :repository_id  do
+
+    config_accessor :repository_id do
       "indices.weblyzard.com/api"
     end
 

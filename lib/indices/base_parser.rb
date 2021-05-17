@@ -9,11 +9,11 @@ module Indices
 
     attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container
     attr_writer :content_type, :repository, :locale
-    
+
     def content_type
       @content_type ||= "text/plain"
     end
-    
+
     def repository
       @repository ||= "indices.weblyzard.com/api"
     end
@@ -24,8 +24,8 @@ module Indices
 
     def document
       {
-        content: sanitize(content, scrubber: Decidim::UserInputScrubber.new), 
-        content_type: content_type, 
+        content: sanitize(content, scrubber: Decidim::UserInputScrubber.new),
+        content_type: content_type,
         repository_id: repository,
         uri: uri,
         title: title,
@@ -39,8 +39,13 @@ module Indices
       JSON.generate document
     end
 
+    # used for comparative search, override depending on the specific document to obtain relevant results
+    def keywords
+      title
+    end
+
     private
-    
+
     def metadata
       {
         published_date: date.iso8601,
@@ -54,7 +59,7 @@ module Indices
       feat["category"] = category if category
       feat
     end
-    
+
     def relations
       rel = {}
       rel["sioc:reply_of"] = reply_of if reply_of

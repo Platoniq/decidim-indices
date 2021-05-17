@@ -4,7 +4,7 @@ module Indices
   class WeblyzardApi
     attr_accessor :username, :password, :token_time, :repository_id
 
-    def initialize(username:, password:, token_time:, repository_id:) 
+    def initialize(username:, password:, token_time:, repository_id:)
       @username = username
       @password = password
       @token_time = token_time
@@ -17,7 +17,7 @@ module Indices
         headers: {
           "Content-Type" => "application/json",
           "Authorization" => "Bearer #{token}"
-          }
+        }
       )
     end
 

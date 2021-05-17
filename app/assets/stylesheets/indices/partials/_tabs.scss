@@ -1,0 +1,9 @@
+@import "variables";
+.tabs-title > a {
+  color: $indices-grey;
+}
+
+.tabs-title > a:focus,
+.tabs-title > a[aria-selected='true'] {
+  color: $indices-black;
+}
