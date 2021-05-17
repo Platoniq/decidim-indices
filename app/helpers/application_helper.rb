@@ -22,6 +22,7 @@ module ApplicationHelper
                        enddate = Date.current.iso8601,
                        languages = [:en])
     content_tag :iframe, "",
+                class: "weblyzard-widget",
                 src: "https://api.indices.weblyzard.com/embed/ayBVrdTaUoabsUQ6fPp9zkxK8WrTV2Fg/#{type}/#{action}=#{u keywords}/date=#{u begindate},#{u enddate}/source=#{sources.join(",")}/language=#{languages.join(",")}",
                 width: "100%",
                 height: "400",

@@ -1,0 +1,42 @@
+.weblyzard {
+  .positive {
+    background-color: rgba(76, 164, 91, 0.9);
+  }
+  .negative {
+    background-color: rgba(164, 68, 68, 0.9);
+  }
+  .info {
+    padding-top:1rem;
+    padding-bottom:0.5rem;
+    background-color: #fff;
+  }
+
+  fieldset {
+    padding: 1rem;
+    background-color: #fff;
+    legend {
+      float: left;
+      margin-right: 1rem;
+    }
+    input {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+  }
+  .sentiment-gradient {
+    height: 1.25rem;
+    width:70%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #fff;
+    padding: 1px 3px;
+    background: linear-gradient(to right, rgb(164, 68, 68) 0%, rgb(76, 164, 91) 100%);
+    &:before {
+      content: "Negative"
+    }
+    &:after {
+      content: "Positive"
+    }
+  }
+}

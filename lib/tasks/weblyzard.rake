@@ -31,7 +31,7 @@ namespace :indices do
     end
 
     def publish_proposals_for(component)
-      Decidim::Proposals::Proposal.where(component: component).find_each do |proposal|
+      Decidim::Proposals::Proposal.published.except_withdrawn.except_rejected.where(component: component).find_each do |proposal|
         puts "Found proposal ##{proposal.id} [#{proposal.title}]"
 
         publish Indices::ProposalParser.new(proposal)
@@ -39,6 +39,12 @@ namespace :indices do
     end
 
     def publish(parser)
+      unless parser.valid?
+        puts "Not publishing resource #{parser.uri} to Weblyzard API: #{parser.errors.values}"
+        Rails.logger.error "Not publishing resource #{parser.uri} to Weblyzard API: #{parser.errors.values}"
+        return
+      end
+
       res = Indices::WeblyzardService.publish(parser)
       if res
         attributes = JSON.parse(res.body)
@@ -46,7 +52,7 @@ namespace :indices do
         Rails.logger.info "Published resource #{parser.uri} to Weblyzard API with ID #{attributes["_id"]}"
       else
         puts "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{attributes}"
-        Rails.logger.info "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{attributes}"
+        Rails.logger.error "ERROR publishing proposal #{parser.uri}] to Weblyzard API"
       end
     end
   end

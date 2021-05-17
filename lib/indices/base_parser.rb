@@ -7,7 +7,7 @@ module Indices
     include ActionView::Helpers::SanitizeHelper
     include ActionView::Helpers::TextHelper
 
-    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container
+    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container, :errors
     attr_writer :content_type, :repository, :locale
 
     def content_type
@@ -42,6 +42,15 @@ module Indices
     # used for comparative search, override depending on the specific document to obtain relevant results
     def keywords
       title
+    end
+
+    def valid?
+      @errors = {}
+      @errors[:title] = "Title is empty" if title.blank?
+      @errors[:content] = "Content is empty" if content.blank?
+      @errors[:date] = "Date is empty" if date.blank?
+
+      @errors.blank?
     end
 
     private
