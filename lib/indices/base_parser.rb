@@ -7,7 +7,7 @@ module Indices
     include ActionView::Helpers::SanitizeHelper
     include ActionView::Helpers::TextHelper
 
-    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container, :errors
+    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container, :errors, :resource_type, :resource_id
     attr_writer :content_type, :repository, :locale
 
     def content_type
@@ -52,8 +52,6 @@ module Indices
 
       @errors.blank?
     end
-
-    private
 
     def metadata
       {

@@ -1,4 +1,7 @@
 .weblyzard {
+  .weblyzard-content {
+    background-color: #fff;
+  }
   .positive {
     background-color: rgba(76, 164, 91, 0.9);
   }
@@ -6,21 +9,37 @@
     background-color: rgba(164, 68, 68, 0.9);
   }
   .info {
-    padding-top:1rem;
-    padding-bottom:0.5rem;
-    background-color: #fff;
+    padding:1rem;
+    margin-bottom:1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
   }
-
-  fieldset {
+  .tools {
     padding: 1rem;
-    background-color: #fff;
+    margin-bottom: 1rem;
+  }
+  fieldset {
+    padding: 0;
+    margin: 0;
+    label {
+      display: inline-block;
+    }
     legend {
       float: left;
       margin-right: 1rem;
     }
     input {
-      margin-bottom: 0;
+      margin: 0 0.5rem 0 1rem;
       vertical-align: middle;
+    }
+    input[type="date"] {
+      width: auto;
+      display: inline-block;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin: 0 0 0 0.5rem;
+      height: auto;
+      font-size: 0.9em;
     }
   }
   .sentiment-gradient {

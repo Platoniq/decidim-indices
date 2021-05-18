@@ -45,14 +45,13 @@ namespace :indices do
         return
       end
 
-      res = Indices::WeblyzardService.publish(parser)
-      if res
-        attributes = JSON.parse(res.body)
-        puts "Published resource #{parser.uri} to Weblyzard API with ID #{attributes["_id"]}"
-        Rails.logger.info "Published resource #{parser.uri} to Weblyzard API with ID #{attributes["_id"]}"
+      result = Indices::WeblyzardService.publish(parser)
+      if result
+        puts "Published resource #{parser.uri} to Weblyzard API with UID #{result["_id"]}"
+        Rails.logger.info "Published resource #{parser.uri} to Weblyzard API with UID #{result["_id"]}"
       else
-        puts "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{attributes}"
-        Rails.logger.error "ERROR publishing proposal #{parser.uri}] to Weblyzard API"
+        puts "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{result}"
+        Rails.logger.error "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{result}"
       end
     end
   end

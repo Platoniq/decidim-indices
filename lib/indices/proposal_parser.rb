@@ -18,6 +18,9 @@ module Indices
       @user_name = @proposal.author.name
       @category = participatory_space.title[@locale]
       @container = Decidim::EngineRouter.main_proxy(component).root_url
+
+      @resource_type = "Decidim::Proposals::Proposal"
+      @resource_id = @proposal.id
     end
   end
 end

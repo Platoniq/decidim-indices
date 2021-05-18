@@ -2,7 +2,7 @@
 
 module Indices
   class WeblyzardApi
-    attr_accessor :username, :password, :token_time, :repository_id
+    attr_accessor :username, :password, :token_time, :repository_id, :result, :document
 
     def initialize(username:, password:, token_time:, repository_id:)
       @username = username
@@ -30,10 +30,18 @@ module Indices
       resp.body
     end
 
-    def post_document(json)
-      connection.post do |req|
-        req.body = json
+    def post_document(document)
+      @result = nil
+      res = connection.post do |req|
+        req.body = document.json
       end
+
+      if res
+        @document = document
+        @result = JSON.parse(res.body)
+      end
+
+      @result
     end
   end
 end

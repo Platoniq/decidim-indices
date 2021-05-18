@@ -19,7 +19,15 @@ module Indices
     end
 
     def self.publish(document)
-      api.post_document document.json
+      result = api.post_document(document)
+      return nil unless result
+
+      save_log(api)
+      result
+    end
+
+    def self.save_log(api)
+      WeblyzardLog.from_api(api).save!
     end
   end
 end

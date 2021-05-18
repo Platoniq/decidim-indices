@@ -3,7 +3,7 @@
     <h4 class="section-heading">AUTOMATED DATA CONTENT ANALYSIS</h4>
   </div>
 
-  <div class="columns">
+  <div class="columns weblyzard-content">
     <ul class="tabs" data-tabs id="weblyzard-widgets-tabs">
       <li class="tabs-title is-active"><a data-tabs-target="keywordgraph" href="#keywordgraph" aria-selected="true">Keyword Graph</a></li>
       <li class="tabs-title"><a data-tabs-target="geomap" href="#geomap">Geomap</a></li>
@@ -14,8 +14,14 @@
       <fieldset>
         <legend>Sources:</legend>
         <% %w(decidim facebook news twitter web).each do |source| %>
-          <input type="checkbox" class="source" checked value="<%= source %>" id="weblyzard-tool-<%= source %>"><label for="weblyzard-tool-<%= source %>"><%= source %></label>
+          <label for="weblyzard-tool-<%= source %>"><input type="checkbox" class="source" checked value="<%= source %>" id="weblyzard-tool-<%= source %>"><%= source %></label>
         <% end %>
+      </fieldset>
+      <fieldset>
+        <legend>Date range:</legend>
+        <label for="weblyzard-tool-begindate">Begin date:</label><input type="date" class="date" value="<%= (Date.current - 6.month).iso8601 %>" name="begindate" id="weblyzard-tool-begindate">
+        &nbsp;
+        <label for="weblyzard-tool-enddate">End date:</label><input type="date" class="date" value="<%= Date.current.iso8601 %>" name="enddate" id="weblyzard-tool-enddate">
       </fieldset>
     </div>
 
@@ -32,7 +38,7 @@
     </div>
 
     <div class="info">
-      Color codes sentiment analysis: <span class="label negative">Negative</span> vs <span class="label positive">Positive</span>
+      Color codes for sentiment analysis: <span class="label negative">Negative</span> vs <span class="label positive">Positive</span>
     </div>
   </div>
 </div>
