@@ -7,7 +7,7 @@ module Indices
     include ActionView::Helpers::SanitizeHelper
     include ActionView::Helpers::TextHelper
 
-    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container, :errors, :resource_type, :resource_id
+    attr_accessor :content, :uri, :title, :date, :user_name, :category, :reply_of, :container, :errors, :resource, :resource_type, :resource_id
     attr_writer :content_type, :repository, :locale
 
     def content_type
@@ -41,7 +41,7 @@ module Indices
 
     # used for comparative search, override depending on the specific document to obtain relevant results
     def keywords
-      title
+      model&.keywords || title
     end
 
     def valid?
@@ -72,6 +72,33 @@ module Indices
       rel["sioc:reply_of"] = reply_of if reply_of
       rel["sioc:has_container"] = container if container
       rel
+    end
+
+    # override in specific implementations if necessary
+    def authored_by?(author)
+      return false unless @resource
+
+      @resource.try(:authored_by?, author)
+    end
+
+    def active?
+      return true unless model
+
+      model.active?
+    end
+
+    def model
+      @model ||= WeblyzardLog.find_by(resource_type: resource_type, resource_id: resource_id)
+    end
+
+    def filter_defaults
+      filter = {
+        source: %w(decidim facebook news twitter web),
+        begindate: (Date.current - 6.months).iso8601,
+        enddate: Date.current.iso8601
+      }
+      filter.merge!(model.defaults.delete_if { |_k, v| v.blank? }.symbolize_keys) if model
+      filter
     end
   end
 end

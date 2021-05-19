@@ -10,34 +10,47 @@
       <li class="tabs-title"><a data-tabs-target="tagcloud" href="#tagcloud">Tag Cloud</a></li>
     </ul>
 
-    <div class="tools">
+    <div class="tools<%= " config" if document.authored_by? current_user %>" data-resource-type="<%= document.resource_type %>" data-resource-id="<%= document.resource_id %>">
       <fieldset>
         <legend>Sources:</legend>
         <% %w(decidim facebook news twitter web).each do |source| %>
-          <label for="weblyzard-tool-<%= source %>"><input type="checkbox" class="source" checked value="<%= source %>" id="weblyzard-tool-<%= source %>"><%= source %></label>
+          <label for="weblyzard-tool-<%= source %>"><input type="checkbox" class="source" <%= "checked" if document.filter_defaults[:source].include?(source) %> value="<%= source %>" id="weblyzard-tool-<%= source %>"><%= source %></label>
         <% end %>
       </fieldset>
       <fieldset>
         <legend>Date range:</legend>
-        <label for="weblyzard-tool-begindate">Begin date:</label><input type="date" class="date" value="<%= (Date.current - 6.month).iso8601 %>" name="begindate" id="weblyzard-tool-begindate">
+        <label for="weblyzard-tool-begindate">Begin date:</label><input type="date" class="date" value="<%= document.filter_defaults[:begindate] %>" name="begindate" id="weblyzard-tool-begindate">
         &nbsp;
-        <label for="weblyzard-tool-enddate">End date:</label><input type="date" class="date" value="<%= Date.current.iso8601 %>" name="enddate" id="weblyzard-tool-enddate">
+        <label for="weblyzard-tool-enddate">End date:</label><input type="date" class="date" value="<%= document.filter_defaults[:enddate] %>" name="enddate" id="weblyzard-tool-enddate">
       </fieldset>
+      <% if document_editable? document %>
+        <fieldset>
+          <p class="help">As (co)author, you can set these visualizations defaults for the rest of the users:</p>
+          <label for="weblyzard-config-keywords">Keywords seed:</label><input type="text" class="keywords" id="weblyzard-config-keywords" value="<%= document.keywords %>">
+          <label for="weblyzard-config-disabled"><input type="checkbox" class="disabled" <%= "checked" unless document.active? %> id="weblyzard-config-disabled">Disable automated data content analysis entirely</label>
+          <p>
+            <button class="button tiny primary submit">Save as defaults</button>
+            <span class="result text-success hide"></span>
+            <span class="result text-alert hide"></span>
+          </p>
+        </fieldset>
+      <% end %>
     </div>
 
-    <div class="tabs-content vertical" data-tabs-content="weblyzard-widgets-tabs">
+    
+    <div class="tabs-content vertical<%= " hide" unless document.active? %>" data-tabs-content="weblyzard-widgets-tabs">
       <div class="tabs-panel is-active" id="keywordgraph">
-        <%= weblyzard_iframe("keywordgraph", document.keywords) %>
+        <%= iframe_from_document("keywordgraph", document) %>
       </div>
       <div class="tabs-panel" id="geomap">
-        <%= weblyzard_iframe("geomap", document.keywords) %>
+        <%= iframe_from_document("geomap", document) %>
       </div>
       <div class="tabs-panel" id="tagcloud">
-        <%= weblyzard_iframe("tagcloud", document.keywords) %>
+        <%= iframe_from_document("tagcloud", document) %>
       </div>
     </div>
 
-    <div class="info">
+    <div class="info<%= " hide" unless document.active? %>">
       Color codes for sentiment analysis: <span class="label negative">Negative</span> vs <span class="label positive">Positive</span>
     </div>
   </div>

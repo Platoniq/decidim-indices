@@ -11,12 +11,8 @@ class AddWeblyzardSyncTable < ActiveRecord::Migration[5.2]
       t.jsonb :relations
       t.boolean :active, default: true
       t.jsonb :defaults
-      t.references :resource, polymorphic: true, index: false
+      t.references :resource, polymorphic: true, index: true
       t.timestamps
     end
-
-    add_index :indices_weblyzard_log,
-            [:uid, :resource_id, :resource_type],
-            name: "index_on_resource_and_uid"
   end
 end

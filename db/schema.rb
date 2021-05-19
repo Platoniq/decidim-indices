@@ -1760,7 +1760,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_061341) do
     t.bigint "resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["uid", "resource_id", "resource_type"], name: "index_on_resource_and_uid"
+    t.index ["resource_type", "resource_id"], name: "index_indices_weblyzard_log_on_resource_type_and_resource_id"
     t.index ["uid"], name: "index_indices_weblyzard_log_on_uid"
   end
 
