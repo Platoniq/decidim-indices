@@ -10,7 +10,7 @@
       <li class="tabs-title"><a data-tabs-target="tagcloud" href="#tagcloud">Tag Cloud</a></li>
     </ul>
 
-    <div class="tools<%= " config" if document.authored_by? current_user %>" data-resource-type="<%= document.resource_type %>" data-resource-id="<%= document.resource_id %>">
+    <div class="tools<%= " config" if document_editable? document %>" data-resource-type="<%= document.resource_type %>" data-resource-id="<%= document.resource_id %>">
       <fieldset>
         <legend>Sources:</legend>
         <% %w(decidim facebook news twitter web).each do |source| %>
