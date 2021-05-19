@@ -2,6 +2,8 @@
 
 module ApplicationHelper
   def weblyzard_widgets_for(document)
+    return unless document.active? || current_user&.admin?
+
     render partial: "indices/widgets/all", locals: { document: document }
   end
 
@@ -16,11 +18,11 @@ module ApplicationHelper
   # @languages Array, one or more of [en, de, fr, nl, es, it]
   # rubocop:disable Metrics/ParameterLists
   # rubocop:disable Metrics/LineLength
-  def weblyzard_iframe(type, keywords, action = :similarto,
-                       source = [:decidim, :facebook, :news, :twitter, :web],
-                       begindate = (Date.current - 6.months).iso8601,
-                       enddate = Date.current.iso8601,
-                       languages = [:en])
+  def weblyzard_iframe(type, keywords, action: :similarto,
+                       source: [:decidim, :facebook, :news, :twitter, :web],
+                       begindate: (Date.current - 6.months).iso8601,
+                       enddate: Date.current.iso8601,
+                       languages: [:en])
     content_tag :iframe, "",
                 class: "weblyzard-widget",
                 src: "https://api.indices.weblyzard.com/embed/ayBVrdTaUoabsUQ6fPp9zkxK8WrTV2Fg/#{type}/#{action}=#{u keywords}/date=#{u begindate},#{u enddate}/source=#{source.join(",")}/language=#{languages.join(",")}",
@@ -31,4 +33,14 @@ module ApplicationHelper
   end
   # rubocop:enable Metrics/ParameterLists
   # rubocop:enable Metrics/LineLength
+
+  def iframe_from_document(type, document)
+    weblyzard_iframe(type, document.keywords, document.filter_defaults)
+  end
+
+  def document_editable?(document)
+    return true if current_user&.admin?
+
+    document.authored_by?(current_user)
+  end
 end

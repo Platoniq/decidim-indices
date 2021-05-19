@@ -17,6 +17,25 @@
   .tools {
     padding: 1rem;
     margin-bottom: 1rem;
+    p {
+      margin: 1rem 0 0 0;
+      &.help {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .config {
+    background-color: rgba(var(--warning-rgb), 0.15);
+    padding-bottom: 0;
+    .result {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 5px;
+      height: 2em;
+      line-height: 0.5;
+      overflow: hidden;
+    }
   }
   fieldset {
     padding: 0;
@@ -31,15 +50,21 @@
     input {
       margin: 0 0.5rem 0 1rem;
       vertical-align: middle;
-    }
-    input[type="date"] {
-      width: auto;
-      display: inline-block;
+      font-size: 0.9em;
       padding-top: 2px;
       padding-bottom: 2px;
-      margin: 0 0 0 0.5rem;
       height: auto;
-      font-size: 0.9em;
+      width: auto;
+      display: inline-block;
+      &.disabled {
+        margin: 0 0.5rem 0 0;
+      }
+    }
+    input[type="date"] {
+      margin: 0 0 0 0.5rem;
+    }
+    input[type="text"] {
+      width: 70%;
     }
   }
   .sentiment-gradient {

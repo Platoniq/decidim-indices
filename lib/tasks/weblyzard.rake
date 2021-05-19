@@ -35,6 +35,7 @@ namespace :indices do
         puts "Found proposal ##{proposal.id} [#{proposal.title}]"
 
         publish Indices::ProposalParser.new(proposal)
+        exit
       end
     end
 
