@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Indices
-  module WeblyzardService
+  class WeblyzardService
     include ActiveSupport::Configurable
 
     config_accessor :username, :password
@@ -14,20 +14,27 @@ module Indices
       8 * 3600
     end
 
-    def self.api
-      @api ||= WeblyzardApi.new config
+    attr_accessor :document
+    attr_reader :result
+
+    def initialize(document)
+      @document = document
     end
 
-    def self.publish(document)
-      result = api.post_document(document)
-      return nil unless result
-
-      save_log(api)
-      result
+    def api
+      @api ||= WeblyzardApi.new WeblyzardService.config
     end
 
-    def self.save_log(api)
+    def publish
+      @result = api.post_document(document)
+      return nil unless @result
+
+      @result = api.put_document(@result["existing_id"], document) if @result["existing_id"]
+
       WeblyzardLog.from_api(api).save!
+    rescue StandardError => e
+      @result["exception"] = e.message
+      nil
     end
   end
 end

@@ -11,9 +11,12 @@ module Indices
       @repository_id = repository_id
     end
 
-    def connection
+    def connection(id = nil)
+      url = "https://api.weblyzard.com/1.0/documents/#{@repository_id}"
+      url = "#{url}/#{id}" if id
+
       @connection ||= Faraday.new(
-        url: "https://api.weblyzard.com/1.0/documents/#{@repository_id}",
+        url: url,
         headers: {
           "Content-Type" => "application/json",
           "Authorization" => "Bearer #{token}"
@@ -33,6 +36,20 @@ module Indices
     def post_document(document)
       @result = nil
       res = connection.post do |req|
+        req.body = document.json
+      end
+
+      if res
+        @document = document
+        @result = JSON.parse(res.body)
+      end
+
+      @result
+    end
+
+    def put_document(id, document)
+      # @result = nil
+      res = connection(id).put do |req|
         req.body = document.json
       end
 

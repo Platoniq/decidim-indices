@@ -35,7 +35,6 @@ namespace :indices do
         puts "Found proposal ##{proposal.id} [#{proposal.title}]"
 
         publish Indices::ProposalParser.new(proposal)
-        exit
       end
     end
 
@@ -46,13 +45,13 @@ namespace :indices do
         return
       end
 
-      result = Indices::WeblyzardService.publish(parser)
-      if result
-        puts "Published resource #{parser.uri} to Weblyzard API with UID #{result["_id"]}"
-        Rails.logger.info "Published resource #{parser.uri} to Weblyzard API with UID #{result["_id"]}"
+      service = Indices::WeblyzardService.new(parser)
+      if service.publish
+        puts "Published resource #{parser.uri} to Weblyzard API with UID #{service.result["_id"]}"
+        Rails.logger.info "Published resource #{parser.uri} to Weblyzard API with UID #{service.result["_id"]}"
       else
-        puts "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{result}"
-        Rails.logger.error "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{result}"
+        puts "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{service.result}"
+        Rails.logger.error "ERROR publishing proposal #{parser.uri}] to Weblyzard API #{service.result}"
       end
     end
   end
