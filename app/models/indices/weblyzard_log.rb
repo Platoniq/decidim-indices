@@ -7,7 +7,7 @@ module Indices
 
     def self.default_defaults
       {
-        source: "decidim,facebook,news,twitter,web",
+        source: %w(decidim facebook news twitter web),
         action: "similarto",
         begindate: (Date.current - 6.months).iso8601
       }
