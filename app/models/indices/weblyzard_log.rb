@@ -14,7 +14,7 @@ module Indices
     end
 
     def self.from_api(api)
-      log = find_or_create_by(resource_type: api.document.resource_type, resource_id: api.document.resource_id)
+      log = from_resource(resource_type: api.document.resource_type, resource_id: api.document.resource_id)
       log.uid = api.result["_id"]
       log.title = api.document.title
       log.content = api.document.content
@@ -24,6 +24,12 @@ module Indices
       log.features = api.document.features
       log.relations = api.document.relations
       log.defaults = default_defaults unless log.id
+      log
+    end
+
+    def self.from_resource(resource_type:, resource_id:)
+      log = find_or_initialize_by(resource_type: resource_type, resource_id: resource_id)
+      log.uid = "" if log.uid.blank?
       log
     end
 

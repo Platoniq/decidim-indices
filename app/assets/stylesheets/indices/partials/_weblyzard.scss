@@ -1,6 +1,33 @@
+@import "variables";
+@import "decidim/utils/settings";
+@import "decidim/utils/mixins";
+
 .weblyzard {
   .weblyzard-content {
     background-color: #fff;
+    .tabs-panel {
+      &.loading {
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.5);
+          left:0;
+          top:0;
+        }
+        &:after {
+          @include spinner(25px, $medium-gray, var(--alert), 800ms);
+          
+          vertical-align: middle;
+          content: "";
+          position: absolute;
+          top:0;
+          left:0;
+        }
+      }
+    }
   }
   .positive {
     background-color: rgba(76, 164, 91, 0.9);
@@ -35,6 +62,10 @@
       height: 2em;
       line-height: 0.5;
       overflow: hidden;
+    }
+    .reload {
+      cursor:pointer;
+      filter: grayscale(0.4);
     }
   }
   fieldset {

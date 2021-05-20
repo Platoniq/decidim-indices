@@ -4,7 +4,7 @@ module Indices
   class WeblyzardLogsController < ApplicationController
     def create
       doc = params[:document]
-      log = WeblyzardLog.find_by(resource_type: doc[:resource_type], resource_id: doc[:resource_id])
+      log = WeblyzardLog.from_resource(resource_type: doc[:resource_type], resource_id: doc[:resource_id])
 
       return render json: { error: "Resource not found!" }, status: :unprocessable_entity unless log
       return render json: { error: "No permissions for resource!" }, status: :unprocessable_entity unless user_has_permission?(log)

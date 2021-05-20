@@ -26,7 +26,7 @@
       <% if document_editable? document %>
         <fieldset>
           <p class="help">As (co)author, you can set these visualizations defaults for the rest of the users:</p>
-          <label for="weblyzard-config-keywords">Keywords seed:</label><input type="text" class="keywords" id="weblyzard-config-keywords" value="<%= document.keywords %>">
+          <label for="weblyzard-config-keywords">Keywords seed:</label><input type="text" class="keywords" id="weblyzard-config-keywords" value="<%= document.keywords %>"> <span class="reload">🔄</span>
           <label for="weblyzard-config-disabled"><input type="checkbox" class="disabled" <%= "checked" unless document.active? %> id="weblyzard-config-disabled">Disable automated data content analysis entirely</label>
           <p>
             <button class="button tiny primary submit">Save as defaults</button>
@@ -39,13 +39,13 @@
 
     
     <div class="tabs-content vertical<%= " hide" unless document.active? %>" data-tabs-content="weblyzard-widgets-tabs">
-      <div class="tabs-panel is-active" id="keywordgraph">
+      <div class="tabs-panel loading is-active" id="keywordgraph">
         <%= iframe_from_document("keywordgraph", document) %>
       </div>
-      <div class="tabs-panel" id="geomap">
+      <div class="tabs-panel loading" id="geomap">
         <%= iframe_from_document("geomap", document) %>
       </div>
-      <div class="tabs-panel" id="tagcloud">
+      <div class="tabs-panel loading" id="tagcloud">
         <%= iframe_from_document("tagcloud", document) %>
       </div>
     </div>

@@ -1,3 +1,8 @@
+function loadedWeblyzardIframe(iframe) {
+  console.log("loaded", iframe);
+  $(iframe).closest(".tabs-panel").removeClass("loading");
+}
+
 $(() => {
   const currentState = () => {
     let state = {
@@ -22,13 +27,15 @@ $(() => {
 
   const replaceIframes = (search, replacement) => {
     $('.weblyzard iframe.weblyzard-widget').each((_i, iframe) => {
+      $(iframe).closest(".tabs-panel").addClass("loading");
       iframe.src = iframe.src.replace(search, replacement);
     });
   };
 
   const showMsg = (type, msg, time) => {
+    $(`.weblyzard .config .result.text-${type}`).removeClass("hide").show().html(msg);
     setTimeout(() => {
-      $(`.weblyzard .config .result.text-${type}`).removeClass("hide").show().html(msg).fadeOut(3000);
+      $(`.weblyzard .config .result.text-${type}`).fadeOut(3000);
     }, time || 5000);
   };
 

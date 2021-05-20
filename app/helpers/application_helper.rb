@@ -24,12 +24,13 @@ module ApplicationHelper
                        enddate: Date.current.iso8601,
                        languages: [:en])
     content_tag :iframe, "",
-                class: "weblyzard-widget",
+                class: "weblyzard-widget loading",
                 src: "https://api.indices.weblyzard.com/embed/ayBVrdTaUoabsUQ6fPp9zkxK8WrTV2Fg/#{type}/#{action}=#{u keywords}/date=#{u begindate},#{u enddate}/source=#{source.join(",")}/language=#{languages.join(",")}",
                 width: "100%",
                 height: "400",
                 frameborder: "0",
-                scrolling: "no"
+                scrolling: "no",
+                onload: "loadedWeblyzardIframe(this)"
   end
   # rubocop:enable Metrics/ParameterLists
   # rubocop:enable Metrics/LineLength
