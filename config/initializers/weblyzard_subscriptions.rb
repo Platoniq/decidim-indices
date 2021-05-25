@@ -30,3 +30,10 @@ Decidim::EventsManager.subscribe(/^decidim\.events\./) do |event_name, data|
     end
   end
 end
+
+# add to proposals component a global flag to enable automatic analysis
+Decidim.component_registry.find(:proposals).tap do |component|
+  component.settings(:global) do |settings|
+    settings.attribute(:automated_data_analysis, type: :boolean, default: true)
+  end
+end
