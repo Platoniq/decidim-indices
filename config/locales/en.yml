@@ -1,90 +1,47 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
-  platoniq:
-    layouts:
-      footer:
-        made_by_platoniq: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free software</a>.
-  indices:
-    footer:
-      eu1: This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870792.
-      eu2: The sole responsibility for the content of this publication lies with the authors. It does not necessarily represent the opinion of the European Union.
-      eu3: Neither the EASME nor the European Commission is responsible for any use that may be made of the information contained therein.
   activerecord:
     models:
       decidim/conference:
         one: Calendar
         other: Calendars
-  layouts:
-    decidim:
-      conferences:
-        index:
-          promoted_conferences: Highlighted calendars
-        order_by_conferences:
-          conferences:
-            one: "%{count} calendar"
-            other: "%{count} calendars"
   decidim:
-    conferences:
-      pages:
-        home:
-          highlighted_conferences:
-            active_conferences: Active calendars
-            see_all_conferences: See all calendars
-      index:
-        title: Calendars
-      statistics:
-        conference_count: Calendars
-    menu:
-      conferences: Calendars
     admin:
-      menu:
-        conferences: Calendars
-      titles:
-        conferences: Calendars
       filters:
         state_eq:
           label: Label
           values:
             accepted: Accepted
             rejected: Rejected
+      menu:
+        conferences: Calendars
+      titles:
+        conferences: Calendars
     authorization_handlers:
-      direct_verifications_consortium:
-        name: InDICEs Consortium Members
-        explanation: People directly related to the InDICEs consortium
       direct_verifications:
+        explanation: A more broad (but controlled) audience related to the InDICEs
+          project
         name: InDICEs & Friends
-        explanation: A more broad (but controlled) audience related to the InDICEs project
+      direct_verifications_consortium:
+        explanation: People directly related to the InDICEs consortium
+        name: InDICEs Consortium Members
+    components:
+      proposals:
+        settings:
+          global:
+            automated_data_analysis: Enable webLyzard's automated data analysis
+    conferences:
+      index:
+        title: Calendars
+      pages:
+        home:
+          highlighted_conferences:
+            active_conferences: Active calendars
+            see_all_conferences: See all calendars
+      statistics:
+        conference_count: Calendars
+    menu:
+      conferences: Calendars
     verifications:
       authorizations:
         first_login:
@@ -94,9 +51,34 @@ en:
   devise:
     mailer:
       invitation_instructions:
-        hello: Dear %{email},
-        someone_invited_you: "Welcome to the %{application}! You’ve been invited to participate. Join the platform by accepting the invitation and clicking the link below:"
         accept_until: Click sooner than later! The invite expires on %{due_date}.
+        hello: Dear %{email},
         ignore: |-
           Remember that your account on the InDICEs Participatory Platform won't be created until you click the link to set your username and password. And to make it more personal, add a photo and some words about yourself. <br><br>
             If you’ve been mistakenly invited, please ignore this email.
+        someone_invited_you: 'Welcome to the %{application}! You’ve been invited to
+          participate. Join the platform by accepting the invitation and clicking
+          the link below:'
+  hello: Hello world
+  indices:
+    footer:
+      eu1: This project has received funding from the European Union’s Horizon 2020
+        research and innovation programme under grant agreement No 870792.
+      eu2: The sole responsibility for the content of this publication lies with the
+        authors. It does not necessarily represent the opinion of the European Union.
+      eu3: Neither the EASME nor the European Commission is responsible for any use
+        that may be made of the information contained therein.
+  layouts:
+    decidim:
+      conferences:
+        index:
+          promoted_conferences: Highlighted calendars
+        order_by_conferences:
+          conferences:
+            one: "%{count} calendar"
+            other: "%{count} calendars"
+  platoniq:
+    layouts:
+      footer:
+        made_by_platoniq: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free
+          software</a>.

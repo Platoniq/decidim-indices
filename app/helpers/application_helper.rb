@@ -3,6 +3,7 @@
 module ApplicationHelper
   def weblyzard_widgets_for(document)
     return unless document.active? || current_user&.admin?
+    return unless current_component.settings.automated_data_analysis
 
     render partial: "indices/widgets/all", locals: { document: document }
   end
