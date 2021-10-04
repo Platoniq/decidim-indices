@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: 4c51b9b0fbf401afb9d6477705455932cfad9015
+  revision: 0d0bbfb85c3d5249e69fdf81a4488a6e80fa1a57
   branch: custom-fields
   specs:
-    decidim-decidim_awesome (0.7.1)
+    decidim-decidim_awesome (0.7.2)
       decidim-admin (>= 0.23.0, < 0.25)
       decidim-core (>= 0.23.0, < 0.25)
       sassc (~> 2.3)
@@ -434,7 +434,7 @@ GEM
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.85.0)
+    excon (0.86.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -544,7 +544,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
-    jwt (2.2.3)
+    jwt (2.3.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
