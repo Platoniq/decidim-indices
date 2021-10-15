@@ -1,12 +1,11 @@
 GIT
-  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: d25720cab8e5b8316b8d3cbef6e45ae5af26a8dd
-  branch: custom-fields
+  remote: https://github.com/Platoniq/decidim-module-notify
+  revision: 5a8eed5490f2f1aa58043be178a98dea751ae35f
+  branch: main
   specs:
-    decidim-decidim_awesome (0.7.2)
-      decidim-admin (>= 0.23.0, < 0.25)
-      decidim-core (>= 0.23.0, < 0.25)
-      sassc (~> 2.3)
+    decidim-notify (0.4)
+      decidim-admin (>= 0.21)
+      decidim-core (>= 0.21)
 
 GIT
   remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
@@ -376,9 +375,10 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
-    decidim-notify (0.4)
-      decidim-admin (>= 0.21)
-      decidim-core (>= 0.21)
+    decidim-decidim_awesome (0.7.2)
+      decidim-admin (>= 0.23.0, < 0.25)
+      decidim-core (>= 0.23.0, < 0.25)
+      sassc (~> 2.3)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -403,7 +403,7 @@ GEM
     docile (1.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    doorkeeper (5.5.3)
+    doorkeeper (5.5.4)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
     em-http-request (1.1.7)
@@ -434,7 +434,7 @@ GEM
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.86.0)
+    excon (0.87.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -498,7 +498,7 @@ GEM
     fugit (1.5.2)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.4)
-    geocoder (1.6.7)
+    geocoder (1.7.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
     graphiql-rails (1.4.11)
@@ -589,7 +589,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0901)
     mini_magick (4.11.0)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     mini_portile2 (2.5.3)
     minitest (5.14.4)
     mixlib-cli (2.1.8)
@@ -723,7 +723,7 @@ GEM
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
-    redis (4.4.0)
+    redis (4.5.0)
     regexp_parser (2.1.1)
     request_store (1.5.0)
       rack (>= 1.4)
@@ -917,10 +917,10 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-consultations!
-  decidim-decidim_awesome!
+  decidim-decidim_awesome (~> 0.7.2)
   decidim-dev!
   decidim-direct_verifications!
-  decidim-notify (~> 0.4.0)
+  decidim-notify!
   decidim-term_customizer!
   faker (~> 2.14)
   faraday
