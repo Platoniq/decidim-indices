@@ -15,7 +15,7 @@ module Indices
     end
 
     attr_accessor :document
-    attr_reader :result
+    attr_reader :result, :error
 
     def initialize(document)
       @document = document
@@ -33,7 +33,7 @@ module Indices
 
       WeblyzardLog.from_api(api).save!
     rescue StandardError => e
-      @result["exception"] = e.message
+      @error = e.message
       nil
     end
   end

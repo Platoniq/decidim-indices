@@ -26,7 +26,7 @@ Decidim::EventsManager.subscribe(/^decidim\.events\./) do |event_name, data|
     if service.publish
       Rails.logger.info "Published event ##{data[:resource].id} [#{event_name}] to Weblyzard API with UID #{service.result["_id"]}"
     else
-      Rails.logger.error "Error publishing event ##{data[:resource].id} [#{event_name}] to Weblyzard API #{service.result}"
+      Rails.logger.error "Error publishing event ##{data[:resource].id} [#{event_name}] to Weblyzard API #{service.error}"
     end
   end
 end
