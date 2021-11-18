@@ -1,0 +1,19 @@
+<% content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <div class="secondary-nav__title">
+      InDICEs Decidim Tweaks
+    </div>
+    <ul>
+      <li <% if is_active_link?(admin_indices_path, :exclusive) %> class="is-active" <% end %>>
+        <%= link_to "InDICEs", admin_indices_path %>
+      </li>
+      <li <% if is_active_link?(admin_indices_sat_index_path) %> class="is-active" <% end %>>
+        <%= link_to "Self-Assessment tool", admin_indices_sat_index_path %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<%= render "layouts/decidim/admin/application" do %>
+  <%= yield %>
+<% end %>

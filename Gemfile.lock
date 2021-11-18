@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: 999ce75b740b2d7ef5adadab9b162767c461cbc8
+  revision: 79fb3bfa428ef9b035698a8d8ce31f0c42f88b23
   branch: release/0.24-stable
   specs:
     decidim (0.24.3)
@@ -321,8 +321,9 @@ GEM
     browser (2.7.1)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.35.3)
+    capybara (3.36.0)
       addressable
+      matrix
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
@@ -349,7 +350,7 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chef-utils (17.6.18)
+    chef-utils (17.7.29)
       concurrent-ruby
     childprocess (3.0.0)
     coercible (1.0.0)
@@ -390,7 +391,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.10.0)
+    devise-i18n (1.10.1)
       devise (>= 4.8.0)
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
@@ -428,13 +429,13 @@ GEM
     erbse (0.1.4)
       temple
     erubi (1.10.0)
-    et-orbi (1.2.5)
+    et-orbi (1.2.6)
       tzinfo
     etherpad-lite (0.3.0)
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.87.0)
+    excon (0.88.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -504,9 +505,9 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.12.16)
+    graphql (1.12.19)
     hashdiff (1.0.1)
-    hashie (4.1.0)
+    hashie (5.0.0)
     health_check (3.1.0)
       railties (>= 5.0)
     highline (2.0.3)
@@ -516,9 +517,9 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http_parser.rb (0.6.0)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    i18n-tasks (0.9.34)
+    i18n-tasks (0.9.35)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       erubi
@@ -530,7 +531,7 @@ GEM
       terminal-table (>= 1.5.1)
     icalendar (2.7.1)
       ice_cube (~> 0.16)
-    ice_cube (0.16.3)
+    ice_cube (0.16.4)
     ice_nine (0.11.2)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -565,7 +566,7 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-    letter_opener_web (1.4.0)
+    letter_opener_web (1.4.1)
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
@@ -578,6 +579,7 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
+    matrix (0.4.2)
     mdl (0.11.0)
       kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.1)
@@ -585,9 +587,9 @@ GEM
       mixlib-config (>= 2.2.1, < 4)
       mixlib-shellout
     method_source (1.0.0)
-    mime-types (3.3.1)
+    mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0901)
+    mime-types-data (3.2021.1115)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     mini_portile2 (2.5.3)
@@ -608,7 +610,7 @@ GEM
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    oauth (0.5.6)
+    oauth (0.5.8)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -628,7 +630,7 @@ GEM
     omniauth-oauth (1.2.0)
       oauth
       omniauth (>= 1.0, < 3)
-    omniauth-oauth2 (1.7.1)
+    omniauth-oauth2 (1.7.2)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
     omniauth-rails_csrf_protection (0.1.2)
@@ -664,10 +666,10 @@ GEM
       eventmachine_httpserver
       http_parser.rb (~> 0.6.0)
       multi_json
-    puma (5.5.0)
+    puma (5.5.2)
       nio4r (~> 2.0)
     raabro (1.4.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-attack (6.5.0)
       rack (>= 1.0, < 3)
@@ -723,7 +725,7 @@ GEM
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
-    redis (4.5.0)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     request_store (1.5.0)
       rack (>= 1.4)
@@ -776,7 +778,7 @@ GEM
       rubocop-ast (>= 0.5.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (1.12.0)
+    rubocop-ast (1.13.0)
       parser (>= 3.0.1.1)
     rubocop-faker (1.1.0)
       faker (>= 2.12.0)
@@ -811,18 +813,18 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sentry-rails (4.7.3)
+    sentry-rails (4.8.0)
       railties (>= 5.0)
-      sentry-ruby-core (~> 4.7.0)
-    sentry-ruby (4.7.3)
+      sentry-ruby-core (~> 4.8.0)
+    sentry-ruby (4.8.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       faraday (>= 1.0)
-      sentry-ruby-core (= 4.7.3)
-    sentry-ruby-core (4.7.3)
+      sentry-ruby-core (= 4.8.0)
+    sentry-ruby-core (4.8.0)
       concurrent-ruby
       faraday
     seven_zip_ruby (1.3.0)
-    sidekiq (6.2.2)
+    sidekiq (6.3.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -851,9 +853,9 @@ GEM
       babel-source (>= 5.8.11)
       babel-transpiler
       sprockets (>= 3.0.0)
-    sprockets-rails (3.2.2)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
+    sprockets-rails (3.4.0)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
     system_test_html_screenshots (0.1.2)
