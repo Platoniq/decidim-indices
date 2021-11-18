@@ -2,9 +2,10 @@
 
 module Decidim
   module Admin
-    class CreateIndicesSatSet < Rectify::Command
-      def initialize(form)
+    class CreateIndicesSatFeedback < Rectify::Command
+      def initialize(form, sat_set)
         @form = form
+        @sat_set = sat_set
       end
 
       def call
@@ -16,18 +17,18 @@ module Decidim
           return broadcast(:invalid, e.message)
         end
 
-        broadcast(:ok, sat_set)
+        broadcast(:ok, sat_feedback)
       end
 
       private
 
-      attr_reader :form, :sat_set
+      attr_reader :form, :sat_set, :sat_feedback
 
       def create_sat_set!
-        @sat_set = Indices::SatSet.create!(
-          organization: form.current_organization,
-          questionnaire_id: form.questionnaire_id,
-          name: form.name
+        @sat_feedback = Indices::SatFeedback.create!(
+          sat_set: sat_set,
+          title: form.title,
+          description: form.description
         )
       end
     end

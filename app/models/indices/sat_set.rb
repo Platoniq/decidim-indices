@@ -5,7 +5,7 @@ module Indices
   class SatSet < ApplicationRecord
     include Decidim::TranslatableAttributes
 
-    self.table_name = "indices_sat_set"
+    self.table_name = "indices_sat_sets"
 
     belongs_to :organization,
                class_name: "Decidim::Organization"
