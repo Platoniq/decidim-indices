@@ -21,5 +21,9 @@ module Indices
       component = questionnaire.questionnaire_for.component
       @survey_name = "#{translated_attribute(component.participatory_space.title)} :: #{translated_attribute(component.name)}"
     end
+
+    def component
+      questionnaire.questionnaire_for.component
+    end
   end
 end

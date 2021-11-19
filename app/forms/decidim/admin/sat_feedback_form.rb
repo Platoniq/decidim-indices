@@ -21,7 +21,7 @@ module Decidim
         hashtags = instance.hashtags
         instance.hashtags = hashtags.first.map.with_index do |v, i|
           {
-            "tag" => v,
+            "tag" => v.gsub("#", ""),
             "weight" => hashtags.second[i].presence || 10
           }
         end

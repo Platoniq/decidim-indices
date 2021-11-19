@@ -7,5 +7,11 @@ module Indices
 
     belongs_to :sat_set,
                class_name: "Indices::SatSet"
+
+    def hashtags_list
+      hashtags.map do |tag|
+        "##{tag["tag"]}"
+      end
+    end
   end
 end

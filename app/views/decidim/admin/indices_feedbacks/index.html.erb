@@ -14,6 +14,7 @@
           <tr>
             <th>Id</th>
             <th>Title</th>
+            <th>Tags</th>
             <th>Created</th>
             <th></th>
           </tr>
@@ -23,6 +24,7 @@
             <tr>
               <td><%= feedback.id %></td>
               <td><%= translated_attribute feedback.title %></td>
+              <td><%= feedback.hashtags_list.join(", ") %></td>
               <td><%= l feedback.created_at, format: :decidim_short %></td>
               <td class="table-list__actions">              
                 <%= icon_link_to "pencil", edit_admin_indices_sat_feedback_path(sat_set, feedback), t("actions.edit", scope: "decidim.admin"), class: "action-icon--edit" %>
