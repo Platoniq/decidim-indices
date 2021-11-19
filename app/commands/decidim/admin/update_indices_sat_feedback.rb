@@ -29,6 +29,7 @@ module Decidim
         @sat_feedback.sat_set = sat_set
         @sat_feedback.title = form.title
         @sat_feedback.description = form.description
+        @sat_feedback.hashtags = form.hashtags
         @sat_feedback.save!
       end
     end

@@ -3,6 +3,63 @@
 </div>
 
 <div class="field">
-  <%= form.translated :text_area, :description %>
+  <%= form.translated :editor, :description %>
 </div>
 
+<table class="table-list">
+  <thead>
+    <tr>
+      <th>Hashtag</th>
+      <th>Weight</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% form.object.hashtags.each do |hashtag| %>
+    <tr>
+      <td>
+        <%= text_field_tag "indices_sat_feedback[hashtags][tag][]", hashtag["tag"], placeholder: "Hashtag" %>
+      </td>
+      <td>
+        <%= number_field_tag "indices_sat_feedback[hashtags][weight][]", hashtag["weight"], placeholder: "Weight" %>
+      </td>
+      <td class="table-list__actions">
+        <%= icon_link_to "circle-x", "#", t("actions.destroy", scope: "decidim.admin"), class: "action-icon--remove remove-hashtag" %>
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="3">
+      <%= icon_link_to "plus", "#", t("actions.new", scope: "decidim.admin", name: "Hashtag"), class: "action-icon--plus new-hashtag" %>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<style>
+  .table-list input { margin-bottom: 0 }
+</style>
+
+<script>
+$(function() {
+  $('tbody').on("click", ".remove-hashtag", function(e) {
+    e.preventDefault();
+    console.log("click!");
+    if(confirm('<%= j t("actions.confirm_destroy", scope: "decidim.admin") %>')) {
+      $(this).closest("tr").remove();
+    }
+  });
+
+  $('.new-hashtag').on("click", function(e) {
+    e.preventDefault();
+    var tr = $(`<tr>
+      <td><%= text_field_tag "indices_sat_feedback[hashtags][tag][]", "", placeholder: "Hashtag" %></td>
+      <td><%= number_field_tag "indices_sat_feedback[hashtags][weight][]", "", placeholder: "Weight" %></td>
+      <td class="table-list__actions">         
+        <%= icon_link_to "circle-x", "#", t("actions.destroy", scope: "decidim.admin"), class: "action-icon--remove remove-hashtag" %>
+      </td>
+      </tr>`)
+    $(this).closest("tr").before(tr);
+  });
+});
+</script>
