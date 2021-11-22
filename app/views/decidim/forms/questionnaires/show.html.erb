@@ -87,7 +87,8 @@
                               answer: answer,
                               answer_idx: answer_idx,
                               cleaned_answer_idx: cleaned_answer_idx,
-                              disabled: !current_participatory_space.can_participate?(current_user)
+                              disabled: !current_participatory_space.can_participate?(current_user),
+                              sat_set: sat_set
                             ) %>
                           <% end %>
                         </div>
