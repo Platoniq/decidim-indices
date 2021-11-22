@@ -31,6 +31,12 @@ checksums = [
     files: {
       "/app/views/decidim/proposals/proposals/show.html.erb" => "e95e244e99bba07303e6b94856d42cb4"
     }
+  },
+  {
+    package: "decidim-forms",
+    files: {
+      "/app/views/decidim/forms/questionnaires/show.html.erb" => "2f47c0abc10a793237b4003e127d7157"
+    }
   }
 ]
 

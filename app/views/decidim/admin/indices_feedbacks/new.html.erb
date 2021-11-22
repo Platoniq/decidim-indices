@@ -2,16 +2,16 @@
   <div class="card-divider">
     <h2 class="card-title">
       New Self-Assessment Feedback for <%= sat_set.name %>
-    </h2>    
+    </h2>
   </div>
 
   <%= decidim_form_for(@form, html: { class: "form" }, url: admin_indices_sat_feedbacks_path) do |f| %>
-  	<div class="card-section">
-	    <%= render partial: "form", object: f %>
-	    
-	    <div class="button--double form-general-submit">
-	    	<%= f.submit "Send" %>
-	    </div>
-  	</div>
-	<% end %>
+    <div class="card-section">
+      <%= render partial: "form", object: f %>
+
+      <div class="button--double form-general-submit">
+        <%= f.submit "Send" %>
+      </div>
+    </div>
+  <% end %>
 </div>

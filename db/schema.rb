@@ -1761,6 +1761,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_170243) do
     t.bigint "questionnaire_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["organization_id", "questionnaire_id"], name: "index_indices_sat_sets_on_organization_id_and_questionnaire_id", unique: true
     t.index ["organization_id"], name: "index_indices_sat_sets_on_organization_id"
     t.index ["questionnaire_id"], name: "index_indices_sat_sets_on_questionnaire_id"
   end

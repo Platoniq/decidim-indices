@@ -55,7 +55,7 @@ $(function() {
     var tr = $(`<tr>
       <td><%= text_field_tag "indices_sat_feedback[hashtags][tag][]", "", placeholder: "Hashtag" %></td>
       <td><%= number_field_tag "indices_sat_feedback[hashtags][weight][]", "", placeholder: "Weight" %></td>
-      <td class="table-list__actions">         
+      <td class="table-list__actions">
         <%= icon_link_to "circle-x", "#", t("actions.destroy", scope: "decidim.admin"), class: "action-icon--remove remove-hashtag" %>
       </td>
       </tr>`)
