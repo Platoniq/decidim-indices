@@ -73,11 +73,11 @@ module Decidim
 
       # list of hashtags used in the survey that are not present in any evaluation
       def missing_hashtags
-        sat_set.answer_tags.keys - sat_set.result_tags.keys
+        sat_set.question_tags.keys - sat_set.result_tags.keys
       end
 
       def unused_hashtags
-        sat_set.result_tags.keys - sat_set.answer_tags.keys
+        sat_set.result_tags.keys - sat_set.question_tags.keys
       end
     end
   end

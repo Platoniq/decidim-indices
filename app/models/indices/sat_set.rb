@@ -20,6 +20,7 @@ module Indices
     validates :questionnaire, uniqueness: { scope: :organization }
 
     delegate :answers, to: :questionnaire
+    delegate :questions, to: :questionnaire
 
     def survey_name
       return @survey_name if @survey_name
@@ -51,6 +52,24 @@ module Indices
       @answer_tags = @answer_tags.tally
     end
 
+    # tags used across all the options
+    def question_tags
+      return @question_tags if @question_tags
+
+      @question_tags = []
+      questions.find_each do |question|
+        next if question.answer_options.blank?
+
+        question.answer_options.each do |choice|
+          translated_attribute(choice.body).gsub(HASHTAG_REGEX) do |match|
+            @question_tags << match[1..]
+          end
+        end
+      end
+      @question_tags = @question_tags.tally
+    end
+
+    # tags used across all feedbacks
     def result_tags
       return @result_tags if @result_tags
 
