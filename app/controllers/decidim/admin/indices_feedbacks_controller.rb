@@ -7,7 +7,7 @@ module Decidim
       include Paginable
       include TranslatableAttributes
 
-      helper_method :feedbacks_list, :sat_set, :sat_feedback
+      helper_method :feedbacks_list, :sat_set, :sat_feedback, :missing_hashtags, :unused_hashtags
 
       def index; end
 
@@ -69,6 +69,15 @@ module Decidim
 
       def feedbacks_list
         paginate(Indices::SatFeedback)
+      end
+
+      # list of hashtags used in the survey that are not present in any evaluation
+      def missing_hashtags
+        sat_set.answer_tags.keys - sat_set.result_tags.keys
+      end
+
+      def unused_hashtags
+        sat_set.result_tags.keys - sat_set.answer_tags.keys
       end
     end
   end

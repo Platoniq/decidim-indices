@@ -51,6 +51,20 @@ module Indices
       @answer_tags = @answer_tags.tally
     end
 
+    def result_tags
+      return @result_tags if @result_tags
+
+      @result_tags = {}
+      feedbacks.find_each do |feedback|
+        feedback.hashtags.each do |tag|
+          @result_tags[tag["tag"]] = 0 if @result_tags[tag["tag"]].blank?
+          @result_tags[tag["tag"]] += tag["weight"].to_i
+        end
+      end
+
+      @result_tags
+    end
+
     # TODO: sql search for results having implicated tags only
     def matching_feedbacks
       feedbacks.all

@@ -6,6 +6,23 @@
       <%= link_to "New Self-Assessment Feedback", new_admin_indices_sat_feedback_path, class: "button tiny button--title" %>
     </h2>
   </div>
+  <% if missing_hashtags.present? %>
+    <div class="card-section">
+      <div class="callout warning">
+        Warning: These hashtags are defined in the questionnaire but are not present in any feedback entry (they will be ignored): <br>
+        <strong>#<%= missing_hashtags.join(" #") %></strong>
+      </div>
+    </div>
+  <% end %>
+  <% if unused_hashtags.present? %>
+    <div class="card-section">
+      <div class="callout warning">
+        Warning: These hashtags are defined in some feedbacks but are not present in the questionnaire (they will be ignored): <br>
+        <strong>#<%= unused_hashtags.join(" #") %></strong>
+      </div>
+    </div>
+  <% end %>
+
   <div class="card-section">
     <h3>Available Feedbacks for this set:</h3>
     <% if feedbacks_list.any? %>
