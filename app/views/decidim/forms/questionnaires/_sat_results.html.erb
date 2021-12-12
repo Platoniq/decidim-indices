@@ -1,0 +1,34 @@
+<div class="sat-results">
+  <h2>Self-Assessment evaluation for this answered questionnaire</h2>
+
+  <% sat_set.results.each do |result| %>
+    <div class="row column class sat-result">
+      <h3>
+        <%= translated_attribute result.title %>
+        <span class="info">
+          <span class="label yellow">Relevance<span><%= result.score %></span></span>
+          <span class="label yellow-light">Matching tags<span><%= result.matching %>%</span></span>
+        </span>
+      </h3>
+
+      <div class="sat-result--description closed">
+        <%= translated_attribute(result.description).html_safe %>
+        <div class="button-expand">↕ Expand</div>
+        <div class="button-close">↕ Close</div>
+      </div>
+    </div>
+  <% end %>
+
+  <p class="help-text">
+    Results are generated according to this answer's tags: <strong><%= "##{sat_set.answer_tags.keys.join(" #")}" %></strong>
+  </p>
+</div>
+
+<script>
+
+  $(function(){
+    $(".sat-result--description .button-expand,.sat-result--description .button-close").on("click", function() {
+      $(this).closest(".sat-result--description").toggleClass(["expand", "closed"])
+    });
+  });
+</script>

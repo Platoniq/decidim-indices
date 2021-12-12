@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title">
+      Edit Self-Assessment Feedback for <%= sat_set.name %>
+    </h2>
+  </div>
+
+  <%= decidim_form_for(@form, html: { class: "form" }, method: :patch, url: admin_indices_sat_feedback_path(sat_set, sat_feedback)) do |f| %>
+    <div class="card-section">
+      <%= render partial: "form", object: f %>
+
+      <div class="button--double form-general-submit">
+        <%= f.submit "Save" %>
+      </div>
+    </div>
+  <% end %>
+</div>

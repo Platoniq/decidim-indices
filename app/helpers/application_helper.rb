@@ -45,4 +45,14 @@ module ApplicationHelper
 
     document.authored_by?(current_user)
   end
+
+  def sat_questionnaire(questionnaire)
+    Indices::SatSet.find_by(questionnaire: questionnaire)
+  end
+
+  def remove_hashtags(text, sat_set)
+    return text unless sat_set
+
+    text.gsub(Indices::SatSet::HASHTAG_REGEX, "")
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_115541) do
+ActiveRecord::Schema.define(version: 2021_11_18_170243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1745,6 +1745,27 @@ ActiveRecord::Schema.define(version: 2021_10_04_115541) do
     t.index ["decidim_organization_id"], name: "index_verifications_csv_census_to_organization"
   end
 
+  create_table "indices_sat_feedbacks", force: :cascade do |t|
+    t.jsonb "title"
+    t.jsonb "description"
+    t.jsonb "hashtags"
+    t.bigint "sat_set_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sat_set_id"], name: "index_indices_sat_feedbacks_on_sat_set_id"
+  end
+
+  create_table "indices_sat_sets", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "organization_id"
+    t.bigint "questionnaire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id", "questionnaire_id"], name: "index_indices_sat_sets_on_organization_id_and_questionnaire_id", unique: true
+    t.index ["organization_id"], name: "index_indices_sat_sets_on_organization_id"
+    t.index ["questionnaire_id"], name: "index_indices_sat_sets_on_questionnaire_id"
+  end
+
   create_table "indices_weblyzard_log", force: :cascade do |t|
     t.string "uid", null: false
     t.string "keywords"
@@ -1867,6 +1888,9 @@ ActiveRecord::Schema.define(version: 2021_10_04_115541) do
   add_foreign_key "decidim_verifications_conflicts", "decidim_users", column: "current_user_id"
   add_foreign_key "decidim_verifications_conflicts", "decidim_users", column: "managed_user_id"
   add_foreign_key "decidim_verifications_csv_data", "decidim_organizations"
+  add_foreign_key "indices_sat_feedbacks", "indices_sat_sets", column: "sat_set_id"
+  add_foreign_key "indices_sat_sets", "decidim_forms_questionnaires", column: "questionnaire_id"
+  add_foreign_key "indices_sat_sets", "decidim_organizations", column: "organization_id"
   add_foreign_key "oauth_access_grants", "decidim_users", column: "resource_owner_id"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "decidim_users", column: "resource_owner_id"

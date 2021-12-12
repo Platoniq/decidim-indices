@@ -15,3 +15,14 @@ Rails.application.routes.draw do
 
   resources :weblyzard_logs, only: [:create], module: "indices"
 end
+
+# Add a simple menu in the admin part
+Decidim::Admin::Engine.routes.draw do
+  resources :indices, only: [:index], as: "admin_indices" do
+    collection do
+      resources :sat, except: [:show], as: "admin_indices_sat", controller: :indices_sat do
+        resources :feedbacks, except: [:show], controller: :indices_feedbacks
+      end
+    end
+  end
+end
