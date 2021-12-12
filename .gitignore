@@ -43,3 +43,8 @@ public/uploads
 # Ignore .rbenv-vars
 .rbenv-vars
 decidim_dummy_app
+
+config/deploy
+config/deploy.rb
+config/application.yml
+Capfile
