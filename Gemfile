@@ -42,12 +42,12 @@ group :development do
   gem "web-console", "~> 3.5"
 
   gem "capistrano", "~> 3.14"
-  gem "capistrano-rails-console"
   gem "capistrano-bundler"
   gem "capistrano-passenger"
   gem "capistrano-rails"
+  gem "capistrano-rails-console"
   gem "capistrano-rbenv"
-  gem 'capistrano-sidekiq'
+  gem "capistrano-sidekiq"
 end
 
 group :production do
