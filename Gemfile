@@ -53,6 +53,6 @@ end
 group :production do
   gem "figaro", "~> 1.2"
   gem "fog-aws"
-  gem "sidekiq", "~> 6.0"
+  gem "sidekiq", "~> 6.4"
   gem "sidekiq-cron"
 end

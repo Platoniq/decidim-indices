@@ -853,7 +853,7 @@ GEM
       concurrent-ruby
       faraday
     seven_zip_ruby (1.3.0)
-    sidekiq (6.3.1)
+    sidekiq (6.4.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -977,7 +977,7 @@ DEPENDENCIES
   rubocop-faker
   sentry-rails
   sentry-ruby
-  sidekiq (~> 6.0)
+  sidekiq (~> 6.4)
   sidekiq-cron
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
