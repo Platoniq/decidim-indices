@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 2.7.2
+  RUBY_VERSION: 2.7.5
   NODE_VERSION: 12.9.1
     
 jobs:
@@ -37,7 +37,6 @@ jobs:
 
       - name: Setup & create Database
         run: |
-          bundle exec rake decidim:generate_external_test_app
           bundle exec rails db:create db:schema:load
         env:
           RAILS_ENV: test

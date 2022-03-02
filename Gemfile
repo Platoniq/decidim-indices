@@ -4,21 +4,19 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.24-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.26-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-decidim_awesome", "~> 0.7.2"
-gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "devel"
-gem "decidim-notify", git: "https://github.com/Platoniq/decidim-module-notify", branch: "main"
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
+gem "decidim-decidim_awesome", "~> 0.8.1"
+gem "decidim-direct_verifications"
+gem "decidim-notify"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
 
-gem "bootsnap", "~> 1.4"
+gem "bootsnap", "~> 1.7"
 gem "health_check"
-gem "sentry-rails"
-gem "sentry-ruby"
 
 gem "faraday"
 gem "puma", ">= 5.0.0"
@@ -55,4 +53,6 @@ group :production do
   gem "fog-aws"
   gem "sidekiq", "~> 6.0"
   gem "sidekiq-cron"
+  gem "sentry-rails"
+  gem "sentry-ruby"
 end
