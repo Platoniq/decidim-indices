@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg419"
+   version="1.1"
+   viewBox="0 0 133.23534 141.03349"
+   height="141.03349mm"
+   width="133.23534mm">
+  <defs
+     id="defs413">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath149">
+      <path
+         d="M 0,0 H 1920 V 1200 H 0 Z"
+         id="path147" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata416">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-553.00622,212.32856)"
+     id="layer1">
+    <path
+       id="path197"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
+       d="m 553.00622,-71.29506 h 133.23534 v -141.0335 H 553.00622 Z" />
+    <path
+       id="path199"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
+       d="m 637.19734,-89.09199 h 14.39262 v -64.76683 h -14.39262 z m 0,-79.15946 h -22.20137 v 14.39263 h -14.39262 v -14.39263 h -14.39263 v 79.15946 h 14.39263 v -50.3742 h 14.39262 v -14.39263 h 22.20137 z" />
+    <path
+       id="path201"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
+       d="m 586.21072,-184.02202 h 14.39263 v -14.39263 h -14.39263 z" />
+  </g>
+</svg>
