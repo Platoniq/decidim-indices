@@ -1,7 +1,7 @@
-function loadedWeblyzardIframe(iframe) {
-  console.log("loaded", iframe);
+window.loadedWeblyzardIframe = (iframe) => {
+  // console.log("loaded", iframe);
   $(iframe).closest(".tabs-panel").removeClass("loading");
-}
+};
 
 $(() => {
   const currentState = () => {

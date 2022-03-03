@@ -32,7 +32,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3"
+  gem "letter_opener_web"
   gem "listen", "~> 3.1"
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
@@ -57,8 +57,8 @@ end
 group :production do
   gem "figaro", "~> 1.2"
   gem "fog-aws"
-  gem "sidekiq", "~> 6.0"
-  gem "sidekiq-cron"
   gem "sentry-rails"
   gem "sentry-ruby"
+  gem "sidekiq", "~> 6.0"
+  gem "sidekiq-cron"
 end
