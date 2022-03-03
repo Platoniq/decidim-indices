@@ -5,15 +5,15 @@
       <a rel="license" class="cc-badge"
          href="http://creativecommons.org/licenses/by-sa/4.0/"
          target="_blank" rel="noopener">
-        <%= image_tag("decidim/cc-badge.png", alt: "Creative Commons License" ) %>
+        <%= image_pack_tag("media/images/cc-badge.png", alt: "Creative Commons License" ) %>
       </a>
       <%= t("platoniq.layouts.footer.made_by_platoniq").html_safe %>
     </div>
     <div class="medium-9 large-6 column footer-logos">
-      <% if current_organization.official_img_footer? %>
+      <% if current_organization.official_img_footer.attached? %>
         <div class="decidim-logo">
         <%= link_to  current_organization.official_url do %>
-          <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
+          <%= image_tag current_organization.attached_uploader(:official_img_footer).path, alt: current_organization.name %>
         <% end %>
       </div>
       <% end %>
@@ -21,14 +21,14 @@
         <a rel="decidim"
            href="https://decidim.org/"
            target="_blank">
-          <%= image_tag("decidim/decidim-logo.svg", alt: "Decidim Logo" ) %>
+          <%= image_pack_tag("media/images/decidim-logo.svg", alt: "Decidim Logo" ) %>
         </a>
       </div>
       <div class="decidim-logo platoniq">
         <a rel="platoniq"
            href="https://platoniq.net/"
            target="_blank" rel="noopener">
-          <%= image_tag("logo_platoniq_white.png", alt: "Made by Platoniq" ) %>
+          <%= image_pack_tag("media/images/logo_platoniq_white.png", alt: "Made by Platoniq" ) %>
         </a>
       </div>
     </div>

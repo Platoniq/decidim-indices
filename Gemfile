@@ -3,16 +3,15 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.26-stable" }.freeze
+DECIDIM_VERSION = "~> 0.26.0"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-decidim_awesome", "~> 0.8.1"
-gem "decidim-direct_verifications"
-gem "decidim-notify"
+gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-direct_verifications", "~> 1.1"
+gem "decidim-notify", "~> 0.5"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
 
 gem "bootsnap", "~> 1.7"
@@ -24,10 +23,10 @@ gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"
 gem "rspec"
-gem "rubocop-faker"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
+  gem "rubocop-faker"
 
   gem "decidim-dev", DECIDIM_VERSION
 end
@@ -38,6 +37,13 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
+
+  # Profiling gems
+  gem "bullet"
+  gem "flamegraph"
+  gem "memory_profiler"
+  gem "rack-mini-profiler", require: false
+  gem "stackprof"
 
   gem "capistrano", "~> 3.14"
   gem "capistrano-bundler"

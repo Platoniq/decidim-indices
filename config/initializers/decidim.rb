@@ -128,3 +128,10 @@ end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
+
+# Api tunnings
+Decidim::Api::Schema.max_complexity = 5000
+Decidim::Api::Schema.max_depth = 50
+
+# Inform Decidim about the assets folder
+Decidim.register_assets_path File.expand_path("app/packs", Rails.application.root)

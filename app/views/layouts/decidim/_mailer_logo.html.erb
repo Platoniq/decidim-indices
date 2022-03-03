@@ -5,7 +5,7 @@
     <% url = decidim.root_url(host: @organization.host) %>
   <% end %>
   <%= link_to url do %>
-    <%= image_tag "indices/logo-full.png", alt: @organization.name, border: "0" %>
+    <%= image_pack_tag "media/images/logo-full.png", alt: @organization.name, border: "0" %>
   <% end %>
 <% else %>
   <%= Decidim.application_name %>
