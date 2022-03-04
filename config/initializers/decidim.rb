@@ -128,3 +128,15 @@ end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
+# Decidim initializes meetings before proposals but meetings is checking for proposals in order to set this var
+# An then linked_reoursces_interface fails with this unchecked
+Decidim::Meetings.enable_proposal_linking = true
+
+Rails.application.config.to_prepare do
+  # Api tunnings
+  Decidim::Api::Schema.max_complexity = 5000
+  Decidim::Api::Schema.max_depth = 50
+end
+
+# Inform Decidim about the assets folder
+Decidim.register_assets_path File.expand_path("app/packs", Rails.application.root)

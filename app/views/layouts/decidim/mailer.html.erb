@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
-    <%= stylesheet_link_tag "decidim/email" %>
+    <%= stylesheet_pack_tag "indices_email" %>
   </head>
 
   <body>
@@ -39,9 +39,9 @@
                         <table>
                           <tr>
                             <th>
-                              <% if @organization.official_img_header? %>
+                              <% if @organization.official_img_header.attached? %>
                                 <%= link_to @organization.official_url do %>
-                                  <%= image_tag @organization.official_img_header.url.to_s , alt: "", style: "max-height: 50px", class: "float-right" %>
+                                  <%= image_tag @organization.attached_uploader(:official_img_header).url(host: @organization.host), alt: "", style: "max-height: 50px", class: "float-right" %>
                                 <% end %>
                               <% end %>
                             </th>
@@ -93,7 +93,7 @@
                     </tr>
                     <tr class="eu-logo">
                       <th class="columns" align="center">
-                        <%= image_tag "indices/europe-flag.png", alt: "Europe flag", border: "2" %>
+                        <%= image_pack_tag "media/images/europe-flag.png", alt: "Europe flag", border: "2" %>
                       </th>
                       <th class="columns" align="left">
                         <%= t("indices.footer.eu1") %>

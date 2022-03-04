@@ -48,3 +48,9 @@ config/deploy
 config/deploy.rb
 config/application.yml
 Capfile
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

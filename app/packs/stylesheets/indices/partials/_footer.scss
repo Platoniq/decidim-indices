@@ -1,0 +1,70 @@
+@import "variables";
+@import "stylesheets/indices/utils/mixins";
+
+
+.main-footer {
+	background-color: $navbar-color;
+	@include strato-border($body-background-color);
+}
+.mini-footer {
+	@include strato-border($navbar-color);
+	@include noise-background;
+}
+
+.footer-logos {
+  text-align: right;
+  .decidim-logo {
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+    margin-left: 1em;
+    &.platoniq {
+      padding-top: 1em;
+    }
+  }
+}
+
+
+.eu-footer{
+  background-color: $navbar-color;
+  color: #828282;
+  padding: 2em;
+  font-size: .9em;
+
+  .flag-container{
+    margin-left: 1em;
+
+    img{
+      max-width: none;
+    }
+  }
+
+  .disclaimer{
+    float: left;
+    width: 90%;
+
+    .column{
+      margin-top: 1em;
+    }
+  }
+
+  @media screen and (min-width: 40em){
+    display: flex;
+
+    .flag-container{
+      margin: 0 1em;
+      text-align: center;
+    }
+
+    .disclaimer .column{
+      margin-top: 0;
+    }
+  }
+
+  .flag{
+    border: 3px white solid;
+    height: 80px;
+    margin: 3px 0 0;
+    display: inline-block;
+  }
+}

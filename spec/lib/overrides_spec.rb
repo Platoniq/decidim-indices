@@ -9,21 +9,20 @@ checksums = [
   {
     package: "decidim-admin",
     files: {
-      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "7fe00e740523bb0caca4bfb60f9f3d68"
     }
   },
   {
     package: "decidim-core",
     files: {
       # layouts
-      "/app/views/layouts/decidim/_application.html.erb" => "3bd5852193832d35634ede6966c49b10",
+      "/app/views/layouts/decidim/_application.html.erb" => "034f77bdb61fce97e6173fd398f05bf2",
       "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440",
-      "/app/views/layouts/decidim/_mailer_logo.html.erb" => "8abb593b786423070101ded4ea8140b4",
-      "/app/views/layouts/decidim/_mini_footer.html.erb" => "55a9ca723b65b8d9eadb714818a89bb3",
-      "/app/views/layouts/decidim/mailer.html.erb" => "5bbe335c1dfd02f8448af287328a49dc",
+      "/app/views/layouts/decidim/_mailer_logo.html.erb" => "7fe70aeb7eb6241107d37b12bd8b5876",
+      "/app/views/layouts/decidim/_mini_footer.html.erb" => "5a842f3e880f24f49789ee2f72d96f60",
+      "/app/views/layouts/decidim/mailer.html.erb" => "0c7804de08649c8d3c55c117005e51c9",
       # assets
-      "/app/assets/stylesheets/decidim/email.scss" => "e77ab30914437227443dd3c714b8534b",
-      "/app/assets/stylesheets/decidim/utils/_settings.scss" => "cc65c749bff68ff08f3971fa8e53de6c"
+      "/app/packs/stylesheets/decidim/email.scss" => "912d93e2242526cc0a75603737b454d6"
     }
   },
   {
@@ -35,8 +34,8 @@ checksums = [
   {
     package: "decidim-forms",
     files: {
-      "/app/views/decidim/forms/questionnaires/show.html.erb" => "2f47c0abc10a793237b4003e127d7157",
-      "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "605b4fd5564f58acf0dcf82e8a4aa871",
+      "/app/views/decidim/forms/questionnaires/show.html.erb" => "25661744151d873281459e5e5343274e",
+      "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "35a5c2df4782e543c339aa597cbdead0",
       "/app/views/decidim/forms/questionnaires/answers/_single_option.html.erb" => "9b1ad5fc7081c769897fbd0e8aaf02fe",
       "/app/views/decidim/forms/questionnaires/answers/_multiple_option.html.erb" => "41c8057d69e5bb8b0a10246cb37a4979"
     }
