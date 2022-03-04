@@ -24,6 +24,7 @@ gem "uglifier", "~> 4.1"
 gem "faker", "~> 2.14"
 gem "rspec"
 
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
   gem "rubocop-faker"
@@ -55,8 +56,9 @@ group :development do
 end
 
 group :production do
+  gem "fog-aws" # to remove once images migrated
+  gem "aws-sdk-s3", require: false
   gem "figaro", "~> 1.2"
-  gem "fog-aws"
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sidekiq", "~> 6.0"
