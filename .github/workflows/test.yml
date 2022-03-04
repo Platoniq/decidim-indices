@@ -44,7 +44,9 @@ jobs:
           DATABASE_PASSWORD: postgres
 
       - name: Precompile assets
-        run: bundle exec rake assets:precompile
+        run: |
+          yarn install
+          bundle exec rake assets:precompile
         env:
           RAILS_ENV: test
 
