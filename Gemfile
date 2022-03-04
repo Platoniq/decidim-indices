@@ -24,7 +24,6 @@ gem "uglifier", "~> 4.1"
 gem "faker", "~> 2.14"
 gem "rspec"
 
-
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
   gem "rubocop-faker"
@@ -35,16 +34,9 @@ end
 group :development do
   gem "letter_opener_web"
   gem "listen", "~> 3.1"
-  gem "spring", "~> 2.0"
+  gem "spring"
   gem "spring-watcher-listen", "~> 2.0"
-  gem "web-console", "~> 3.5"
-
-  # Profiling gems
-  gem "bullet"
-  gem "flamegraph"
-  gem "memory_profiler"
-  gem "rack-mini-profiler", require: false
-  gem "stackprof"
+  gem "web-console"
 
   gem "capistrano", "~> 3.14"
   gem "capistrano-bundler"
@@ -56,9 +48,9 @@ group :development do
 end
 
 group :production do
-  gem "fog-aws" # to remove once images migrated
   gem "aws-sdk-s3", require: false
   gem "figaro", "~> 1.2"
+  gem "fog-aws" # to remove once images migrated
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sidekiq", "~> 6.0"

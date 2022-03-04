@@ -6,3 +6,5 @@
   - ["events", 1]
   - ["metrics", 1]
   - ["default", 1]
+  - [exports, 1]
+  - [translations, 1]
