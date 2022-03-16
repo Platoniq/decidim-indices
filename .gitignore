@@ -48,6 +48,7 @@ config/deploy
 config/deploy.rb
 config/application.yml
 Capfile
+/public/decidim-packs
 /public/packs
 /public/packs-test
 /node_modules
