@@ -37,7 +37,9 @@ checksums = [
       "/app/views/decidim/forms/questionnaires/show.html.erb" => "25661744151d873281459e5e5343274e",
       "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "35a5c2df4782e543c339aa597cbdead0",
       "/app/views/decidim/forms/questionnaires/answers/_single_option.html.erb" => "9b1ad5fc7081c769897fbd0e8aaf02fe",
-      "/app/views/decidim/forms/questionnaires/answers/_multiple_option.html.erb" => "41c8057d69e5bb8b0a10246cb37a4979"
+      "/app/views/decidim/forms/questionnaires/answers/_multiple_option.html.erb" => "41c8057d69e5bb8b0a10246cb37a4979",
+      "/app/views/decidim/forms/questionnaires/answers/_matrix_single.html.erb" => "4672d9d8edecea6e31da418d5b3050da",
+      "/app/views/decidim/forms/questionnaires/answers/_matrix_multiple.html.erb" => "cdb610e7d40f36780da543b49be039d4"
     }
   }
 ]
