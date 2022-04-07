@@ -28,13 +28,13 @@ checksums = [
   {
     package: "decidim-proposals",
     files: {
-      "/app/views/decidim/proposals/proposals/show.html.erb" => "e95e244e99bba07303e6b94856d42cb4"
+      "/app/views/decidim/proposals/proposals/show.html.erb" => "f27bbec257eb6da28dbdd07ac0a224a5"
     }
   },
   {
     package: "decidim-forms",
     files: {
-      "/app/views/decidim/forms/questionnaires/show.html.erb" => "25661744151d873281459e5e5343274e",
+      "/app/views/decidim/forms/questionnaires/show.html.erb" => "9edf99eda246f8a276732d3b7544877c",
       "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "35a5c2df4782e543c339aa597cbdead0",
       "/app/views/decidim/forms/questionnaires/answers/_single_option.html.erb" => "9b1ad5fc7081c769897fbd0e8aaf02fe",
       "/app/views/decidim/forms/questionnaires/answers/_multiple_option.html.erb" => "41c8057d69e5bb8b0a10246cb37a4979",
