@@ -1,0 +1,25 @@
+<div class="column medium-6" data-relevance="<%= model.score %>" data-matching="<%= model.matching %>">
+  <div class="card">
+    <div class="row card-section">
+      <div class="column small-3">
+        <img alt="member-avatar" src="/decidim-packs/media/images/default-avatar-aaa9e55bac5d7159b847.svg">
+      </div>
+
+      <div class="column small-9">
+        <h4><%= title %></h4>
+
+        <h5><%= subtitle %></h5>
+
+        <%= description %>
+
+        <p>
+          Effort: <%= effort %>
+        </p>
+
+        <p class="text-small">
+          key words: <strong><%= key_words %></strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

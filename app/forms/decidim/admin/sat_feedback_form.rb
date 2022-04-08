@@ -9,8 +9,10 @@ module Decidim
       mimic "indices/sat_feedback"
 
       translatable_attribute :title, String
+      translatable_attribute :subtitle, String
       translatable_attribute :description, String
       attribute :hashtags, Array
+      attribute :effort, Integer
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true

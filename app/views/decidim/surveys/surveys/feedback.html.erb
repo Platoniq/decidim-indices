@@ -3,7 +3,43 @@
 
   <%= render partial: "questionnaire_description" %>
 
-  <%= render partial: "questionnaire_preview" %>
+  <ul class="accordion sat-feedback-accordion" data-accordion data-multi-expand="true">
+    <li class="accordion-item" data-accordion-item>
+      <a href="#" class="accordion-title">
+        <h4>SAT questions</h4>
+      </a>
 
-  <%= render partial: "questionnaire_results" %>
+      <div class="accordion-content" data-tab-content>
+        <%= render partial: "questionnaire_preview" %>
+      </div>
+    </li>
+
+    <li class="accordion-item is-active" data-accordion-item>
+      <a href="#" class="accordion-title">
+        <h4>Key recommendations</h4>
+      </a>
+
+      <div class="accordion-content" data-tab-content>
+        <div class="row">
+          <% key_recommendations.each do |result| %>
+            <%= cell "indices/sat_feedback", result %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+
+    <li class="accordion-item" data-accordion-item>
+      <a href="#" class="accordion-title">
+        <h4>Resources</h4>
+      </a>
+
+      <div class="accordion-content" data-tab-content>
+        <div class="row">
+          <% other_recommendations.each do |result| %>
+            <%= cell "indices/sat_feedback", result %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>

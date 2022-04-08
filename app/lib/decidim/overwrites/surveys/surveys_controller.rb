@@ -16,7 +16,7 @@ module Decidim
 
         def self.prepended(base)
           base.class_eval do
-            base.helper_method :survey, :sat_set, :columns, :link_class
+            base.helper_method :survey, :sat_set, :key_recommendations, :other_recommendations
           end
         end
 
@@ -26,14 +26,12 @@ module Decidim
           @sat_set ||= Indices::SatSet.find_by(questionnaire: questionnaire)
         end
 
-        def columns
-          @columns ||= allow_answers? && visitor_can_answer? ? 9 : 6
+        def key_recommendations
+          @key_recommendations ||= sat_set.results.select { |r| r.score.positive? }
         end
 
-        def link_class(active, current)
-          string = "button small card__button"
-          "#{string} hollow" if active != current
-          string
+        def other_recommendations
+          @other_recommendations ||= sat_set.results - key_recommendations
         end
       end
     end

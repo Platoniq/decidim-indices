@@ -28,7 +28,9 @@ module Decidim
         @sat_feedback = Indices::SatFeedback.create!(
           sat_set: sat_set,
           title: form.title,
+          subtitle: form.subtitle,
           description: form.description,
+          effort: form.effort,
           hashtags: form.hashtags
         )
       end
