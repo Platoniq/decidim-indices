@@ -26,3 +26,15 @@ Decidim::Admin::Engine.routes.draw do
     end
   end
 end
+
+module Decidim
+  module Surveys
+    class Engine < ::Rails::Engine
+      routes do
+        resources :surveys do
+          get :feedback, on: :member
+        end
+      end
+    end
+  end
+end

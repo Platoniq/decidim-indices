@@ -1,5 +1,7 @@
-<div class="sat-results">
-  <h2>Self-Assessment evaluation for this answered questionnaire</h2>
+<div class="sat-results" id="key-recommendations">
+  <%= render "sat_nav", active: "recommendations" %>
+
+  <h4>Key recommendations</h4>
 
   <% sat_set.results.each do |result| %>
     <div class="row column class sat-result">
@@ -18,14 +20,21 @@
       </div>
     </div>
   <% end %>
+</div>
 
+<div class="sat-results" id="resources">
+  <h4>Resources</h4>
+
+  <p>nothing here</p>
+</div>
+
+<div>
   <p class="help-text">
     Results are generated according to this answer's tags: <strong><%= "##{sat_set.answer_tags.keys.join(" #")}" %></strong>
   </p>
 </div>
 
 <script>
-
   $(function(){
     $(".sat-result--description .button-expand,.sat-result--description .button-close").on("click", function() {
       $(this).closest(".sat-result--description").toggleClass(["expand", "closed"])

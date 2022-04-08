@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="columns large-<%= columns %> medium-centered">
+    <div class="card">
+      <div class="card__content">
+        <%= render partial: "questionnaire_not_published" %>
+
+        <div class="section">
+          <div class="callout warning">
+            <h4><%= t(".questionnaire_closed.title") %></h4>
+            <p><%= t(".questionnaire_closed.body") %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
