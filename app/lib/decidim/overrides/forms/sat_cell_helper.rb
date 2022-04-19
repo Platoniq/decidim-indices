@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Decidim
-  module Overwrites
+  module Overrides
     module Forms
       module SatCellHelper
         def sat_set

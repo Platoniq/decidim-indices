@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
 module Decidim
-  module Overwrites
+  module Overrides
     module Forms
       # This cell renders a possible answer of a question (readonly)
       module AnswerReadonlyCell
         include SatCellHelper
 
-        def show
-          return super unless sat_set
-
-          text = remove_hashtags(translated_attribute(model.body))
-          content_tag :li, text, class: "questionnaire-question_readonly-answer"
+        def text
+          if sat_set
+            remove_hashtags(translated_attribute(model.body))
+          else
+            translated_attribute(model.body)
+          end
         end
       end
     end

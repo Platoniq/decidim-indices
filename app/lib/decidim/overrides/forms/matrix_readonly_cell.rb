@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Decidim
-  module Overwrites
+  module Overrides
     module Forms
       # This cell renders a possible matrix answer of a question (readonly)
       module MatrixReadonlyCell
