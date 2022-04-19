@@ -1,0 +1,7 @@
+<% unless questionnaire_for.try(:component)&.try(:published?) %>
+  <div class="section">
+    <div class="callout warning">
+      <p><%= t(".questionnaire_not_published.body") %></p>
+    </div>
+  </div>
+<% end %>

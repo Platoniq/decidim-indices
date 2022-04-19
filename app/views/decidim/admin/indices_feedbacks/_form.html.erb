@@ -3,7 +3,15 @@
 </div>
 
 <div class="field">
+  <%= form.translated :text_field, :subtitle, autofocus: true %>
+</div>
+
+<div class="field">
   <%= form.translated :editor, :description %>
+</div>
+
+<div class="field">
+  <%= form.number_field :effort %>
 </div>
 
 <table class="table-list">

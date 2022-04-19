@@ -1,0 +1,9 @@
+<div id="readonly" class="sat-questionnaire_readonly">
+  <div class="card">
+    <div class="card__content">
+      <ol>
+        <%= cell("decidim/forms/question_readonly", collection: questionnaire.questions.not_conditioned, sat_set: sat_set) %>
+      </ol>
+    </div>
+  </div>
+</div>
