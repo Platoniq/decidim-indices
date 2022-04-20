@@ -887,6 +887,7 @@ DEPENDENCIES
   figaro (~> 1.2)
   fog-aws
   health_check
+  image_processing (>= 1.2)
   letter_opener_web
   listen (~> 3.1)
   puma (>= 5.0.0)

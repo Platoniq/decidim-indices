@@ -4,6 +4,7 @@ module Indices
   # The data store for the self assessment tool set
   class SatFeedback < ApplicationRecord
     self.table_name = "indices_sat_feedbacks"
+    has_one_attached :avatar
 
     belongs_to :sat_set,
                class_name: "Indices::SatSet"
@@ -23,6 +24,13 @@ module Indices
         score = hashtags.filter_map { |tag| tag["tag"] == name ? tag["weight"].to_i : false }.sum
         [name, score * freq] if score
       end.to_h
+    end
+
+    def avatar_thumb_path
+      Rails.application.routes.url_helpers.rails_representation_url(
+        avatar.variant(resize_to_fill: [300, 300]),
+        only_path: true
+      )
     end
   end
 end

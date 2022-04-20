@@ -13,6 +13,7 @@ module Decidim
       translatable_attribute :description, String
       attribute :hashtags, Array
       attribute :effort, Integer
+      attribute :avatar
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true
