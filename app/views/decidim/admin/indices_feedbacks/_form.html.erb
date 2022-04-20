@@ -14,6 +14,20 @@
   <%= form.number_field :effort %>
 </div>
 
+<div class="field">
+  <%= form.file_field(:avatar, accept: 'image/png,image/gif,image/jpeg') %>
+
+  <% if sat_feedback.avatar.attached? %>
+    <div class="card" style="width: 300px;">
+      <%= image_tag sat_feedback.avatar_thumb_path, alt: "Avatar for #{sat_feedback.title}", title: "Current avatar" %>
+
+      <div class="card-section">
+        <%= form.check_box :remove_avatar, label: "Remove avatar" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <table class="table-list">
   <thead>
     <tr>

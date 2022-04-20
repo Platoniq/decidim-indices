@@ -24,6 +24,8 @@ gem "uglifier", "~> 4.1"
 gem "faker", "~> 2.14"
 gem "rspec"
 
+gem "image_processing", ">= 1.2"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
   gem "rubocop-faker"

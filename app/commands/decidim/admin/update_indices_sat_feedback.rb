@@ -26,13 +26,19 @@ module Decidim
       attr_reader :form, :sat_set, :sat_feedback
 
       def update_sat_feedback!
-        @sat_feedback.sat_set = sat_set
-        @sat_feedback.title = form.title
-        @sat_feedback.subtitle = form.subtitle
-        @sat_feedback.description = form.description
-        @sat_feedback.effort = form.effort
-        @sat_feedback.hashtags = form.hashtags
-        @sat_feedback.save!
+        attributes = {
+          sat_set: sat_set,
+          title: form.title,
+          subtitle: form.subtitle,
+          description: form.description,
+          effort: form.effort,
+          hashtags: form.hashtags
+        }
+
+        sat_feedback.update!(attributes)
+
+        sat_feedback.avatar.attach(form.avatar) if form.avatar
+        sat_feedback.avatar.purge if form.remove_avatar
       end
     end
   end

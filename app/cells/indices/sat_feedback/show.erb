@@ -2,7 +2,11 @@
   <div class="card">
     <div class="row card-section">
       <div class="column small-3">
-        <%= image_pack_tag "media/images/default-avatar.svg", alt: "member-avatar" %>
+        <% if model.avatar.attached? %>
+          <%= image_tag model.avatar_thumb_path, alt: "Avatar for #{title}" %>
+        <% else %>
+          <%= image_pack_tag "media/images/default-avatar.svg", alt: "member-avatar" %>
+        <% end %>
       </div>
 
       <div class="column small-9">
