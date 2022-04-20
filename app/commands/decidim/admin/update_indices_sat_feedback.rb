@@ -36,7 +36,9 @@ module Decidim
         }
 
         sat_feedback.update!(attributes)
-        sat_feedback.avatar.attach(form.avatar)
+
+        sat_feedback.avatar.attach(form.avatar) if form.avatar
+        sat_feedback.avatar.purge if form.remove_avatar
       end
     end
   end

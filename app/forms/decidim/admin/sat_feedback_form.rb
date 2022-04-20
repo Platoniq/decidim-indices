@@ -14,6 +14,7 @@ module Decidim
       attribute :hashtags, Array
       attribute :effort, Integer
       attribute :avatar
+      attribute :remove_avatar, Boolean
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true
