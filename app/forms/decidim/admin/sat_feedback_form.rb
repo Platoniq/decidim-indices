@@ -15,9 +15,13 @@ module Decidim
       attribute :effort, Integer
       attribute :avatar
       attribute :remove_avatar, Boolean
+      translatable_attribute :link_label, String
+      attribute :link_uri, String
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true
+      validates :link_uri, url: true, presence: true, if: :link_label
+      validates :link_label, translatable_presence: true, if: :link_uri
 
       # convert hashtags to a proper json
       def self.from_params(params, additional_params = {})
@@ -30,6 +34,13 @@ module Decidim
           }
         end
         instance
+      end
+
+      def link_uri_format
+        uri = URI.parse(link_uri)
+        errors.add :link_uri, :invalid if !uri.is_a?(URI::HTTP) || uri.host.nil?
+      rescue URI::InvalidURIError
+        errors.add :link_uri, :invalid
       end
     end
   end

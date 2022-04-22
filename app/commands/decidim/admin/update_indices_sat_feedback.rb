@@ -32,7 +32,9 @@ module Decidim
           subtitle: form.subtitle,
           description: form.description,
           effort: form.effort,
-          hashtags: form.hashtags
+          hashtags: form.hashtags,
+          link_label: form.link_label,
+          link_uri: form.link_uri
         }
 
         sat_feedback.update!(attributes)

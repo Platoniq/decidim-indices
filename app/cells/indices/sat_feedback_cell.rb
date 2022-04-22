@@ -23,5 +23,17 @@ module Indices
     def key_words
       model.hashtags.collect { |a| a["tag"].prepend("#") }.join(" ")
     end
+
+    def link_label
+      translated_attribute(model.link_label)
+    end
+
+    def link_button
+      return unless model.link_uri
+
+      content_tag :p do
+        link_to link_label, model.link_uri, class: "button secondary", target: "_blank", rel: "noopener"
+      end
+    end
   end
 end

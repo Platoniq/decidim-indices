@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_08_163460) do
+ActiveRecord::Schema.define(version: 2022_04_20_095955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1856,6 +1856,8 @@ ActiveRecord::Schema.define(version: 2022_04_08_163460) do
     t.datetime "updated_at", null: false
     t.integer "effort", default: 0
     t.jsonb "subtitle"
+    t.jsonb "link_label"
+    t.string "link_uri"
     t.index ["sat_set_id"], name: "index_indices_sat_feedbacks_on_sat_set_id"
   end
 
