@@ -64,7 +64,7 @@ module Decidim
       end
 
       def sat_feedback
-        Indices::SatFeedback.find(params[:id])
+        Indices::SatFeedback.find(params[:id]) if params[:id]
       end
 
       def feedbacks_list

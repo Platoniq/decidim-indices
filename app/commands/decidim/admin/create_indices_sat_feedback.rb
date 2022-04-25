@@ -12,12 +12,12 @@ module Decidim
         return broadcast(:invalid) unless form.valid?
 
         begin
-          create_sat_feedback!
+          sat_feedback = create_sat_feedback!
         rescue StandardError => e
           return broadcast(:invalid, e.message)
         end
 
-        sat_feedback.avatar.attach(form.avatar)
+        sat_feedback.avatar.attach(form.avatar) if sat_feedback && form.avatar
 
         broadcast(:ok, sat_feedback)
       end
@@ -27,14 +27,18 @@ module Decidim
       attr_reader :form, :sat_set, :sat_feedback
 
       def create_sat_feedback!
-        @sat_feedback = Indices::SatFeedback.create!(
+        attributes = {
           sat_set: sat_set,
           title: form.title,
           subtitle: form.subtitle,
           description: form.description,
           effort: form.effort,
-          hashtags: form.hashtags
-        )
+          hashtags: form.hashtags,
+          link_label: form.link_label,
+          link_uri: form.link_uri
+        }
+
+        Indices::SatFeedback.create!(attributes)
       end
     end
   end

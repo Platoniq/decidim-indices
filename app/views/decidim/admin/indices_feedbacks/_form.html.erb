@@ -3,7 +3,7 @@
 </div>
 
 <div class="field">
-  <%= form.translated :text_field, :subtitle, autofocus: true %>
+  <%= form.translated :text_field, :subtitle %>
 </div>
 
 <div class="field">
@@ -15,9 +15,17 @@
 </div>
 
 <div class="field">
+  <%= form.translated :text_field, :link_label %>
+</div>
+
+<div class="field">
+  <%= form.text_field :link_uri, autofocus: true %>
+</div>
+
+<div class="field">
   <%= form.file_field(:avatar, accept: 'image/png,image/gif,image/jpeg') %>
 
-  <% if sat_feedback.avatar.attached? %>
+  <% if sat_feedback && sat_feedback.avatar.attached? %>
     <div class="card" style="width: 300px;">
       <%= image_tag sat_feedback.avatar_thumb_path, alt: "Avatar for #{sat_feedback.title}", title: "Current avatar" %>
 
