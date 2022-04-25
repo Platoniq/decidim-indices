@@ -20,8 +20,8 @@ module Decidim
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true
-      validates :link_uri, url: true, presence: true, if: :link_label
-      validates :link_label, translatable_presence: true, if: :link_uri
+      validates :link_uri, url: true, presence: true, if: :has_link_label?
+      validates :link_label, translatable_presence: true, if: :has_link_uri?
 
       # convert hashtags to a proper json
       def self.from_params(params, additional_params = {})
@@ -36,11 +36,18 @@ module Decidim
         instance
       end
 
-      def link_uri_format
-        uri = URI.parse(link_uri)
-        errors.add :link_uri, :invalid if !uri.is_a?(URI::HTTP) || uri.host.nil?
-      rescue URI::InvalidURIError
-        errors.add :link_uri, :invalid
+      def has_link_label?
+        return false if link_label.nil?
+
+        Decidim.available_locales.each do |locale|
+          return true if link_label.with_indifferent_access[locale].present?
+        end
+
+        false
+      end
+
+      def has_link_uri?
+        link_uri.present?
       end
     end
   end
