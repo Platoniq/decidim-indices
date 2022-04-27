@@ -15,6 +15,7 @@ module Indices
     end
 
     def effort
+      return unless model.effort
       return if model.effort.zero?
 
       Array.new(model.effort + 1).join("⚙️")

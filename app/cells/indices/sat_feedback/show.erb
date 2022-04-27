@@ -3,7 +3,7 @@
     <div class="row card-section">
       <div class="column small-3">
         <% if model.avatar.attached? %>
-          <%= image_tag model.avatar_thumb_path, alt: "Avatar for #{title}" %>
+          <%= image_tag model.avatar_thumb_path, alt: "#{t("card.avatar_alt", title: title, scope: "decidim.surveys.surveys.feedback")}" %>
         <% else %>
           <%= image_pack_tag "media/images/default-avatar.svg", alt: "member-avatar" %>
         <% end %>
@@ -17,11 +17,11 @@
         <%= description %>
 
         <p>
-          Effort: <%= effort %>
+          <%= t("card.effort", scope: "decidim.surveys.surveys.feedback") %>: <%= effort %>
         </p>
 
         <p class="text-small">
-          key words: <strong><%= key_words %></strong>
+          <%= t("card.keywords", scope: "decidim.surveys.surveys.feedback") %>: <strong><%= key_words %></strong>
         </p>
 
         <%= link_button %>
