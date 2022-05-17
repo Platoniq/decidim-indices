@@ -35,7 +35,7 @@ checksums = [
     package: "decidim-forms",
     files: {
       "/app/views/decidim/forms/questionnaires/show.html.erb" => "9edf99eda246f8a276732d3b7544877c",
-      "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "35a5c2df4782e543c339aa597cbdead0",
+      "/app/views/decidim/forms/questionnaires/_answer.html.erb" => "6b9d226d7b726e8e25549331870cc2b7",
       "/app/views/decidim/forms/questionnaires/answers/_single_option.html.erb" => "9b1ad5fc7081c769897fbd0e8aaf02fe",
       "/app/views/decidim/forms/questionnaires/answers/_multiple_option.html.erb" => "41c8057d69e5bb8b0a10246cb37a4979",
       "/app/views/decidim/forms/questionnaires/answers/_matrix_single.html.erb" => "4672d9d8edecea6e31da418d5b3050da",
