@@ -1,3 +1,4 @@
+<div class="js--sat-fieldset-error fieldset-error hide" role="alert"><%= t(".fieldset_error") %></div>
 <table class="questionnaire-question-matrix table">
   <thead>
     <tr>
@@ -16,20 +17,23 @@
           <% choice_id = "#{field_id}_matrix_row_#{row_idx}_choice_#{idx}" %>
           <td>
             <div class="collection-input">
-              <%= check_box_tag "questionnaire[responses][#{answer_idx}][choices][][body]",
+              <span class="form-error" role="alert">.</span>
+              <% tag_options = { id: "#{choice_id}_body", disabled: disabled } %>
+              <% tag_options[:required] = "required" if answer.question.mandatory? %>
+              <%= check_box_tag "questionnaire[responses][#{answer_idx}][choices][#{row_idx}][body]",
                                     translated_attribute(answer_option.body),
                                     choice.present?,
-                                    id: "#{choice_id}_body", disabled: disabled %>
-              <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][][answer_option_id]",
+                                    tag_options %>
+              <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][#{row_idx}][answer_option_id]",
                                     answer_option.id,
                                     id: "#{choice_id}_answer_option",
                                     disabled: true %>
-              <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][][matrix_row_id]",
+              <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][#{row_idx}][matrix_row_id]",
                                     row.id,
                                     id: "#{choice_id}_matrix_row",
                                     disabled: true %>
               <% if answer_option.free_text %>
-                <%= text_field_tag "questionnaire[responses][#{answer_idx}][choices][][custom_body]",
+                <%= text_field_tag "questionnaire[responses][#{answer_idx}][choices][#{row_idx}][custom_body]",
                 choice.try(:custom_body),
                 id: "#{choice_id}_custom_body",
                 disabled: true,

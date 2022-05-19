@@ -40,19 +40,26 @@ en:
             see_all_conferences: See all calendars
       statistics:
         conference_count: Calendars
+    forms:
+    questionnaires:
+      answers:
+        generic:
+          fieldset_error: Mandatory question. Please fill an answer to continue the survey.
+        matrix_multiple:
+          fieldset_error: Mandatory question. Please select an answer to continue.
     menu:
       conferences: Calendars
     surveys:
       surveys:
         feedback:
-          header: Self Assesment Tool Results
-          sat_questions: SAT Questions
-          key_recommendations: Key recommendations
-          resources: Resources
           card:
+            avatar_alt: Avatar for %(title)
             effort: Effort
             keywords: keywords
-            avatar_alt: Avatar for %(title)
+          header: Self Assesment Tool Results
+          key_recommendations: Key recommendations
+          resources: Resources
+          sat_questions: SAT Questions
     verifications:
       authorizations:
         first_login:
