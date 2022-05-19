@@ -1,20 +1,26 @@
 <div class="check-box-collection">
+  <div class="js--sat-fieldset-error fieldset-error hide" role="alert"><%= t("fieldset_error", scope: "decidim.forms.questionnaires.answers.generic") %></div>
+
   <% answer.question.answer_options.each_with_index do |answer_option, idx| %>
     <% choice = answer.selected_choices.find { |choice| choice.answer_option_id == answer_option.id } %>
 
     <div class="collection-input">
       <%= label_tag do %>
-        <%= check_box_tag "questionnaire[responses][#{answer_idx}][choices][#{idx}][body]",
+        <% tag_options = { id: "#{answer.question.id}_body", disabled: disabled } %>
+        <% tag_options[:required] = "required" if answer.question.mandatory? %>
+        <span class="form-error" role="alert">.</span>
+        <%= check_box_tag "questionnaire[responses][#{answer_idx}][choices][][body]",
                           translated_attribute(answer_option.body),
-                          choice.present?, disabled: disabled %>
+                          choice.present?,
+                          tag_options %>
 
         <%= remove_hashtags(translated_attribute(answer_option.body), sat_set) %>
 
-        <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][#{idx}][answer_option_id]", answer_option.id %>
+        <%= hidden_field_tag "questionnaire[responses][#{answer_idx}][choices][][answer_option_id]", answer_option.id %>
       <% end %>
 
       <% if answer_option.free_text %>
-        <%= text_field_tag "questionnaire[responses][#{answer_idx}][choices][#{idx}][custom_body]",
+        <%= text_field_tag "questionnaire[responses][#{answer_idx}][choices][][custom_body]",
         choice.try(:custom_body),
         disabled: true,
         maxlength: maxlength %>

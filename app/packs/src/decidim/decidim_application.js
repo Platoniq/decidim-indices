@@ -2,6 +2,7 @@
 // as part of that pack
 
 import "../indices/weblyzard.js";
+import "src/indices/sat_form_validator";
 
 // Load images
 require.context("../../images", true)

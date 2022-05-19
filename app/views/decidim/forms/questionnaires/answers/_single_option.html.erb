@@ -1,15 +1,21 @@
 <div class="radio-button-collection">
   <% choice = answer.choices.first %>
+  <div class="js--sat-fieldset-error fieldset-error hide" role="alert"><%= t("fieldset_error", scope: "decidim.forms.questionnaires.answers.generic") %></div>
 
   <% answer.question.answer_options.each_with_index do |answer_option, idx| %>
     <% choice_id = "#{field_id}_choices_#{idx}" %>
 
     <div class="collection-input">
       <%= label_tag "#{choice_id}_body" do %>
+        <% if idx.zero? %>
+          <span class="form-error" role="alert">.</span>
+        <% end %>
+        <% tag_options = { id: "#{choice_id}_body", disabled: disabled } %>
+        <% tag_options[:required] = "required" if answer.question.mandatory %>
         <%= radio_button_tag "questionnaire[responses][#{answer_idx}][choices][][body]",
                             translated_attribute(answer_option.body),
                             answer_option.id == choice.try(:answer_option_id),
-                            id: "#{choice_id}_body", disabled: disabled %>
+                            tag_options %>
 
         <%= remove_hashtags(translated_attribute(answer_option.body), sat_set) %>
 
