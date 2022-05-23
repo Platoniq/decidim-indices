@@ -15,6 +15,7 @@ Decidim.configure do |config|
     static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
   }
 
+  config.unconfirmed_access_for = 2.days
   # Custom resource reference generator method
   # config.reference_generator = lambda do |resource, component|
   #   # Implement your custom method to generate resources references
