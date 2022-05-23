@@ -58,8 +58,11 @@ it:
             keywords: keywords
           header: Self Assesment Tool Results
           key_recommendations: Key recommendations
+          key_recommendations_description: These are the most important recommendations based on the answers you provided [# TODO]
           resources: Resources
+          resources_description: These are useful resources that can help you improve [# TODO]
           sat_questions: SAT Questions
+          sat_questions_description: These are your answers to the Self-Assesment Tool questionnaire [# TODO]
     verifications:
       authorizations:
         first_login:
