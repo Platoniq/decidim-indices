@@ -58,11 +58,11 @@ it:
             keywords: keywords
           header: Self Assesment Tool Results
           key_recommendations: Key recommendations
-          key_recommendations_description: These are the most important recommendations based on the answers you provided [# TODO]
+          key_recommendations_description: Key Recommendations are resources and tools that have been prioritized or deemed most relevant in correspondence to the answers provided and are most up to date.
           resources: Resources
-          resources_description: These are useful resources that can help you improve [# TODO]
+          resources_description: Resources are additional tools and resources that correlate with the responses provided that may also be helpful.
           sat_questions: SAT Questions
-          sat_questions_description: These are your answers to the Self-Assesment Tool questionnaire [# TODO]
+          sat_questions_description: These are your answers to the Self Assesment Tool survey
     verifications:
       authorizations:
         first_login:
