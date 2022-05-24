@@ -3,10 +3,11 @@
 
   <%= render partial: "questionnaire_description" %>
 
-  <ul class="accordion sat-feedback-accordion" data-accordion data-multi-expand="true">
+  <ul class="accordion sat-feedback-accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     <li class="accordion-item" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".sat_questions") %></h4>
+        <h5><%= t(".sat_questions_description") %></h5>
       </a>
 
       <div class="accordion-content" data-tab-content>
@@ -17,6 +18,7 @@
     <li class="accordion-item is-active" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".key_recommendations") %></h4>
+        <h5><%= t(".key_recommendations_description") %></h5>
       </a>
 
       <div class="accordion-content" data-tab-content>
@@ -31,6 +33,7 @@
     <li class="accordion-item" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".resources") %></h4>
+        <h5><%= t(".resources_description") %></h5>
       </a>
 
       <div class="accordion-content" data-tab-content>

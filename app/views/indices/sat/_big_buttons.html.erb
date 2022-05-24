@@ -1,0 +1,30 @@
+<% if ENV["SAT_SURVEY_COMPONENT_ID"].present? && %>
+  <% sat_component = Decidim::Component.find(ENV["SAT_SURVEY_COMPONENT_ID"]) %>
+  <% if sat_component.participatory_space == current_participatory_space %>
+    <% link_1_title = t(".link_1_title") %>
+    <% link_1_subtitle = t(".link_1_subtitle") %>
+    <% link_1_url = decidim.new_user_session_path %>
+    <% link_2_title = t(".link_2_title") %>
+    <% link_2_subtitle = t(".link_2_subtitle") %>
+    <% link_2_url = main_component_path(sat_component) %>
+    <div class="section">
+      <div class="row">
+        <% unless current_user %>
+          <div class="columns">
+            <%= link_to link_1_url, class: "button expanded large p-m" do %>
+              <h4><%= link_1_title %></h4>
+              <h5><%= link_1_subtitle %></h5>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="columns">
+            <%= link_to link_2_url, class: "button expanded large p-m" do %>
+              <h4><%= link_2_title %></h4>
+              <h5><%= link_2_subtitle %></h5>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

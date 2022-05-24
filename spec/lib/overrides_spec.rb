@@ -57,6 +57,12 @@ checksums = [
     files: {
       "/app/controllers/decidim/surveys/surveys_controller.rb" => "f443ed19838d251fd9d9b960e5908418"
     }
+  },
+  {
+    package: "decidim-participatory_processes",
+    files: {
+      "/app/views/decidim/participatory_processes/participatory_processes/show.html.erb" => "6905bb3badfefd1fdaddbfa053af3749"
+    }
   }
 ]
 
