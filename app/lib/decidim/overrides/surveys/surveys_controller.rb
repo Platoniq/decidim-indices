@@ -27,6 +27,8 @@ module Decidim
         end
 
         def key_recommendations
+          return unless sat_set.results
+
           @key_recommendations ||= sat_set.results.select { |r| r.score.positive? }
         end
 

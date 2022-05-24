@@ -44,9 +44,13 @@ en:
       questionnaires:
         answers:
           generic:
-            fieldset_error: Mandatory question. Please fill an answer to continue the survey.
+            fieldset_error: Mandatory question. Please fill an answer to continue
+              the survey.
           matrix_multiple:
             fieldset_error: Mandatory question. Please select an answer to continue.
+      step_navigation:
+        wait: Wait ...
+        warning_empty_fieds: Please check empty fields or answers.
     menu:
       conferences: Calendars
     surveys:
@@ -58,11 +62,15 @@ en:
             keywords: keywords
           header: Self Assesment Tool Results
           key_recommendations: Key recommendations
-          key_recommendations_description: Key Recommendations are resources and tools that have been prioritized or deemed most relevant in correspondence to the answers provided and are most up to date.
+          key_recommendations_description: Key Recommendations are resources and tools
+            that have been prioritized or deemed most relevant in correspondence to
+            the answers provided and are most up to date.
           resources: Resources
-          resources_description: Resources are additional tools and resources that correlate with the responses provided that may also be helpful.
+          resources_description: Resources are additional tools and resources that
+            correlate with the responses provided that may also be helpful.
           sat_questions: SAT Questions
-          sat_questions_description: These are your answers to the Self Assesment Tool survey
+          sat_questions_description: These are your answers to the Self Assesment
+            Tool survey
     verifications:
       authorizations:
         first_login:
@@ -91,10 +99,11 @@ en:
         that may be made of the information contained therein.
     sat:
       big_buttons:
+        link_1_subtitle: Click here to create an account to answer the Enumerate SAT
+          Survey
         link_1_title: Create your account
-        link_1_subtitle: Click here to create an account to answer the Enumerate SAT Survey
-        link_2_title: Start the  Enumerate SAT Survey
         link_2_subtitle: Click here to answer the Survey and get custom recommendations!
+        link_2_title: Start the  Enumerate SAT Survey
   layouts:
     decidim:
       conferences:
