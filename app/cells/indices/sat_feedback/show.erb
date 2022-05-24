@@ -16,9 +16,11 @@
 
         <%= description %>
 
-        <p>
-          <%= t("card.effort", scope: "decidim.surveys.surveys.feedback") %>: <%= effort %>
-        </p>
+        <% if effort %>
+          <p>
+            <%= t("card.effort", scope: "decidim.surveys.surveys.feedback") %>: <%= effort %>
+          </p>
+        <% end %>
 
         <p class="text-small">
           <%= t("card.keywords", scope: "decidim.surveys.surveys.feedback") %>: <strong><%= key_words %></strong>
