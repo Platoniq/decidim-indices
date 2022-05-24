@@ -12,7 +12,7 @@ module Decidim
       translatable_attribute :subtitle, String
       translatable_attribute :description, String
       attribute :hashtags, Array
-      attribute :effort, Integer, default: 0
+      attribute :effort, Integer
       attribute :avatar
       attribute :remove_avatar, Boolean
       translatable_attribute :link_label, String
