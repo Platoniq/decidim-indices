@@ -16,9 +16,8 @@ module Indices
 
     def effort
       return unless model.effort
-      return if model.effort.zero?
 
-      Array.new(model.effort + 1).join("⚙️")
+      Array.new(model.effort + 2).join("⚙️")
     end
 
     def key_words
