@@ -29,11 +29,10 @@
     </div>
   <% end %>
 
+
   <%= render partial: "decidim/forms/questionnaires/answers/#{answer.question.question_type}", locals: { sat_set: sat_set, answer: answer, answer_form: answer_form, answer_idx: answer_idx, field_id: field_id, disabled: disabled, maxlength: (answer.question.max_characters if answer.question.max_characters.positive?) } %>
 
   <%= answer_form.hidden_field :question_id %>
-
-  <!-- <small class="form-error max-choices-alert"><%= t(".max_choices_alert") %></small> --->
 
   <% answer.errors.full_messages.each do |msg| %>
     <small class="form-error is-visible"><%= msg %></small>
@@ -41,6 +40,5 @@
 <% end %>
 
 <% if answer.question.mandatory? %>
-    <div id="form-debug"></div>
   </div> <!-- close .js--sat-mandatory -->
 <% end %>

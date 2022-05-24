@@ -1,5 +1,5 @@
 ---
-it:
+en:
   activerecord:
     models:
       decidim/conference:
@@ -41,12 +41,16 @@ it:
       statistics:
         conference_count: Calendars
     forms:
-    questionnaires:
-      answers:
-        generic:
-          fieldset_error: Mandatory question. Please fill an answer to continue the survey.
-        matrix_multiple:
-          fieldset_error: Mandatory question. Please select an answer to continue.
+      questionnaires:
+        answers:
+          generic:
+            fieldset_error: Mandatory question. Please fill an answer to continue
+              the survey.
+          matrix_multiple:
+            fieldset_error: Mandatory question. Please select an answer to continue.
+      step_navigation:
+        wait: Wait ...
+        warning_empty_fieds: Please check empty fields or answers.
     menu:
       conferences: Calendars
     surveys:

@@ -31,9 +31,58 @@
     max-width: 0px;
     overflow: hidden;
   }
+}
 
-  .fieldset-error {
-    border: 1px solid #ec5840;
-    padding: 1rem;
+.fieldset-error,
+.max-choices-alert {
+  color: #333;
+  border: 1px solid $alert;
+  position: relative;
+  padding: .4rem .8rem;
+  margin-bottom: .5rem;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $alert transparent transparent transparent;
+  }
+}
+
+.max-choices-alert {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.answer-questionnaire__submit {
+  display: block;
+
+  .secondary.hollow {
+    display: inline-block;
+    marging-bottom: 2rem;
+  }
+
+  @include breakpoint(medium){
+    display: flex;
+    .fieldset-error::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-top: -5px;
+      margin-left: 0px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent $alert;
+    }
+  }
+
+  .fieldset-error{
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: -2px;
   }
 }

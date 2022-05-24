@@ -18,18 +18,25 @@
       class: "button button--sc js--submit",
       disabled: button_disabled?,
       data: {
-        confirm: t("decidim.forms.step_navigation.show.are_you_sure"),
         disable: true
       }
     ) %>
   <% else %>
-    <%= link_to(
-      t("decidim.forms.step_navigation.show.continue"),
-      "#",
-      class: "button button--sc js--one-step-beyond",
-      data: {
-        toggle: [next_step_dom_id, current_step_dom_id].join(" ")
-      }
-    ) %>
+    <div>
+      <span class="fieldset-error js--step-empty--fields hide">
+        <%= t(".warning_empty_fieds") %>
+      </span>
+
+      <%= link_to(
+        t("decidim.forms.step_navigation.show.continue"),
+        "#",
+        class: "button button--sc js--one-step-beyond",
+        data: {
+          toggle: [next_step_dom_id, current_step_dom_id].join(" "),
+          "text-continue": "#{ t("decidim.forms.step_navigation.show.continue") }",
+          "text-wait": "#{ t("decidim.forms.step_navigation.wait") }"
+        }
+      ) %>
+    </div>
   <% end %>
 </div>
