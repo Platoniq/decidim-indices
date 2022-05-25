@@ -11,6 +11,6 @@ This is the open-source repository for [Indices Participatory Platform](https://
 This Application is being developed in the context of the OpenHeritage project which has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870792
 
 <div style="display: flex">
-<img height=100 src="app/assets/images/indices/europe-flag.png"/>
-<img height=100 src="app/assets/images/indices/logo-full.png"/>
+  <img height=100 src="app/packs/images/europe-flag.png"/>
+  <img height=100 src="app/packs/images/indices/logo-full.png"/>
 </div>
