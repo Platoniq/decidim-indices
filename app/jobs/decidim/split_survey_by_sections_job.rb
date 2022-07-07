@@ -40,7 +40,7 @@ module Decidim
             allow_answers: true
           },
           step_settings: { participatory_space.active_step.id => { allow_answers: true } },
-          published_at: Time.now
+          published_at: Time.zone.now
         }
 
         questionnaires = []
@@ -49,6 +49,7 @@ module Decidim
         questions = []
         answers = []
 
+        # rubocop:disable Rails/SkipsModelValidations
         Decidim::Forms::Answer.transaction do
           Decidim::Forms::Question.transaction do
             Decidim::Forms::Questionnaire.transaction do
@@ -99,6 +100,7 @@ module Decidim
             end
           end
         end
+        # rubocop:enable Rails/SkipsModelValidations
 
         Rails.logger.info "Created questionnaires #{questionnaires}"
         Rails.logger.info "Created surveys #{surveys}"
@@ -115,7 +117,7 @@ module Decidim
     end
 
     def original_questionnaire
-      @questionnaire ||= original_survey.questionnaire
+      @original_questionnaire ||= original_survey.questionnaire
     end
 
     def organization
