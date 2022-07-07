@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Decidim
+  # Usage: Decidim::SplitSurveyBySectionsJob.perform_now(131, "sections_and_questions.csv", "admin@example.com")
   class SplitSurveyBySectionsJob < ApplicationJob
     queue_as :default
 
@@ -18,8 +19,8 @@ module Decidim
 
       data.each do |d|
         section_id = d["section_id"]
-        next unless section_id.present?
-        
+        next if section_id.blank?
+
         question_id = d["question_id"]
         questions_for_section[section_id] ||= []
         questions_for_section[section_id] << question_id
@@ -29,13 +30,16 @@ module Decidim
         title = map_locales("Survey for section #{section}")
         description = title
 
+        participatory_space = original_survey.component.participatory_space
+
         params = {
           name: title,
           manifest_name: :surveys,
-          participatory_space: original_survey.component.participatory_space,
+          participatory_space: participatory_space,
           settings: {
             allow_answers: true
           },
+          step_settings: { participatory_space.active_step.id => { allow_answers: true } },
           published_at: Time.now
         }
 
@@ -83,7 +87,7 @@ module Decidim
                   question_answers.update_all(decidim_questionnaire_id: questionnaire.id)
 
                   questions << question
-                  answers = answers + question_answers
+                  answers += question_answers
 
                   Decidim::Forms::DisplayCondition.where(question: questions).destroy_all
                 end
@@ -113,15 +117,15 @@ module Decidim
     def original_questionnaire
       @questionnaire ||= original_survey.questionnaire
     end
-    
+
     def organization
       @organization ||= original_survey.organization
     end
-    
+
     def map_locales(string)
-      organization.available_locales.map do |locale|
-        [locale, string]
-      end.to_h
+      organization.available_locales.index_with do |_locale|
+        string
+      end
     end
 
     def admin_user
