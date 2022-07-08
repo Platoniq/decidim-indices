@@ -68,7 +68,7 @@ module Decidim
       end
 
       def feedbacks_list
-        paginate(Indices::SatFeedback)
+        paginate(Indices::SatFeedback.where(sat_set: sat_set))
       end
 
       # list of hashtags used in the survey that are not present in any evaluation
