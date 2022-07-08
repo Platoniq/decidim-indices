@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity
+
 module Decidim
   # Usage: Decidim::SplitSurveyBySectionsJob.perform_now(131, "sections_and_questions.csv", "admin@example.com")
   class SplitSurveyBySectionsJob < ApplicationJob
@@ -163,3 +166,6 @@ module Decidim
     end
   end
 end
+
+# rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity
