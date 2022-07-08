@@ -26,6 +26,12 @@ module Decidim
         questions_for_section[section_id] << question_id
       end
 
+      questionnaires = []
+      surveys = []
+      components = []
+      questions = []
+      answers = []
+
       sections.each do |section|
         title = map_locales("Survey for section #{section}")
         description = title
@@ -42,12 +48,6 @@ module Decidim
           step_settings: { participatory_space.active_step.id => { allow_answers: true } },
           published_at: Time.zone.now
         }
-
-        questionnaires = []
-        surveys = []
-        components = []
-        questions = []
-        answers = []
 
         # rubocop:disable Rails/SkipsModelValidations
         Decidim::Forms::Answer.transaction do
@@ -101,12 +101,40 @@ module Decidim
           end
         end
         # rubocop:enable Rails/SkipsModelValidations
+      end
 
-        Rails.logger.info "Created questionnaires #{questionnaires}"
-        Rails.logger.info "Created surveys #{surveys}"
-        Rails.logger.info "Created components #{components}"
-        Rails.logger.info "Updated questions #{questions}"
-        Rails.logger.info "Updated answers #{answers}"
+      Rails.logger.info "Created questionnaires #{questionnaires}"
+      Rails.logger.info "Created surveys #{surveys}"
+      Rails.logger.info "Created components #{components}"
+      Rails.logger.info "Updated questions #{questions}"
+      Rails.logger.info "Updated answers #{answers}"
+
+      all_new_feedbacks = []
+
+      original_sat_set = Indices::SatSet.find_by(questionnaire: original_questionnaire)
+
+      Indices::SatSet.transaction do
+        Indices::SatFeedback.transaction do
+          questionnaires.each do |questionnaire|
+            new_sat_set = Indices::SatSet.create!(organization: organization, questionnaire: questionnaire, name: "SAT feedback for '#{questionnaire.title["en"]}'")
+
+            answer_options_with_hashtag = Decidim::Forms::AnswerOption.where(question: questionnaire.questions).where("body->>'en' like ?", "%#%")
+            all_present_hashtags = answer_options_with_hashtag.pluck(Arel.sql("body->>'en'")).map { |body| body.match(/#(.*)/).captures }.flatten.uniq
+
+            all_present_hashtags.each do |tag|
+              feedbacks = original_sat_set.feedbacks.select { |f| f.hashtags.map { |h| h["tag"] }.include?(tag) }
+              feedbacks.map do |feedback|
+                f = feedback.dup
+                f.sat_set = new_sat_set
+                f.save!
+              end
+
+              all_new_feedbacks << feedbacks
+            end
+          end
+        end
+
+        Rails.logger.info "Copied feedbacks #{all_new_feedbacks}"
       end
     end
 
