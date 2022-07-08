@@ -1,4 +1,7 @@
+<div class="form-error max-choices-alert js--max-choices-alert"><%= t("decidim.forms.questionnaires.answer.max_choices_alert") %></div>
+
 <div class="js--sat-fieldset-error fieldset-error hide" role="alert"><%= t(".fieldset_error") %></div>
+
 <table class="questionnaire-question-matrix table">
   <thead>
     <tr>
@@ -20,6 +23,8 @@
               <span class="form-error" role="alert">.</span>
               <% tag_options = { id: "#{choice_id}_body", disabled: disabled } %>
               <% tag_options[:required] = "required" if answer.question.mandatory? %>
+              <% tag_options["data-row-idx"] = row_idx %>
+              <% tag_options[:class] = "collection-input_checkbox_group" %>
               <%= check_box_tag "questionnaire[responses][#{answer_idx}][choices][][body]",
                                     translated_attribute(answer_option.body),
                                     choice.present?,
@@ -37,7 +42,8 @@
                 choice.try(:custom_body),
                 id: "#{choice_id}_custom_body",
                 disabled: true,
-                maxlength: maxlength %>
+                maxlength: maxlength,
+                class: "free-text" %>
               <% end %>
             </div>
           </td>
