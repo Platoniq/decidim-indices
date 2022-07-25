@@ -1,0 +1,9 @@
+question_id,answer_option_id,survey_ids,label
+432,1500,43,#archive
+432,1501,43,#gallery
+432,1502,43,#library
+432,1503,43,#museum
+432,1504,43,#site
+432,1505,43,(other)
+455,1596,46+47,yes (physical collection)
+469,1620,48+49+50,yes (digital collection)

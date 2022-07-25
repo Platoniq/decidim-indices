@@ -16,7 +16,7 @@ module Decidim
 
       data = CSV.parse(File.read(@csv_file), headers: true)
 
-      sections = data.map { |d| d["section_id"] }.compact.uniq
+      sections = data.map { |d| [d["section_id"], d["section_title"]] }.compact.uniq
 
       questions_for_section = {}
 
@@ -36,8 +36,10 @@ module Decidim
       answers = []
 
       sections.each do |section|
-        title = map_locales("Survey for section #{section}")
-        description = title
+        section_id, section_title = section
+        
+        title = map_locales(section_title)
+        description = map_locales("")
 
         participatory_space = original_survey.component.participatory_space
 
@@ -49,7 +51,8 @@ module Decidim
             allow_answers: true
           },
           step_settings: { participatory_space.active_step.id => { allow_answers: true } },
-          published_at: Time.zone.now
+          published_at: Time.zone.now,
+          weight: section_id.to_i
         }
 
         # rubocop:disable Rails/SkipsModelValidations
@@ -67,7 +70,7 @@ module Decidim
                 end
 
                 questionnaire = Decidim::Forms::Questionnaire.new(
-                  title: map_locales("Section title #{section}"),
+                  title: title,
                   description: description,
                   tos: original_questionnaire.tos
                 )
@@ -84,7 +87,7 @@ module Decidim
 
                 questionnaire.save!
 
-                questions_for_section[section].each do |question_id|
+                questions_for_section[section_id].each do |question_id|
                   question = Decidim::Forms::Question.find(question_id)
                   question.update!(questionnaire: survey.questionnaire)
                   question_answers = Decidim::Forms::Answer.where(question: question)

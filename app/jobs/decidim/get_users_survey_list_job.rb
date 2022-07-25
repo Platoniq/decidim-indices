@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module Decidim
-  # Decidim::Surveys::Survey.joins(:component).where(id: survey_ids).pluck("decidim_surveys_surveys.id, decidim_components.name->'en'")
-
   # Usage: Decidim::GetUsersSurveyListJob.perform_now("satEnumerate", "Decidim::ParticipatoryProcess", "answer_option_survey_map.csv")
   class GetUsersSurveyListJob < ApplicationJob
     queue_as :default

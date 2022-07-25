@@ -56,3 +56,6 @@ Capfile
 yarn-debug.log*
 .yarn-integrity
 packages/
+
+
+LOGS_INDICES/
