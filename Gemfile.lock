@@ -888,6 +888,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications (~> 1.1)
   decidim-notify (~> 0.5)
+  decidim-templates!
   decidim-term_customizer!
   faker (~> 2.14)
   faraday
@@ -914,4 +915,4 @@ RUBY VERSION
    ruby 2.7.5p203
 
 BUNDLED WITH
-   2.3.6
+   2.3.5
