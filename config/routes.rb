@@ -33,6 +33,7 @@ module Decidim
       routes do
         resources :surveys do
           get :feedback, on: :member
+          get :export_user_answers, on: :member
         end
       end
     end

@@ -43,6 +43,8 @@ en:
     forms:
       questionnaires:
         answers:
+          actions:
+            export: Export your answers as CSV
           generic:
             fieldset_error: Mandatory question. Please fill an answer to continue
               the survey.
