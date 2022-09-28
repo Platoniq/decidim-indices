@@ -200,6 +200,13 @@ GIT
       decidim-admin (~> 0.26.0)
       decidim-core (~> 0.26.0)
 
+PATH
+  remote: decidim-multisurveys
+  specs:
+    decidim-multisurveys (0.3)
+      decidim-admin (>= 0.24.0, <= 0.26.2)
+      decidim-core (>= 0.24.0, <= 0.26.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -887,6 +894,7 @@ DEPENDENCIES
   decidim-decidim_awesome!
   decidim-dev!
   decidim-direct_verifications (~> 1.1)
+  decidim-multisurveys!
   decidim-notify (~> 0.5)
   decidim-templates!
   decidim-term_customizer!
