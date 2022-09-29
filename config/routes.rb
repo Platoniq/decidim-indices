@@ -33,6 +33,18 @@ module Decidim
       routes do
         resources :surveys do
           get :feedback, on: :member
+          # get :export_user_answers, on: :member
+        end
+      end
+    end
+  end
+end
+
+module Decidim
+  module Pages
+    class Engine < ::Rails::Engine
+      routes do
+        resources :pages do
           get :export_user_answers, on: :member
         end
       end

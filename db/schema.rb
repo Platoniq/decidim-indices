@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_01_145805) do
+ActiveRecord::Schema.define(version: 2022_09_28_131117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1857,6 +1857,26 @@ ActiveRecord::Schema.define(version: 2022_08_01_145805) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["decidim_organization_id"], name: "index_verifications_csv_census_to_organization"
+  end
+
+  create_table "indices_component_component_groups", force: :cascade do |t|
+    t.bigint "decidim_component_id"
+    t.bigint "indices_component_group_id"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_component_id"], name: "indices_c_cg_component"
+    t.index ["indices_component_group_id"], name: "indices_c_cg_component_group"
+  end
+
+  create_table "indices_component_groups", force: :cascade do |t|
+    t.jsonb "name"
+    t.jsonb "description"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "decidim_component_id"
+    t.index ["decidim_component_id"], name: "index_indices_component_groups_on_decidim_component_id"
   end
 
   create_table "indices_sat_feedbacks", force: :cascade do |t|

@@ -20,7 +20,7 @@
           <%= decidim_sanitize_editor translated_attribute(component_group.description) %>
           <% component_group.components.each do |component| %>
               <%= link_to translated_attribute(component.name), main_component_path(component), class: "external_link-container" %>
-              <%= link_to t("actions.export", scope: "decidim.forms.questionnaires.answers"), export_user_answers_survey_path, class: "button tiny button--title export" %>
+              <%= link_to t("actions.export", scope: "decidim.forms.questionnaires.answers"), export_user_answers_page_path(component), class: "button tiny button--title export" %>
           <% end %>
         </div>
       <% end %>
