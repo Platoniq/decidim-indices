@@ -1,0 +1,29 @@
+<% add_decidim_meta_tags({
+                           description: translated_attribute(@page.body),
+                         }) %>
+
+<%= render partial: "decidim/shared/component_announcement" %>
+
+<div class="row column">
+  <div class="row">
+    <div class="columns medium-7 mediumlarge-8">
+      <div class="section">
+        <%= decidim_sanitize_editor translated_attribute(@page.body) %>
+      </div>
+    </div>
+  </div>
+  <% if @page.component.owned_component_groups.any? %>
+    <div class="row">
+      <% @page.component.owned_component_groups.each do |component_group| %>
+        <div class="columns medium-7 mediumlarge-8">
+          <%= decidim_sanitize_editor translated_attribute(component_group.name) %>
+          <%= decidim_sanitize_editor translated_attribute(component_group.description) %>
+          <% component_group.components.each do |component| %>
+              <%= link_to translated_attribute(component.name), main_component_path(component), class: "external_link-container" %>
+              <%= link_to t("actions.export", scope: "decidim.forms.questionnaires.answers"), export_user_answers_survey_path, class: "button tiny button--title export" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
