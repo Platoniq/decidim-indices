@@ -61,7 +61,8 @@ checksums = [
   {
     package: "decidim-participatory_processes",
     files: {
-      "/app/views/decidim/participatory_processes/participatory_processes/show.html.erb" => "6905bb3badfefd1fdaddbfa053af3749"
+      "/app/views/decidim/participatory_processes/participatory_processes/show.html.erb" => "6905bb3badfefd1fdaddbfa053af3749",
+      "/app/views/layouts/decidim/_process_navigation.html.erb" => "e4d2322544d80ef4452aa61425034aa3"
     }
   }
 ]
