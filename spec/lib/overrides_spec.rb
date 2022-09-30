@@ -13,6 +13,12 @@ checksums = [
     }
   },
   {
+    package: "decidim-conferences",
+    files: {
+      "/app/views/layouts/decidim/_conferences_nav.html.erb" => "34e1e1c09af6473c32a3cc781b494fe0"
+    }
+  },
+  {
     package: "decidim-core",
     files: {
       # layouts
