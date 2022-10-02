@@ -105,6 +105,10 @@ module Decidim
       EngineRouter.main_proxy(self).root_path(self, share_token: share_token.token)
     end
 
+    def answered_by?(user)
+      Decidim::Surveys::Survey.find_by(decidim_component_id: id)&.answered_by?(user)
+    end
+
     delegate :serializes_specific_data?, to: :manifest
 
     private

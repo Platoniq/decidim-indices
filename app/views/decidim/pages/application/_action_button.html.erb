@@ -1,0 +1,7 @@
+<div class="columns medium-4 mediumlarge-3 action-survey-buttom">
+  <% if component.answered_by?(user) %>
+    <%= link_to t("actions.export", scope: "decidim.forms.questionnaires.answers"), export_user_answers_page_path(component), class: "filled" %>
+  <% else %>
+    <%= link_to t("actions.fill", scope: "decidim.forms.questionnaires.answers"), main_component_path(component), class: "external_link-container non-filled" %>
+  <% end %>
+</div>

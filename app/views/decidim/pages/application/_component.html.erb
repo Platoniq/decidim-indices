@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="columns medium-8 mediumlarge-9">
+    <h3>
+      <%= link_to translated_attribute(component.name), main_component_path(component), class: "external-link-container" %>
+    </h3>
+  </div>
+  <%= render 'decidim/pages/application/action_button', user: current_user, component: component %>
+</div>
