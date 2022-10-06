@@ -12,7 +12,6 @@ module Decidim
 
       delegate :title, :answered_by?, to: :questionnaire
 
-
       validates :questionnaire, presence: true
 
       def clean_after_publish?
@@ -36,7 +35,6 @@ module Decidim
 
         false
       end
-      
     end
   end
 end

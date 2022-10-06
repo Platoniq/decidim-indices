@@ -15,7 +15,7 @@ module Decidim
     belongs_to :participatory_space, polymorphic: true
     has_many :indices_component_component_groups,
              class_name: "Indices::ComponentComponentGroup",
-             foreign_key: "decidim_component_id"
+             foreign_key: "decidim_component_id", dependent: :destroy
     has_many :component_groups,
              class_name: "Indices::ComponentGroup",
              through: :indices_component_component_groups,
@@ -23,7 +23,7 @@ module Decidim
 
     has_many :owned_component_groups,
              class_name: "Indices::ComponentGroup",
-             foreign_key: "decidim_component_id"
+             foreign_key: "decidim_component_id", dependent: :nullify
 
     default_scope { order(arel_table[:weight].asc, arel_table[:manifest_name].asc) }
 

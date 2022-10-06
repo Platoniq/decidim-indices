@@ -35,8 +35,8 @@ module Decidim
 
       flash[:notice] = t("decidim.admin.exports.notice")
 
-      #FIXME: choose the right path
-      redirect_to decidim_participatory_process_pages_path(params[:participatory_process_slug], params[:component_id])
+      # FIXME: choose the right path
+      redirect_to main_component_path(params[:id])
     end
 
     private

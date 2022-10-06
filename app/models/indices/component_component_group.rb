@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Indices
   class ComponentComponentGroup < ApplicationRecord
     self.table_name = "indices_component_component_groups"
