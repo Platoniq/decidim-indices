@@ -13,12 +13,12 @@ module Indices
              class_name: "Indices::ComponentComponentGroup",
              foreign_key: "indices_component_group_id", dependent: :destroy
     has_many :components, through: :indices_component_component_groups,
-             foreign_key: "decidim_component_id"
+                          foreign_key: "decidim_component_id"
     belongs_to :component, class_name: "Decidim::Component",
-               foreign_key: "decidim_component_id"
+                           foreign_key: "decidim_component_id"
 
     def ordered_components
-      indices_component_component_groups.map {|iccg| iccg.component }
+      indices_component_component_groups.map(&:component)
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Indices
   module WeightSortable
     extend ActiveSupport::Concern
@@ -11,6 +13,7 @@ module Indices
     def sort_weights
       objects = self.class.where("weight = ? AND id != ? AND #{self.class::WEIGHT_SCOPE} = ?", weight, id, send(self.class::WEIGHT_SCOPE))
       return if objects.blank?
+
       objects.each { |object| object.update(weight: weight + 1) }
     end
   end
