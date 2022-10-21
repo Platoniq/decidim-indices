@@ -2,7 +2,7 @@
   <div class="ql-editor ql-reset-decidim">
     <%= decidim_sanitize_editor translated_attribute(component_group.name) %>
     <%= decidim_sanitize_editor translated_attribute(component_group.description) %>
-    <% component_group.components.each do |component| %>
+    <% component_group.ordered_components.each do |component| %>
       <%= render "decidim/pages/application/component", component: component %>
     <% end %>
   </div>

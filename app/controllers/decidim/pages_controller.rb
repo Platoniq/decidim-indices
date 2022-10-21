@@ -7,7 +7,7 @@ module Decidim
 
     helper_method :page, :pages
     helper CtaButtonHelper
-    ResourceHelper resource_locator
+    helper Decidim::ResourceHelper
     helper Decidim::SanitizeHelper
 
     before_action :set_default_request_format
@@ -36,8 +36,7 @@ module Decidim
 
       flash[:notice] = t("decidim.admin.exports.notice")
 
-      # FIXME: choose the right path
-      redirect_to resource_locator(Decidim::Component.find(params[:component_id])).path
+      redirect_to helpers.resource_locator(Decidim::Pages::Page.find_by(decidim_component_id: params[:component_id])).path
     end
 
     private
