@@ -11,6 +11,8 @@ module Decidim
         end
 
         def feedback
+          survey = Indices::ComponentComponentGroup.find_by(decidim_component_id: params[:component_id])
+          @side_surveys = { previous_survey: survey.previous_component_for(current_user), next_survey: survey.next_component_for(current_user) }
           render template: "questionnaire_closed.html" unless allow_answers?
         end
 
