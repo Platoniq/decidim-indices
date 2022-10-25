@@ -1,10 +1,7 @@
 <div class="row columns">
   <%= render partial: "questionnaire_not_published" %>
-
   <%= render partial: "questionnaire_description" %>
-
   <ul class="accordion sat-feedback-accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-
     <!--
     <li class="accordion-item" data-accordion-item>
       <a href="#" class="accordion-title">
@@ -17,13 +14,11 @@
       </div>
     </li>
     -->
-
     <li class="accordion-item is-active" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".key_recommendations") %></h4>
         <h5><%= t(".key_recommendations_description") %></h5>
       </a>
-
       <div class="accordion-content" data-tab-content>
         <div class="row">
           <% key_recommendations.each do |result| %>
@@ -32,13 +27,11 @@
         </div>
       </div>
     </li>
-
     <li class="accordion-item" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".resources") %></h4>
         <h5><%= t(".resources_description") %></h5>
       </a>
-
       <div class="accordion-content" data-tab-content>
         <div class="row">
           <% other_recommendations.each do |result| %>
@@ -48,4 +41,13 @@
       </div>
     </li>
   </ul>
+
+  <div>
+    <% if @side_surveys[:previous_survey] %>
+      <%= link_to "<< Previous Survey", main_component_path(@side_surveys[:previous_survey].component), class: "button button--sc js--submit cell small-3 margin-2 float-left" %>
+    <% end %>
+    <% if @side_surveys[:next_survey] %>
+      <%= link_to "Next Survey >>", main_component_path(@side_surveys[:next_survey].component), class: "button button--sc js--submit cell small-3 margin-2 float-right" %>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,20 @@
+<% add_decidim_meta_tags({
+                           description: translated_attribute(@page.body),
+                         }) %>
+
+<%= render partial: "decidim/shared/component_announcement" %>
+
+  <div class="row">
+    <div class="columns medium-7 mediumlarge-8">
+      <div class="section">
+        <%= decidim_sanitize_editor translated_attribute(@page.body) %>
+      </div>
+    </div>
+  </div>
+  <% if @page.component.owned_component_groups.any? %>
+    <div class="row">
+      <% @page.component.owned_component_groups.each do |component_group| %>
+        <%= render 'decidim/pages/application/component_group', component_group: component_group %>
+      <% end %>
+    </div>
+  <% end %>
