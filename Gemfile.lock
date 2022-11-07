@@ -193,12 +193,18 @@ GIT
 
 GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
-  revision: 0046905fff1fbf24ff721a8d8c30e2b767c448fb
-  branch: develop
+  revision: 9540a2ab20b872896e51ea5f97c5ebae3388ca60
+  branch: release/0.26-stable
   specs:
     decidim-term_customizer (0.26.0)
       decidim-admin (~> 0.26.0)
       decidim-core (~> 0.26.0)
+
+PATH
+  remote: decidim-module-survey_sections
+  specs:
+    decidim-survey_sections (0.26.1)
+      decidim-core (= 0.26.1)
 
 GEM
   remote: https://rubygems.org/
@@ -560,6 +566,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -574,6 +581,9 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
+    nokogiri (1.13.6)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.10)
@@ -868,6 +878,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -888,6 +899,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications (~> 1.1)
   decidim-notify (~> 0.5)
+  decidim-survey_sections!
   decidim-templates!
   decidim-term_customizer!
   faker (~> 2.14)
@@ -898,7 +910,7 @@ DEPENDENCIES
   image_processing (>= 1.2)
   letter_opener_web
   listen (~> 3.1)
-  puma (>= 5.0.0)
+  puma (>= 5.0)
   rspec
   rubocop-faker
   sentry-rails

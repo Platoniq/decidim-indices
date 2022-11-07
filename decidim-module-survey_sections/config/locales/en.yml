@@ -1,0 +1,6 @@
+---
+en:
+  decidim:
+    components:
+      survey_sections:
+        name: SurveySections

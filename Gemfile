@@ -13,13 +13,13 @@ gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-
 gem "decidim-direct_verifications", "~> 1.1"
 gem "decidim-notify", "~> 0.5"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
-
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.26-stable"
+gem "decidim-survey_sections", path: "./decidim-module-survey_sections"
 gem "bootsnap", "~> 1.7"
 gem "health_check"
 
 gem "faraday"
-gem "puma", ">= 5.0.0"
+gem "puma", ">= 5.0"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"
