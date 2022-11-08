@@ -8,7 +8,7 @@ module Decidim
         def call
           super unless sat_set
 
-          return broadcast(:invalid) if user_already_answered?
+          return broadcast(:invalid) if @form.invalid? || user_already_answered?
 
           answer_questionnaire
 
