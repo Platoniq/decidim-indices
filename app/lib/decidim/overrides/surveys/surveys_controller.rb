@@ -11,7 +11,7 @@ module Decidim
         end
 
         def feedback
-          survey = Decidim::SurveyGroup.find_by(survey_id: params[:survey_id])
+          survey = Decidim::SurveyGroup.find_by(survey_id: params[:component_id])
           @side_surveys = { previous_survey: survey.previous_survey_for(current_user), next_survey: survey.next_survey_for(current_user) }
           render template: "questionnaire_closed.html" unless allow_answers?
         end

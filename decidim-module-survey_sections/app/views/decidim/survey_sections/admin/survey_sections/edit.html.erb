@@ -1,0 +1,9 @@
+<%= decidim_form_for(@form, url: survey_section_path, method: :post, html: { class: "form edit_page" }) do |form| %>
+  <%= render partial: "form", object: form, locals: { edit_survey_sections_component: t(".edit_survey_sections_component"), name: t(".name"), sections: t(".sections") } %>
+
+  <div class="button--double form-general-submit">
+    <%= form.submit t(".save") %>
+  </div>
+<% end %>
+
+

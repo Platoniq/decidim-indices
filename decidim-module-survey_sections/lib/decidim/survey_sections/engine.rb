@@ -12,7 +12,8 @@ module Decidim
       routes do
         # Add engine routes here
         # resources :survey_sections
-        # root to: "survey_sections#index"
+        resources :survey_sections, only: [:show], controller: :application
+        root to: "application#show"
       end
 
       initializer "SurveySections.webpacker.assets_path" do

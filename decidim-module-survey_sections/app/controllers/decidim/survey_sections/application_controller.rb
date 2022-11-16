@@ -8,6 +8,9 @@ module Decidim
     # Note that it inherits from `Decidim::Components::BaseController`, which
     # override its layout and provide all kinds of useful methods.
     class ApplicationController < Decidim::Components::BaseController
+      def show
+        @survey_section_component = current_component
+      end
     end
   end
 end

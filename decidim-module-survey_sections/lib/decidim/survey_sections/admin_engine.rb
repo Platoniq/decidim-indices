@@ -10,13 +10,10 @@ module Decidim
       paths["lib/tasks"] = nil
 
       routes do
-        # Add admin engine routes here
-        # resources :survey_sections do
-        #   collection do
-        #     resources :exports, only: [:create]
-        #   end
-        # end
-        # root to: "survey_sections#index"
+        get "/survey_sections/:id", to: "survey_sections#show", as: :survey_section_show
+        delete "/survey_sections/:id", to: "survey_sections#destroy", as: :survey_section_destroy
+        post "/", to: "survey_sections#update", as: :survey_section
+        root to: "survey_sections#edit"
       end
 
       def load_seed
