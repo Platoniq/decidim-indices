@@ -24,6 +24,11 @@ Decidim::Admin::Engine.routes.draw do
         resources :feedbacks, except: [:show], controller: :indices_feedbacks
       end
     end
+    collection do
+      resources :sat_lite, as: "admin_indices_sat_lite", controller: :indices_sat_lite do
+        resources :feedbacks, except: [:show], controller: :indices_sat_lite_feedbacks
+      end
+    end
   end
 end
 

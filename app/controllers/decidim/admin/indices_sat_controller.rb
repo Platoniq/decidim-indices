@@ -85,7 +85,7 @@ module Decidim
       end
 
       def sat_list
-        paginate(Indices::SatSet)
+        paginate(Indices::SatSet).where(type: nil)
       end
     end
   end

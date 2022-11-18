@@ -10,6 +10,9 @@
       <li <% if is_active_link?(admin_indices_sat_index_path) %> class="is-active" <% end %>>
         <%= link_to "Self-Assessment tool", admin_indices_sat_index_path %>
       </li>
+      <li <% if is_active_link?(admin_indices_sat_lite_index_path) %> class="is-active" <% end %>>
+        <%= link_to "Self-Assessment tool Lite", admin_indices_sat_lite_index_path %>
+      </li>
     </ul>
   </div>
 <% end %>
