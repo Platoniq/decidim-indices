@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_01_145805) do
+ActiveRecord::Schema.define(version: 2022_11_21_075618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1671,6 +1671,26 @@ ActiveRecord::Schema.define(version: 2022_08_01_145805) do
     t.index ["topic_id"], name: "index_decidim_static_pages_on_topic_id"
   end
 
+  create_table "decidim_survey_groups", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.bigint "decidim_survey_section_id"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_survey_section_id"], name: "decidim_ss_survey_section"
+    t.index ["survey_id"], name: "decidim_ss_survey"
+  end
+
+  create_table "decidim_survey_sections", force: :cascade do |t|
+    t.jsonb "title"
+    t.jsonb "description"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "decidim_survey_sections_group_id"
+    t.index ["decidim_survey_sections_group_id"], name: "decidim_ss_ss_group"
+  end
+
   create_table "decidim_surveys_surveys", id: :serial, force: :cascade do |t|
     t.integer "decidim_component_id"
     t.datetime "created_at", null: false
@@ -1859,6 +1879,26 @@ ActiveRecord::Schema.define(version: 2022_08_01_145805) do
     t.index ["decidim_organization_id"], name: "index_verifications_csv_census_to_organization"
   end
 
+  create_table "indices_component_component_groups", force: :cascade do |t|
+    t.bigint "decidim_component_id"
+    t.bigint "indices_component_group_id"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_component_id"], name: "indices_c_cg_component"
+    t.index ["indices_component_group_id"], name: "indices_c_cg_component_group"
+  end
+
+  create_table "indices_component_groups", force: :cascade do |t|
+    t.jsonb "name"
+    t.jsonb "description"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "decidim_component_id"
+    t.index ["decidim_component_id"], name: "index_indices_component_groups_on_decidim_component_id"
+  end
+
   create_table "indices_sat_feedbacks", force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
@@ -1879,6 +1919,7 @@ ActiveRecord::Schema.define(version: 2022_08_01_145805) do
     t.bigint "questionnaire_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.index ["organization_id", "questionnaire_id"], name: "index_indices_sat_sets_on_organization_id_and_questionnaire_id", unique: true
     t.index ["organization_id"], name: "index_indices_sat_sets_on_organization_id"
     t.index ["questionnaire_id"], name: "index_indices_sat_sets_on_questionnaire_id"

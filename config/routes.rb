@@ -38,3 +38,15 @@ module Decidim
     end
   end
 end
+
+module Decidim
+  module SurveySectionsGroup
+    class Engine < ::Rails::Engine
+      routes do
+        resources :survey_sections_group do
+          get :export_user_answers, on: :member
+        end
+      end
+    end
+  end
+end

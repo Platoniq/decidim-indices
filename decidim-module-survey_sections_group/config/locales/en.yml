@@ -1,0 +1,57 @@
+---
+en:
+  activerecord:
+    models:
+      decidim/survey_sections_group/survey_section:
+        one: SurveySection
+        other: SurveySections
+  decidim:
+    admin_log:
+      survey_section:
+        update: "%{user_name} updated the %{resource_name} survey_section in %{space_name}"
+    components:
+      survey_sections_group:
+        name: SurveySectionsGroup
+        settings:
+          global:
+            announcement: Announcement
+            survey_sections_group: Survey Sections Group
+          step:
+            announcement: Announcement
+    survey_sections_group:
+      admin:
+        models:
+          components:
+            name: Name
+        survey_sections_group:
+          edit:
+            save: Update
+            edit_survey_sections_group: Edit Survey Sections component
+            name: Name
+            sections: List of Sections
+          form:
+            add_section: Add section
+            collapse: Collapse all sections
+            expand: Expand all sections
+          update:
+            invalid: There was a problem saving the survey section.
+            success: SurveySection successfully saved.
+          destroy:
+            success: Section was successfully deleted.
+            invalid: There was a problem deleting the survey section.
+          survey_section:
+            create: Create a new Section
+            section: Section
+            title: Title
+            description: Description
+            weight: Weight
+            collapse: Collapse
+            expand: Expand
+            up: Up
+            down: Down
+            remove: Remove
+      home:
+        hero:
+          participate_title: Participate to the platform's processes
+        sub_hero:
+          register_title: Sign up to create an account
