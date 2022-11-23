@@ -4,5 +4,5 @@
       <%= link_to translated_attribute(survey.name), main_component_path(survey), class: "external-link-container" %>
     </h3>
   </div>
-  <%= render 'decidim/survey_sections_group/application/action_button', user: current_user, survey: survey %>
+  <%= render "decidim/survey_sections_group/application/action_button", user: current_user, survey: survey %>
 </div>

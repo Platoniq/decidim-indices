@@ -7,7 +7,7 @@
 <% if @survey_sections_group.survey_sections.any? %>
   <div class="row">
     <% @survey_sections_group.survey_sections.each do |survey_section| %>
-      <%= render 'decidim/survey_sections/application/survey_section', survey_section: survey_section %>
+      <%= render 'decidim/survey_sections_group/application/survey_section', survey_section: survey_section %>
     <% end %>
   </div>
 <% end %>

@@ -6,10 +6,6 @@ module Decidim
       class SurveySectionsGroupController < Admin::ApplicationController
         helper_method :blank_survey_section
 
-        def show
-          @survey_section = Decidim::SurveySectionsGroup::SurveySection.find(params[:id])
-        end
-
         def edit
           enforce_permission_to :update, :survey_sections_group
 
@@ -31,17 +27,6 @@ module Decidim
               flash.now[:alert] = I18n.t("survey_sections_group.update.invalid", scope: "decidim.survey_sections_group.admin")
               render action: "edit"
             end
-          end
-        end
-
-        def destroy
-          @survey_section = Decidim::SurveySectionsGroup::SurveySection.find(params[:id])
-          if @survey_section.destroy
-            flash[:notice] = I18n.t("survey_sections_group.destroy.success", scope: "decidim.survey_sections_group.admin")
-            redirect_to parent_path
-          else
-            flash[:notice] = I18n.t("survey_sections_group.destroy.invalid", scope: "decidim.survey_sections_group.admin")
-            render action: "edit"
           end
         end
 
