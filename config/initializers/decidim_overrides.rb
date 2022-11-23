@@ -6,4 +6,5 @@ Rails.application.config.to_prepare do
   Decidim::Forms::AnswerReadonlyCell.prepend Decidim::Overrides::Forms::AnswerReadonlyCell
   Decidim::Forms::StepNavigationCell.prepend Decidim::Overrides::Forms::StepNavigationCell
   Decidim::Forms::AnswerQuestionnaire.prepend Decidim::Overrides::Forms::AnswerQuestionnaire
+  Decidim::Forms::UserAnswersSerializer.prepend Decidim::Overrides::Forms::UserAnswersSerializer
 end

@@ -17,9 +17,9 @@ module Decidim
                foreign_key: "decidim_survey_section_id", dependent: :destroy
 
       has_many :surveys, through: :decidim_survey_groups,
-               foreign_key: "survey_id"
+                         foreign_key: "survey_id"
       belongs_to :survey_sections_group, class_name: "Decidim::Component",
-                 foreign_key: "decidim_survey_sections_group_id"
+                                         foreign_key: "decidim_survey_sections_group_id"
 
       def ordered_surveys
         decidim_survey_groups.map(&:survey)
@@ -27,4 +27,3 @@ module Decidim
     end
   end
 end
-
