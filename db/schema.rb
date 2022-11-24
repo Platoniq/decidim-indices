@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_16_105419) do
+ActiveRecord::Schema.define(version: 2022_11_24_111311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1687,8 +1687,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_105419) do
     t.integer "weight", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "decidim_survey_section_component_id"
-    t.index ["decidim_survey_section_component_id"], name: "decidim_ss_ss_component"
+    t.bigint "decidim_survey_sections_group_id"
+    t.index ["decidim_survey_sections_group_id"], name: "decidim_ss_ss_group"
   end
 
   create_table "decidim_surveys_surveys", id: :serial, force: :cascade do |t|
@@ -1920,6 +1920,7 @@ ActiveRecord::Schema.define(version: 2022_11_16_105419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
+    t.text "iframe"
     t.index ["organization_id", "questionnaire_id"], name: "index_indices_sat_sets_on_organization_id_and_questionnaire_id", unique: true
     t.index ["organization_id"], name: "index_indices_sat_sets_on_organization_id"
     t.index ["questionnaire_id"], name: "index_indices_sat_sets_on_questionnaire_id"

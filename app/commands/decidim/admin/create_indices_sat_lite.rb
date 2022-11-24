@@ -28,7 +28,8 @@ module Decidim
           organization: form.current_organization,
           questionnaire_id: form.questionnaire_id,
           name: form.name,
-          image: form.image
+          image: form.image,
+          iframe: form.iframe
         )
       end
     end

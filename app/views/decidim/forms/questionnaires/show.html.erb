@@ -14,6 +14,9 @@
       <%= image_tag(questionnaire.sat_lite.attached_uploader(:image).path, size: "1000x500") %>
     </div>
   <% end %>
+  <div class="columns large-10 medium-centered margin-bottom-1">
+      <%= questionnaire.sat_lite&.iframe.html_safe %>
+  </div>
   <div class="row">
     <div class="columns large-<%= columns %> medium-centered lead">
       <%= decidim_sanitize_editor translated_attribute questionnaire.description %>
