@@ -9,13 +9,13 @@ gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
+gem "bootsnap", "~> 1.7"
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome", branch: "main"
 gem "decidim-direct_verifications", "~> 1.1"
 gem "decidim-notify", "~> 0.5"
+gem "decidim-survey_sections_group", path: "./decidim-module-survey_sections_group"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
-
-gem "bootsnap", "~> 1.7"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.26-stable"
 gem "health_check"
 
 gem "faraday"
@@ -29,9 +29,10 @@ gem "image_processing", ">= 1.2"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
-  gem "rubocop-faker"
-
+  gem "debase"
   gem "decidim-dev", DECIDIM_VERSION
+  gem "rubocop-faker"
+  gem "ruby-debug-ide"
 end
 
 group :development do

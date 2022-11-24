@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title"><%= edit_survey_sections_group %></h2>
+  </div>
+  <div class="card-section">
+    <div class="row column">
+      <%= form.translated :text_field, :name, label: t("survey_sections_group.edit.name", scope: "decidim.survey_sections_group.admin") %>
+    </div>
+  </div>
+</div>
+
+<div class="questionnaire-questions">
+  <div class="row column text-center">
+    <button type="button" class="button collapse-all"><%= t(".collapse") %></button>
+    <button type="button" class="button expand-all"><%= t(".expand") %></button>
+  </div>
+
+
+  <%= fields_for "survey_sections_group[survey_sections][#{blank_survey_section.to_param}]", blank_survey_section do |survey_section_form| %>
+    <%= render "decidim/survey_sections_group/admin/survey_sections_group/survey_section",
+               form: survey_section_form,
+               id: tabs_id_for_survey_section(blank_survey_section) %>
+  <% end %>
+
+  <div class="card">
+    <div class="card-divider">
+      <h2 class="card-title"><%= sections %></h2>
+    </div>
+    <% current_component.survey_sections.each do |section| %>
+      <div class="card-section" style="width: 50%">
+        <h3><u><%= strip_tags(translated_attribute(section.title)) %></u></h3>
+        <p><%= strip_tags(translated_attribute(section.description)) %></p>
+        <% if section.surveys.any? %>
+          <h5><u>Surveys in this section</u></h5>
+          <% section.surveys.each do |survey| %>
+            <h6><%= translated_attribute(survey.name) %></h6>
+          <% end %>
+        <% end %>
+        <div class="button-group">
+          <%= link_to "Edit", admin_edit_survey_sections_path(section), class: "button" %>
+          <%= link_to "Remove", admin_destroy_survey_sections_path(section), method: :delete, data: {confirm: "Are you sure you want to delete the section?"}, class: "button alert" %>
+        </div>
+        <hr>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= javascript_pack_tag "decidim_forms_admin", defer: false %>
+
+<script>
+  window.Decidim.createEditableForm()
+</script>

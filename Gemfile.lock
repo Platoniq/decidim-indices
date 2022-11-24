@@ -193,12 +193,18 @@ GIT
 
 GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
-  revision: 0046905fff1fbf24ff721a8d8c30e2b767c448fb
-  branch: develop
+  revision: 9540a2ab20b872896e51ea5f97c5ebae3388ca60
+  branch: release/0.26-stable
   specs:
     decidim-term_customizer (0.26.0)
       decidim-admin (~> 0.26.0)
       decidim-core (~> 0.26.0)
+
+PATH
+  remote: decidim-module-survey_sections_group
+  specs:
+    decidim-survey_sections_group (0.26.1)
+      decidim-core (= 0.26.1)
 
 GEM
   remote: https://rubygems.org/
@@ -387,6 +393,9 @@ GEM
     db-query-matchers (0.10.0)
       activesupport (>= 4.0, < 7)
       rspec (~> 3.0)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.17)
     decidim-direct_verifications (1.2.1)
       decidim-admin (>= 0.25.0)
       decidim-core (>= 0.25.0)
@@ -560,6 +569,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -574,6 +584,9 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
+    nokogiri (1.13.6)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.10)
@@ -748,6 +761,8 @@ GEM
       rubocop (>= 0.90.0, < 2.0)
     rubocop-rspec (1.43.2)
       rubocop (~> 0.87)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
@@ -882,6 +897,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capistrano-sidekiq
+  debase
   decidim!
   decidim-conferences!
   decidim-consultations!
@@ -889,6 +905,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications (~> 1.1)
   decidim-notify (~> 0.5)
+  decidim-survey_sections_group!
   decidim-templates!
   decidim-term_customizer!
   faker (~> 2.14)
@@ -902,6 +919,7 @@ DEPENDENCIES
   puma (>= 5.0.0)
   rspec
   rubocop-faker
+  ruby-debug-ide
   sentry-rails
   sentry-ruby
   sentry-sidekiq

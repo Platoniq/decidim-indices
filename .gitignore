@@ -56,3 +56,5 @@ Capfile
 yarn-debug.log*
 .yarn-integrity
 packages/
+
+.idea/

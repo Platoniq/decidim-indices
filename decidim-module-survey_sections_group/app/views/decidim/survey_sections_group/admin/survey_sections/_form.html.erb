@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title"><%= edit_survey_section %></h2>
+  </div>
+  <div class="card-section">
+    <div class="row column">
+      <%= form.translated :text_field, :title, label: t(".title") %>
+    </div>
+    <div class="row column">
+      <%= form.translated :editor, :description, label: t(".description") %>
+    </div>
+    <div class="row column">
+      <%= form.number_field(:weight, min: 0, label: t(".weight")) %>
+    </div>
+    <div class="card">
+      <div class="card-divider">
+        <h2 class="card-title"><%= add_survey %></h2>
+      </div>
+      <div class="card-section">
+        <div class="row column">
+          <%= form.collection_check_boxes(:surveys, @form.surveys_list, :id, :name) do |b| %>
+            <div>
+              <% if @form.surveys.include?(b.object) %>
+                <%= b.check_box checked: true %>
+              <% else %>
+                <%= b.check_box %>
+              <% end %>
+              <%= translated_attribute(b.object.name) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
