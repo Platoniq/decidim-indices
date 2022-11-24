@@ -29,10 +29,8 @@ gem "image_processing", ">= 1.2"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
-  gem "debase"
   gem "decidim-dev", DECIDIM_VERSION
   gem "rubocop-faker"
-  gem "ruby-debug-ide"
 end
 
 group :development do
