@@ -35,7 +35,7 @@ module Decidim
             title: @form.title,
             description: @form.description,
             weight: @form.weight,
-            surveys: Decidim::Component.find(@form.surveys.reject(&:present?))
+            surveys: Decidim::Component.find(@form.surveys.reject(&:empty?))
           )
         end
       end
