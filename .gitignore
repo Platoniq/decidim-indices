@@ -58,3 +58,5 @@ yarn-debug.log*
 packages/
 
 .idea/
+Docker*
+docker*
