@@ -9,14 +9,16 @@
 
 <div class="row columns">
   <h3 class="section-heading"><%= translated_attribute questionnaire.title %></h3>
-  <% if questionnaire.sat_lite&.attached_uploader(:image).path.present? %>
+  <% if questionnaire.sat_lite&.attached_uploader(:image)&.path.present? %>
     <div class="columns large-10 medium-centered margin-bottom-1">
       <%= image_tag(questionnaire.sat_lite.attached_uploader(:image).path, size: "1000x500") %>
     </div>
   <% end %>
-  <div class="columns large-10 medium-centered margin-bottom-1">
-      <%= questionnaire.sat_lite&.iframe.html_safe %>
-  </div>
+  <% if questionnaire.sat_lite&.iframe %>
+    <div class="columns large-10 medium-centered margin-bottom-1">
+        <%= questionnaire.sat_lite&.iframe&.html_safe %>
+    </div>
+  <% end %>
   <div class="row">
     <div class="columns large-<%= columns %> medium-centered lead">
       <%= decidim_sanitize_editor translated_attribute questionnaire.description %>
