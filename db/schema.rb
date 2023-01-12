@@ -1671,6 +1671,26 @@ ActiveRecord::Schema.define(version: 2022_11_25_095043) do
     t.index ["topic_id"], name: "index_decidim_static_pages_on_topic_id"
   end
 
+  create_table "decidim_survey_groups", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.bigint "decidim_survey_section_id"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_survey_section_id"], name: "decidim_ss_survey_section"
+    t.index ["survey_id"], name: "decidim_ss_survey"
+  end
+
+  create_table "decidim_survey_sections", force: :cascade do |t|
+    t.jsonb "title"
+    t.jsonb "description"
+    t.integer "weight", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "decidim_survey_sections_group_id"
+    t.index ["decidim_survey_sections_group_id"], name: "decidim_ss_ss_group"
+  end
+
   create_table "decidim_surveys_surveys", id: :serial, force: :cascade do |t|
     t.integer "decidim_component_id"
     t.datetime "created_at", null: false
