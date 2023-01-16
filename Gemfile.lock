@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-alternative_landing
+  revision: 0eb7f00d008ec260c93735e0940020b2714cb44c
+  branch: release/0.26-stable
+  specs:
+    decidim-alternative_landing (0.3.0)
+      decidim-admin (>= 0.25.0, < 0.27)
+      decidim-core (>= 0.25.0, < 0.27)
+      redcarpet (~> 3.4)
+
+GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
   revision: 658d226e9ed164ffdca2efbde4dfaf79b02c295e
   branch: main
@@ -574,6 +584,8 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
+    nokogiri (1.13.6-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.10)
@@ -868,6 +880,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -882,6 +895,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   decidim!
+  decidim-alternative_landing!
   decidim-conferences!
   decidim-consultations!
   decidim-decidim_awesome!
