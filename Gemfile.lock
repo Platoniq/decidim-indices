@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-alternative_landing
+  revision: 7aeeedc12cd168dbacd775557e2ee48f78955754
+  branch: release/0.26-stable
+  specs:
+    decidim-alternative_landing (0.3.0)
+      decidim-admin (>= 0.25.0, < 0.27)
+      decidim-core (>= 0.25.0, < 0.27)
+      redcarpet (~> 3.4)
+
+GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
   revision: 658d226e9ed164ffdca2efbde4dfaf79b02c295e
   branch: main
@@ -566,7 +576,6 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.15.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -581,8 +590,7 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.6-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
@@ -878,7 +886,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -893,6 +901,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   decidim!
+  decidim-alternative_landing!
   decidim-conferences!
   decidim-consultations!
   decidim-decidim_awesome!
