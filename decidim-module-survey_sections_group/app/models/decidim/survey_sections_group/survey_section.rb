@@ -22,7 +22,7 @@ module Decidim
                                          foreign_key: "decidim_survey_sections_group_id"
 
       def ordered_surveys
-        decidim_survey_groups.map(&:survey)
+        decidim_survey_groups.map(&:survey).sort_by(&:weight)
       end
     end
   end
