@@ -10,11 +10,17 @@ module Decidim
       belongs_to :survey, class_name: "Decidim::Component"
 
       def previous_survey_for(user)
-        self.class.where("weight < ? AND decidim_survey_section_id = ?", weight, survey_section.id)&.find { |s| s.survey.answered_by?(user.id) == false }
+        self.class.where(decidim_survey_section_id: survey_section.id)
+            .joins(:survey)
+            .where("decidim_components.weight < ?", survey.weight)
+          &.find { |s| !s.survey.answered_by?(user.id) }
       end
 
       def next_survey_for(user)
-        self.class.where("weight > ? AND decidim_survey_section_id = ?", weight, survey_section.id)&.find { |s| s.survey.answered_by?(user.id) == false }
+        self.class.where(decidim_survey_section_id: survey_section.id)
+            .joins(:survey)
+            .where("decidim_components.weight > ?", survey.weight)
+          &.find { |s| !s.survey.answered_by?(user.id) }
       end
     end
   end

@@ -92,7 +92,7 @@ module Indices
     def results
       @results ||= matching_feedbacks.sort_by do |feedback|
         tags = feedback.score_for(answer_tags).filter { |_k, v| v != 0 }
-        feedback.matching = (100 * (tags.keys & answer_tags.keys).size) / answer_tags.size
+        feedback.matching = (100 * (tags.keys & answer_tags.keys).size) / answer_tags.size unless answer_tags.empty?
         feedback.score = tags.values.sum
       end.reverse
     end
