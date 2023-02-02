@@ -34,7 +34,7 @@ module Decidim
         def key_recommendations
           return unless sat_set.results(current_user)
 
-          @key_recommendations ||= sat_set.results(current_user).select { |r| r.score.positive? }
+          @key_recommendations ||= sat_set.results(current_user).select { |r| r.score.positive? }.slice(0, 2)
         end
 
         def other_recommendations
