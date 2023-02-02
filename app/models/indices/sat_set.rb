@@ -38,18 +38,21 @@ module Indices
     ##########
 
     # Score for the current set of answers
-    def answer_tags
-      return @answer_tags if @answer_tags
-
-      @answer_tags = []
-      answers.find_each do |answer|
-        answer.choices.each do |choice|
-          choice.body.gsub(HASHTAG_REGEX) do |match|
-            @answer_tags << match[1..]
+    def answer_tags(user = nil)
+      @answer_tags ||= Hash.new do |h, key|
+        answer_tags = []
+        relation = answers
+        relation = relation.where(decidim_user_id: key) if key
+        relation.find_each do |answer|
+          answer.choices.each do |choice|
+            choice.body.gsub(HASHTAG_REGEX) do |match|
+              answer_tags << match[1..]
+            end
           end
         end
+        h[key] = answer_tags.tally
       end
-      @answer_tags = @answer_tags.tally
+      @answer_tags[user.try(:id)]
     end
 
     # tags used across all the options
@@ -84,15 +87,14 @@ module Indices
       @result_tags
     end
 
-    # TODO: sql search for results having implicated tags only
-    def matching_feedbacks
-      feedbacks.all
+    def matching_feedbacks(user)
+      feedbacks.all.select { |f| answer_tags(user).keys.include?(f.hashtags[0]["tag"]) }
     end
 
-    def results
-      @results ||= matching_feedbacks.sort_by do |feedback|
-        tags = feedback.score_for(answer_tags).filter { |_k, v| v != 0 }
-        feedback.matching = (100 * (tags.keys & answer_tags.keys).size) / answer_tags.size unless answer_tags.empty?
+    def results(user)
+      @results ||= matching_feedbacks(user).sort_by do |feedback|
+        tags = feedback.score_for(answer_tags(user)).filter { |_k, v| v != 0 }
+        feedback.matching = (100 * (tags.keys & answer_tags(user).keys).size) / answer_tags(user).size unless answer_tags(user).empty?
         feedback.score = tags.values.sum
       end.reverse
     end
