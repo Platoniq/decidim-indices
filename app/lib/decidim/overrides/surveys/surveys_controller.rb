@@ -12,8 +12,10 @@ module Decidim
 
         def feedback
           survey = Decidim::SurveySectionsGroup::SurveyGroup.find_by(survey_id: params[:component_id])
-          @side_surveys = { previous_survey: survey.previous_survey_for(current_user), next_survey: survey.next_survey_for(current_user) }
-          @survey_sections_group = survey.survey_section.survey_sections_group
+          if survey
+            @side_surveys = { previous_survey: survey.previous_survey_for(current_user), next_survey: survey.next_survey_for(current_user) }
+            @survey_sections_group = survey.survey_section.survey_sections_group
+          end
           render template: "questionnaire_closed.html" unless allow_answers?
         end
 
@@ -30,13 +32,13 @@ module Decidim
         end
 
         def key_recommendations
-          return unless sat_set.results
+          return unless sat_set.results(current_user)
 
-          @key_recommendations ||= sat_set.results.select { |r| r.score.positive? }
+          @key_recommendations ||= sat_set.results(current_user).select { |r| r.score.positive? }
         end
 
         def other_recommendations
-          @other_recommendations ||= sat_set.results - key_recommendations
+          @other_recommendations ||= sat_set.results(current_user) - key_recommendations
         end
       end
     end

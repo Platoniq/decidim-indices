@@ -50,14 +50,16 @@
   </ul>
 
   <div>
-    <% if @side_surveys[:previous_survey]&.survey&.published? %>
+    <% if @side_surveys&.dig(:previous_survey)&.survey&.published? %>
       <%= link_to "<< Previous Survey", main_component_path(@side_surveys[:previous_survey].survey), class: "button button--sc js--submit cell small-3 margin-2" %>
     <% end %>
-    <% if @side_surveys[:next_survey]&.survey&.published? %>
+    <% if @side_surveys&.dig(:next_survey)&.survey&.published? %>
       <%= link_to "Next Survey >>", main_component_path(@side_surveys[:next_survey].survey), class: "button button--sc js--submit cell small-3 margin-2 float-right" %>
     <% end %>
-    <div>
-      <%= link_to "Back", main_component_path(@survey_sections_group), class: "button button--sc js--submit cell small-3 margin-2" %>
-    </div>
+    <% if @survey_sections_group %>
+      <div>
+        <%= link_to "Back", main_component_path(@survey_sections_group), class: "button button--sc js--submit cell small-3 margin-2" %>
+      </div>
+    <% end %>
   </div>
 </div>
