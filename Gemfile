@@ -16,6 +16,8 @@ gem "decidim-notify", "~> 0.5"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
 
+gem "decidim-multisurveys", path: "./decidim-multisurveys"
+
 gem "bootsnap", "~> 1.7"
 gem "health_check"
 
