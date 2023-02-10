@@ -75,8 +75,8 @@ en:
       questionnaires:
         answers:
           actions:
-            fill: Fill the survey
-            export: Download your answers as CSV
+            fill: Fill in Survey
+            export: Download responses
 
 it:
   activerecord:
