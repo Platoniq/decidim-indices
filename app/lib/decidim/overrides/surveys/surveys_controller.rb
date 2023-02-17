@@ -10,10 +10,6 @@ module Decidim
           redirect_to feedback_survey_path(survey, anchor: "key-recommendations")
         end
 
-        def feedback
-          render template: "questionnaire_closed.html" unless allow_answers?
-        end
-
         def self.prepended(base)
           base.class_eval do
             base.helper_method :survey, :sat_set, :key_recommendations, :other_recommendations
