@@ -11,6 +11,8 @@ module Decidim
         end
 
         def feedback
+          return head 404 unless current_user
+
           survey = Decidim::SurveySectionsGroup::SurveyGroup.find_by(survey_id: params[:component_id])
           if survey
             @side_surveys = { previous_survey: survey.previous_survey_for(current_user), next_survey: survey.next_survey_for(current_user) }
