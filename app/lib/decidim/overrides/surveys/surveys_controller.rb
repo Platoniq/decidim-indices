@@ -16,7 +16,6 @@ module Decidim
             @side_surveys = { previous_survey: survey.previous_survey_for(current_user), next_survey: survey.next_survey_for(current_user) }
             @survey_sections_group = survey.survey_section.survey_sections_group
           end
-          render template: "questionnaire_closed.html" unless allow_answers?
         end
 
         def self.prepended(base)
