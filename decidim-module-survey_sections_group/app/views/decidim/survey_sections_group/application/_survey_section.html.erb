@@ -1,0 +1,11 @@
+<div class="columns medium-7 mediumlarge-10 end survey-section">
+  <div class="ql-editor ql-reset-decidim">
+    <h2><%= decidim_sanitize_editor translated_attribute(survey_section.title) %></h2>
+    <p><%= decidim_sanitize_editor translated_attribute(survey_section.description) %></p>
+    <% survey_section.ordered_surveys.each do |survey| %>
+      <% if survey.published? %>
+        <%= render "decidim/survey_sections_group/application/survey", user: current_user, survey: survey %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -163,9 +163,9 @@ $(() => {
 
   let $inputs = $currentStep().find("input, textarea").not(".free-text")
 
-  $inputs.on("change", function(ev,frm) {
-    validateStep();
-  });
+ //$inputs.on("change", function(ev,frm) {
+ //  validateStep();
+ //});
 
   // form validation failed
   $survey.on("forminvalid.zf.abide", function(ev,frm) {

@@ -203,12 +203,18 @@ GIT
 
 GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
-  revision: 0046905fff1fbf24ff721a8d8c30e2b767c448fb
-  branch: develop
+  revision: 9540a2ab20b872896e51ea5f97c5ebae3388ca60
+  branch: release/0.26-stable
   specs:
     decidim-term_customizer (0.26.0)
       decidim-admin (~> 0.26.0)
       decidim-core (~> 0.26.0)
+
+PATH
+  remote: decidim-module-survey_sections_group
+  specs:
+    decidim-survey_sections_group (0.26.1)
+      decidim-core (= 0.26.1)
 
 GEM
   remote: https://rubygems.org/
@@ -902,6 +908,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications (~> 1.1)
   decidim-notify (~> 0.5)
+  decidim-survey_sections_group!
   decidim-templates!
   decidim-term_customizer!
   faker (~> 2.14)

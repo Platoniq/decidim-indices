@@ -13,8 +13,9 @@ gem "decidim-alternative_landing", git: "https://github.com/Platoniq/decidim-mod
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome", branch: "main"
 gem "decidim-direct_verifications", "~> 1.1"
 gem "decidim-notify", "~> 0.5"
+gem "decidim-survey_sections_group", path: "./decidim-module-survey_sections_group"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: :develop
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.26-stable"
 
 gem "bootsnap", "~> 1.7"
 gem "health_check"

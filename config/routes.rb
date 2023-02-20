@@ -24,6 +24,11 @@ Decidim::Admin::Engine.routes.draw do
         resources :feedbacks, except: [:show], controller: :indices_feedbacks
       end
     end
+    collection do
+      resources :sat_lite, as: "admin_indices_sat_lite", controller: :indices_sat_lite do
+        resources :feedbacks, except: [:show], controller: :indices_sat_lite_feedbacks
+      end
+    end
   end
 end
 
@@ -33,6 +38,18 @@ module Decidim
       routes do
         resources :surveys do
           get :feedback, on: :member
+        end
+      end
+    end
+  end
+end
+
+module Decidim
+  module SurveySectionsGroup
+    class Engine < ::Rails::Engine
+      routes do
+        resources :survey_sections_group do
+          get :export_user_answers, on: :member
         end
       end
     end
