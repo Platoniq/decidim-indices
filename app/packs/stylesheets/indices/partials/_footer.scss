@@ -11,6 +11,11 @@
 	@include noise-background;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-logos {
   text-align: right;
   .decidim-logo {
