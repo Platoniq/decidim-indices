@@ -18,7 +18,7 @@
     </li>
     -->
 
-    <li class="accordion-item is-active" data-accordion-item>
+    <li class="accordion-item <% if key_recommendations.present? %>is-active <% end %>" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".key_recommendations") %></h4>
         <h5><%= t(".key_recommendations_description") %></h5>
@@ -33,7 +33,7 @@
       </div>
     </li>
 
-    <li class="accordion-item" data-accordion-item>
+    <li class="accordion-item <% if other_recommendations.present? %>is-active <% end %>" data-accordion-item>
       <a href="#" class="accordion-title">
         <h4><%= t(".resources") %></h4>
         <h5><%= t(".resources_description") %></h5>
