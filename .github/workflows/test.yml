@@ -9,7 +9,7 @@ on:
 env:
   RUBY_VERSION: 2.7.5
   NODE_VERSION: 16.9.1
-    
+
 jobs:
   test:
     name: Test
@@ -45,7 +45,7 @@ jobs:
 
       - name: Precompile assets
         run: |
-          yarn install
+          npm install
           bundle exec rake assets:precompile
         env:
           RAILS_ENV: test
