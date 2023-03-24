@@ -17,6 +17,11 @@
       </div>
     </li>
     -->
+    <% if sat_lite&.image&.present? %>
+      <div class="columns large-10 medium-centered margin-bottom-1">
+        <%= image_tag(sat_lite.attached_uploader(:image).path, size: "1000x500") %>
+      </div>
+    <% end %>
 
     <li class="accordion-item <% if key_recommendations.present? %>is-active <% end %>" data-accordion-item>
       <a href="#" class="accordion-title">
