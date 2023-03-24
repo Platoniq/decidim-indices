@@ -65,6 +65,7 @@ en:
           key_recommendations_description: Key Recommendations are resources and tools
             that have been prioritized or deemed most relevant in correspondence to
             the answers provided and are most up to date.
+          no_recommendations: No recommendations have been established for this survey. Thanks for your contribution.
           resources: Resources
           resources_description: Resources are additional tools and resources that
             correlate with the responses provided that may also be helpful.
