@@ -67,6 +67,7 @@ en:
             that have been prioritized or deemed most relevant in correspondence to
             the answers provided and are most up to date.
           next_topic: Next topic >>
+          no_recommendations: No recommendations have been established for this survey. Thanks for your contribution.
           previous_topic: << Previous topic
           resources: Resources
           resources_description: Resources are additional tools and resources that
