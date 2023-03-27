@@ -5,6 +5,7 @@ module Decidim
     module Surveys
       module SurveysController
         def show
+          return head 403 unless current_component.weight == 1 || current_component.mandatory_survey_answered_by?(current_user)
           return super unless visitor_already_answered? && sat_set
 
           redirect_to feedback_survey_path(survey, anchor: "key-recommendations")

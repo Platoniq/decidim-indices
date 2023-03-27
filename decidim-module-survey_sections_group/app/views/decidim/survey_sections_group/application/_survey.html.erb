@@ -1,8 +1,16 @@
 <div class="row component">
-  <div class="<% if survey.answered_by?(user) %>filled-survey-box<% end %> columns medium-8 mediumlarge-9 ">
-    <h3>
-      <%= link_to translated_attribute(survey.name), main_component_path(survey), class: "external-link-container" %>
-    </h3>
-  </div>
+  <% if survey == survey.mandatory_survey || survey.mandatory_survey_answered_by?(user) %>
+    <div class="<% if survey.answered_by?(user) %>filled-survey-box<% end %> columns medium-8 mediumlarge-9 ">
+      <h3>
+        <%= link_to translated_attribute(survey.name), main_component_path(survey), class: "external-link-container" %>
+      </h3>
+    </div>
+  <% else %>
+    <div class="filled-survey-box columns medium-8 mediumlarge-9 ">
+      <h3>
+        <%= link_to translated_attribute(survey.name), main_component_path(survey.mandatory_survey), class: "external-link-container" %>
+      </h3>
+    </div>
+  <% end %>
   <%= render "decidim/survey_sections_group/application/action_button", user: current_user, survey: survey %>
 </div>

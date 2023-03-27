@@ -17,6 +17,16 @@ module Decidim
         def answered_by?(user)
           Decidim::Surveys::Survey.find_by(decidim_component_id: id)&.answered_by?(user)
         end
+
+        def mandatory_survey
+          participatory_space.components.where(manifest_name: 'surveys').where(weight: 1).first
+        end
+
+        def mandatory_survey_answered_by?(user)
+          return true unless mandatory_survey
+
+          Decidim::Surveys::Survey.find_by(decidim_component_id: mandatory_survey).answered_by?(user)
+        end
       end
     end
   end

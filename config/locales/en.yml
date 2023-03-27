@@ -1,5 +1,9 @@
 ---
 en:
+  activemodel:
+    attributes:
+      component:
+        weight_text_help: Order position 1 will be taken as mandatory survey
   activerecord:
     models:
       decidim/conference:
