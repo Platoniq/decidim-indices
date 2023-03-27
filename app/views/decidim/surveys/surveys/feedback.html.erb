@@ -17,9 +17,9 @@
       </div>
     </li>
     -->
-    <% if sat_lite&.image&.present? %>
+    <% if sat_set.respond_to?(:image) && sat_set.image.present? %>
       <div class="columns large-10 medium-centered margin-bottom-1">
-        <%= image_tag(sat_lite.attached_uploader(:image).path, size: "1000x500") %>
+        <%= image_tag(sat_set.attached_uploader(:image).path, size: "1000x500") %>
       </div>
     <% end %>
 

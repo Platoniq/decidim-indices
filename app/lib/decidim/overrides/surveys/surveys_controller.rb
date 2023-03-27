@@ -22,7 +22,7 @@ module Decidim
 
         def self.prepended(base)
           base.class_eval do
-            base.helper_method :survey, :sat_set, :key_recommendations, :other_recommendations, :sat_lite
+            base.helper_method :survey, :sat_set, :key_recommendations, :other_recommendations
           end
         end
 
@@ -30,10 +30,6 @@ module Decidim
 
         def sat_set
           @sat_set ||= Indices::SatSet.find_by(questionnaire: questionnaire)
-        end
-
-        def sat_lite
-          @sat_lite ||= Indices::SatLite.find_by(questionnaire: questionnaire)
         end
 
         def key_recommendations
