@@ -62,14 +62,14 @@
 
   <div>
     <% if @side_surveys&.dig(:previous_survey)&.survey&.published? %>
-      <%= link_to "<< Previous Survey", main_component_path(@side_surveys[:previous_survey].survey), class: "button button--sc js--submit cell small-3 margin-2" %>
+      <%= link_to t('.previous_topic'), main_component_path(@side_surveys[:previous_survey].survey), class: "button button--sc js--submit cell small-3 margin-2" %>
     <% end %>
     <% if @side_surveys&.dig(:next_survey)&.survey&.published? %>
-      <%= link_to "Next Survey >>", main_component_path(@side_surveys[:next_survey].survey), class: "button button--sc js--submit cell small-3 margin-2 float-right" %>
+      <%= link_to t('.next_topic'), main_component_path(@side_surveys[:next_survey].survey), class: "button button--sc js--submit cell small-3 margin-2 float-right" %>
     <% end %>
     <% if @survey_sections_group %>
       <div>
-        <%= link_to "Back", main_component_path(@survey_sections_group), class: "button button--sc js--submit cell small-3 margin-2" %>
+        <%= link_to t('.back'), main_component_path(@survey_sections_group), class: "button button--sc js--submit cell small-3 margin-2" %>
       </div>
     <% end %>
   </div>
