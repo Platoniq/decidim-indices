@@ -19,7 +19,7 @@ module Decidim
         end
 
         def mandatory_survey
-          participatory_space.components.where(manifest_name: 'surveys').where(weight: 1).first
+          participatory_space.components.where(manifest_name: "surveys").find_by(weight: 1)
         end
 
         def mandatory_survey_answered_by?(user)
