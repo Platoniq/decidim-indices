@@ -9,7 +9,7 @@ module Decidim
         return if user&.email.blank?
         return if answers.blank?
 
-        serializer = Decidim::Forms::UserAnswersSerializer
+        serializer = Decidim::Overrides::Forms::UserAnswersSerializer
         export_data = Decidim::Exporters::CSV.new(answers, serializer).export
 
         ExportMailer.export(user, title, export_data).deliver_now
