@@ -4,7 +4,6 @@ class ExportAllSurveyAnswersJob < ApplicationJob
   queue_as :default
 
   def perform(user, survey_sections_group_id)
-
     survey_sections_group = Decidim::Component.find(survey_sections_group_id)
     data = []
     survey_sections_group.survey_sections.each do |survey_section|
@@ -22,20 +21,23 @@ class ExportAllSurveyAnswersJob < ApplicationJob
     { collection: export_manifest.collection.call(component, user, resource_id), serializer: export_manifest.serializer }
   end
 
+  # rubocop:disable Metrics/PerceivedComplexity
+  # rubocop:disable Metrics/CyclomaticComplexity
   def export(data)
     workbook = RubyXL::Workbook.new
-    data.each_with_index do |datum, index|
+    data.each_with_index do |datum, worksheet_index|
       processed_collection = datum[:data][:collection].map do |resource|
         flatten(datum[:data][:serializer].new(resource).run).deep_dup
       end
       headers = begin
-                  return [] if processed_collection.empty?
-                  processed_collection.inject([]) do |keys, resource|
-                    keys | resource.keys
-                  end
-                end
-      workbook.add_worksheet if index > 0
-      worksheet = workbook[index]
+        return [] if processed_collection.empty?
+
+        processed_collection.inject([]) do |keys, resource|
+          keys | resource.keys
+        end
+      end
+      workbook.add_worksheet if worksheet_index.positive?
+      worksheet = workbook[worksheet_index]
       worksheet.sheet_name = datum[:survey].name["en"]
 
       headers.each_with_index.map do |header, index|
@@ -61,6 +63,8 @@ class ExportAllSurveyAnswersJob < ApplicationJob
     export_data = Decidim::Exporters::ExportData.new(workbook.stream.string, "xlsx")
     workbook.write(export_data.filename)
   end
+  # rubocop:enable Metrics/PerceivedComplexity
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def flatten(object, key = nil)
     case object
