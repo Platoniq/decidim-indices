@@ -55,6 +55,8 @@ en:
       step_navigation:
         wait: Wait ...
         warning_empty_fieds: Please check empty fields or answers.
+      user_answers_serializer:
+        user_identifier: User Identifier
     menu:
       conferences: Calendars
     surveys:
