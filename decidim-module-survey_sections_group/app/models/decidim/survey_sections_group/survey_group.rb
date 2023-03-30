@@ -15,7 +15,7 @@ module Decidim
             .where("decidim_components.weight < ?", survey.weight)
             .sort_by { |s| s.survey.weight }
             .reverse
-            &.find { |s| !s.survey.answered_by?(user.id) }
+            .find { |s| !s.survey.answered_by?(user.id) }
       end
 
       def next_survey_for(user)
@@ -23,7 +23,7 @@ module Decidim
             .joins(:survey)
             .where("decidim_components.weight > ?", survey.weight)
             .sort_by { |s| s.survey.weight }
-            &.find { |s| !s.survey.answered_by?(user.id) }
+            .find { |s| !s.survey.answered_by?(user.id) }
       end
     end
   end
