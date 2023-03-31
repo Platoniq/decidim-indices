@@ -61,6 +61,9 @@ en:
       conferences: Calendars
     surveys:
       surveys:
+        show:
+          flash:
+            alert: "This Topic is mandatory and has to be filled in first"
         feedback:
           back: Back
           card:
