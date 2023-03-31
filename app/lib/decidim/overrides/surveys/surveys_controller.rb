@@ -5,6 +5,7 @@ module Decidim
     module Surveys
       module SurveysController
         def show
+          flash[:alert] = t("decidim.surveys.surveys.show.flash.alert") unless current_component.mandatory_survey_answered_by?(current_user)
           return head 403 unless current_component.weight == 1 || current_component.mandatory_survey_answered_by?(current_user)
           return super unless visitor_already_answered? && sat_set
 
