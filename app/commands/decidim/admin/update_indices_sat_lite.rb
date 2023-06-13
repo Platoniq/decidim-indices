@@ -34,11 +34,20 @@ module Decidim
       end
 
       def attributes
+        form_attributes
+          .merge(attachment_attributes(*image_fields))
+      end
+
+      def image_fields
+        [:image, :feedback_image]
+      end
+
+      def form_attributes
         {
           questionnaire_id: @form.questionnaire_id,
           name: @form.name,
           iframe: @form.iframe
-        }.merge(attachment_attributes(:image, :feedback_image))
+        }
       end
     end
   end
