@@ -38,7 +38,7 @@ module Decidim
           questionnaire_id: @form.questionnaire_id,
           name: @form.name,
           iframe: @form.iframe
-        }.merge(attachment_attributes(:image))
+        }.merge(attachment_attributes(:image, :feedback_image))
       end
     end
   end

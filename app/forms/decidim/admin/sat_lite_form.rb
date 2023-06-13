@@ -6,6 +6,7 @@ module Decidim
       include Decidim::HasUploadValidations
       mimic "indices/sat_lite"
       attribute :image
+      attribute :feedback_image
       attribute :iframe
     end
   end
