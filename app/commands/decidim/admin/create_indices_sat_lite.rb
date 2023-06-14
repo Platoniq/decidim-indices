@@ -29,6 +29,7 @@ module Decidim
           questionnaire_id: form.questionnaire_id,
           name: form.name,
           image: form.image,
+          feedback_image: form.feedback_image,
           iframe: form.iframe
         )
       end

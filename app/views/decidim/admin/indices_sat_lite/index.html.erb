@@ -24,6 +24,7 @@
           <th>Questionnaire</th>
           <th>Created</th>
           <th>Image</th>
+          <th>Feedback Image</th>
           <th></th>
         </tr>
         </thead>
@@ -36,6 +37,11 @@
             <td><%= l set.created_at, format: :decidim_short %></td>
             <% if set.attached_uploader(:image).path %>
               <td><%= link_to image_tag(set.attached_uploader(:image).path, size: "100x100"), set.attached_uploader(:image).path, target: "_blank" %></td>
+            <% else %>
+              <td>No image</td>
+            <% end %>
+            <% if set.attached_uploader(:feedback_image).path %>
+              <td><%= link_to image_tag(set.attached_uploader(:feedback_image).path, size: "100x100"), set.attached_uploader(:feedback_image).path, target: "_blank" %></td>
             <% else %>
               <td>No image</td>
             <% end %>

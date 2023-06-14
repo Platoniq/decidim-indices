@@ -84,6 +84,9 @@ en:
           sat_questions: SAT Questions
           sat_questions_description: These are your answers to the Self Assesment
             Tool survey
+        questionnaire_not_published:
+          questionnaire_not_published:
+            body: "Survey not published"
     verifications:
       authorizations:
         first_login:
